@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class AlignPosToController : MonoBehaviour
 {
-    public Transform targetTrans;
-    public Transform head;
+    public OVRInput.Controller targetPos;
     public GameObject align;
     public Vector3 offset;
     public float lerpSpeed;
 
     private void OnEnable()
     {
-        align.transform.position = targetTrans.position + offset;
+        align.transform.position = OVRInput.GetLocalControllerPosition(targetPos) + offset;
     }
 
     // Update is called once per frame
@@ -23,12 +22,16 @@ public class AlignPosToController : MonoBehaviour
 
     void AlignHandle()
     {
-        Vector3 pos = targetTrans.position + (targetTrans.rotation.normalized * offset);
+        bool controllersActive = OVRInput.GetActiveController() == OVRInput.Controller.Touch ||
+          OVRInput.GetActiveController() == OVRInput.Controller.LTouch ||
+          OVRInput.GetActiveController() == OVRInput.Controller.RTouch;
 
-        align.transform.position = Vector3.Lerp(align.transform.position, pos, lerpSpeed * Time.deltaTime);
+        if (!controllersActive) return;
 
-        align.transform.LookAt(head);
-        align.transform.forward *= -1;
+        Vector3 menuPosition = OVRInput.GetLocalControllerPosition(targetPos) + (OVRInput.GetLocalControllerRotation(targetPos).normalized * offset);
+
+        align.transform.position = Vector3.Lerp(align.transform.position, menuPosition, lerpSpeed * Time.deltaTime);
+        align.transform.rotation = Quaternion.LookRotation(menuPosition - Camera.main.transform.position);
     }
 
 }
