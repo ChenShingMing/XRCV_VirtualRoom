@@ -33,7 +33,9 @@ public class ClassroomManager : MonoBehaviourPunCallbacks
 
     [FoldoutGroup("Manager")]
     public TopicManager topicManager;
-    
+
+    [FoldoutGroup("Manager")]
+    public LicenseInformation licenseInformation;
 
     [FoldoutGroup("Controller")]
     public LineController lineController;
@@ -64,6 +66,10 @@ public class ClassroomManager : MonoBehaviourPunCallbacks
     [HideInInspector]
     public UnityEvent OnSwitchTeachingTypeToSelfStudy = new UnityEvent();
 
+    [HideInInspector]
+    public UnityEvent OnSetTopic = new UnityEvent();
+    [HideInInspector]
+    public UnityEvent OnExitTopic = new UnityEvent();
 
     #region MonoBehavior
 
@@ -80,6 +86,9 @@ public class ClassroomManager : MonoBehaviourPunCallbacks
     public void InitSetUp()
     {
         ResetClassroom();
+
+        InitPhotonInfo();
+
 
         currentTopicName = "No Topic Selected.";
         PunNetworkManager.ins.OnJoinRoomEvent.AddListener(InstantiatePlayer);
@@ -226,6 +235,11 @@ public class ClassroomManager : MonoBehaviourPunCallbacks
     {
         topicManager.SetTopic(topicName);
 
+        if(OnSetTopic != null)
+        {
+            OnSetTopic.Invoke();
+        }
+
         ExitGames.Client.Photon.Hashtable props = new ExitGames.Client.Photon.Hashtable();
         props.Add("CurrentTopic", topicManager.currentTopic.topicName);
         PhotonNetwork.CurrentRoom.SetCustomProperties(props);
@@ -236,6 +250,11 @@ public class ClassroomManager : MonoBehaviourPunCallbacks
     {
         topicManager.ExitTopic();
 
+        if (OnExitTopic != null)
+        {
+            OnExitTopic.Invoke();
+        }
+
         ExitGames.Client.Photon.Hashtable props = new ExitGames.Client.Photon.Hashtable();
         props.Add("CurrentTopic", string.Empty);
         PhotonNetwork.CurrentRoom.SetCustomProperties(props);
@@ -245,9 +264,10 @@ public class ClassroomManager : MonoBehaviourPunCallbacks
 
     #region Classroom
 
-    public void SetRoomMaxPlayers(byte num)
+    public void InitPhotonInfo()
     {
-        PunNetworkManager.ins.maxPlayersPerRoom = num;
+        PunNetworkManager.ins.maxPlayersPerRoom = (byte)(licenseInformation.seatInfo_Teacher + licenseInformation.seatInfo_Stu);
+        PunNetworkManager.ins.SetPhotonAppID(licenseInformation.photonAppID);
     }
 
     public int GetStudentNumber()

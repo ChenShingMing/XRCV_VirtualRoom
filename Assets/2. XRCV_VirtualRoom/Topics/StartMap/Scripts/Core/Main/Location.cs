@@ -10,7 +10,7 @@ public class Location
     public string name;
     public Vector2 latitudeAndLongitude;
 
-    public Sprite picture;
+    public Texture picture;
     public Texture day;
     public Texture night;
 }

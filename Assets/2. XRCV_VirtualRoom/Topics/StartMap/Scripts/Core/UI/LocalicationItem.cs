@@ -5,19 +5,7 @@ using UnityEngine.UI;
 
 public class LocalicationItem : MonoBehaviour
 {
-    public Image image;
+    public RawImage rawImage;
     public Text localicationName;
     public int dataID;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

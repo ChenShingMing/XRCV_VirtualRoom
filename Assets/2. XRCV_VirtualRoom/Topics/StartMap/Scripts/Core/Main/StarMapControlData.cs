@@ -393,7 +393,8 @@ public class StarMapControlData
         }
     }
 
+
     #endregion
 
-    
+
 }

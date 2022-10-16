@@ -153,20 +153,11 @@ public class MainUIManager : MonoBehaviourPunCallbacks
 
     public void CreateRoom()
     {
-        /*
-        if (LicenseManager.ins != null)
+        if (PunNetworkManager.ins.cachedRoomList.Count >= ClassroomManager.ins.licenseInformation.seatInfo_Teacher)
         {
-            ClassroomManager.ins.SetRoomMaxPlayers(
-                (byte)(LicenseManager.ins.elementData.seatInfo_Stu
-                + LicenseManager.ins.elementData.seatInfo_Teacher));
-
-            if (PunNetworkManager.ins.cachedRoomList.Count >= LicenseManager.ins.elementData.seatInfo_Teacher)
-            {
-                lobbyPanelComponent.ShowMaxRoomTip();
-                return;
-            }
+            lobbyPanelComponent.ShowMaxRoomTip();
+            return;
         }
-        */
 
         PunNetworkManager.ins.CreateRoom(createRoomName.text);
     }

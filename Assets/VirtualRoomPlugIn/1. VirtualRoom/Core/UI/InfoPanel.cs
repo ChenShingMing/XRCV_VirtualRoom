@@ -21,7 +21,7 @@ public class InfoPanel : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        //schoolName_Text.text = LicenseManager.ins == null? string.Empty : LicenseManager.ins.elementData.name;
+        schoolName_Text.text = ClassroomManager.ins.licenseInformation.schoolName;
         nickName_Text.text = PhotonNetwork.NickName;
 
         if (PhotonNetwork.IsConnected)

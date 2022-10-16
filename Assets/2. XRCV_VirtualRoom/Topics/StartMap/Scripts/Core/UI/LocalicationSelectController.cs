@@ -26,7 +26,7 @@ public class LocalicationSelectController : MonoBehaviour
     private IEnumerable<Toggle> activeItems; // 所有的地點Toggle
     private LocalicationItem activeItem; //當前選中的item
 
-    private void Awake()
+    public void Awake()
     {
         locationDataList = StarMapController.ins.starMapControlData.locationData.locationList;
 
@@ -35,14 +35,13 @@ public class LocalicationSelectController : MonoBehaviour
         {
             itemTemplate = Instantiate(itemTemplate, scrollContent);
             itemTemplate.localicationName.text = locationDataList[i].name;
-            itemTemplate.image.sprite = locationDataList[i].picture;
+            itemTemplate.rawImage.texture = locationDataList[i].picture;
             itemTemplate.dataID = i;
 
             allItems.Add(itemTemplate);
 
             itemTemplate.gameObject.SetActive(true);
         }
-
     }
 
     //用於Toggle被選擇時
@@ -72,6 +71,7 @@ public class LocalicationSelectController : MonoBehaviour
         }
         catch (Exception e)
         {
+            Debug.Log(e);
             temp = new Vector2();
         }
 

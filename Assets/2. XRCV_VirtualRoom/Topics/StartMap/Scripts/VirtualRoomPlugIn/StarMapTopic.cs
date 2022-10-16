@@ -9,7 +9,7 @@ public class StarMapTopic : Topic
     public override void OnInit()
     {
         base.OnInit();
-        starMapController = controller.GetComponent<StarMapController>();
+        starMapController = controller.GetComponentInChildren<StarMapController>(true);
     }
 
     public override void TriggerMenu()
