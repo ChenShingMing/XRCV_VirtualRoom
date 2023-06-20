@@ -106,6 +106,7 @@ public class StarMapControlData
     public delegate void StarMapControlDataEventHandler();
     public StarMapControlDataEventHandler OnInitCompleteEvent;
 
+    private int actuallylocalicationIndex; //實際上顯示得Index
     bool isInit;
 
     #region 執行緒
@@ -124,6 +125,8 @@ public class StarMapControlData
         currentLocalicationName = "自訂地點";
         latitude = 23.9738f;
         longitude = 120.982f;
+
+        actuallylocalicationIndex = currentlocalicationIndex;
 
         if (OnInitCompleteEvent != null)
         {
@@ -333,6 +336,14 @@ public class StarMapControlData
             }
             else
             {
+                //如果顯示的圖片不一樣
+                if(actuallylocalicationIndex != currentlocalicationIndex)
+                {
+                    SetPanoramicPhoto();
+                    actuallylocalicationIndex = currentlocalicationIndex;
+                }
+                
+                //如果日夜不一樣
                 if (DayNightEnvironmentControl.ins.isNight)
                 {
                     if (panoramicStatus != PanoramicStatus.Night)

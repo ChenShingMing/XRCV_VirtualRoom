@@ -76,6 +76,7 @@ public class Room_Monitor : MonoBehaviour
         return null;
     }
 
+    [Button]
     public void ReflashTargetSelect()
     {
         UpdateTargetListCount();

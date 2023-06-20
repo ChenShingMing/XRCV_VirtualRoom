@@ -36,21 +36,10 @@ public class StarMapRotate : MonoBehaviour
 
     private TimeSpan timeSpan;
     private Vector3 prev_transform;
-
-
-    private void Awake()
-    {
-        
-    }
-
-    // Use this for initialization
-    void Start ()
-    {
-		
-	}
+    
 	
 	// Update is called once per frame
-	void Update ()
+	void FixedUpdate()
     {
         SetAxis();
         RotateHandle();
@@ -98,7 +87,13 @@ public class StarMapRotate : MonoBehaviour
             prev_transform = StarTrans.localEulerAngles;
             StarTrans.Rotate(-Vector3.up * Time.deltaTime * rotateSpeed);
 
+            float minues = prev_transform.y - StarTrans.localEulerAngles.y;
+            if (Mathf.Abs(minues) > 1f) return; //自轉經過360，導致差異過大，這幀變動需要被忽略。
+
+
             differEulerAnglesY += (prev_transform.y - StarTrans.localEulerAngles.y);
+            //Debug.Log("prev_transform.y : " + prev_transform.y + " " + " StarTrans.localEulerAngles.y : " + StarTrans.localEulerAngles.y);
+
 
             //判斷旋轉有沒有超過一小時
             if (differEulerAnglesY >= 15f)
@@ -110,12 +105,14 @@ public class StarMapRotate : MonoBehaviour
         }
         else
         {
-            if (differEulerAnglesY > 0)
+            if (differEulerAnglesY != 0)
             {
                 differEulerAnglesY = 0;
             }
 
-            Spindle = Mathf.Lerp(Spindle, -((float)SpindleSampleValue) * SpindleSampleAngle - (float)timeSpan.TotalDays - 15f - longitudeOffset, Time.deltaTime * 3);
+            float targetSpindle = (-((float)SpindleSampleValue) * SpindleSampleAngle - (float)timeSpan.TotalDays - 15f - longitudeOffset);
+            Spindle = Mathf.Lerp(Spindle, targetSpindle, Time.deltaTime * 3);
+            //Spindle = -((float)SpindleSampleValue) * SpindleSampleAngle - (float)timeSpan.TotalDays - 15f - longitudeOffset;
             StarTrans.localEulerAngles = new Vector3(0, Spindle, 0);
         }
 

@@ -11,6 +11,8 @@ public abstract class TopicController : MonoBehaviourPunCallbacks
 
     public override void OnEnable()
     {
+        base.OnEnable();
+
         //若使用者身分是學生，就監聽教學模式切換的事件
         if (Player.localPlayer
             && Player.localPlayer.identity == Player.Identity.Student)
@@ -22,6 +24,8 @@ public abstract class TopicController : MonoBehaviourPunCallbacks
 
     public override void OnDisable()
     {
+        base.OnDisable();
+
         //若使用者身分是學生，就移除監聽教學模式切換的事件
         if (Player.localPlayer
             && Player.localPlayer.identity == Player.Identity.Student)

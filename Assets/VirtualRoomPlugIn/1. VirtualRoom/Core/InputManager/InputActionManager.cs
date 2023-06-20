@@ -107,10 +107,14 @@ public class InputActionManager : MonoBehaviour
 
             if (ClassroomManager.ins.isPenMode)
             {
-                ClassroomManager.ins.RPCSetLinePoint(GazeSphere.RayHitOnSphereLine(new Ray(Camera.main.transform.position,
-                                                                         rotation * Vector3.forward)));
-            }
+                Vector3 pos = GazeSphere.RayHitOnSphereLine(new Ray(Camera.main.transform.position,
+                                                                         rotation * Vector3.forward));
 
+                if (Vector3.Distance(pos, ClassroomManager.ins.lineController.pos) > 0.15f)
+                {
+                    ClassroomManager.ins.RPCSetLinePoint(pos);
+                }
+            }
         }
     }
 

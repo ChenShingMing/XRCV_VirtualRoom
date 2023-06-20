@@ -106,6 +106,12 @@ public class ClassroomManager : MonoBehaviourPunCallbacks
         MappingClassroomProperties();
     }
 
+    public override void OnDisconnected(DisconnectCause cause)
+    {
+        base.OnDisconnected(cause);
+        SetMainMenuActive(true);
+    }
+
     #endregion
 
     #region Private Method
@@ -410,6 +416,45 @@ public class ClassroomManager : MonoBehaviourPunCallbacks
     #endregion
 
 
+    #region Classroom
+
+    //更新當前PhotonNetworkManager Loading 等級
+    public void RPCUpdatePunLoadingLevel()
+    {
+        PunNetworkManager.LoadingLevel targetLevel = PunNetworkManager.LoadingLevel.Easy;
+
+        int playerCount = PhotonNetwork.CurrentRoom.Players.Count;
+
+        switch(playerCount)
+        {
+            case > 60:
+                targetLevel = PunNetworkManager.LoadingLevel.VeryHard;
+
+                break;
+
+            case > 40:
+                targetLevel = PunNetworkManager.LoadingLevel.Hard;
+
+                break;
+
+            case > 20:
+                targetLevel = PunNetworkManager.LoadingLevel.Normal;
+
+                break;
+
+            case > 0:
+                targetLevel = PunNetworkManager.LoadingLevel.Easy;
+
+                break;
+        }
+
+
+        PhotonView photonView = PhotonView.Get(this);
+        photonView.RPC("SetLoadingLevel", RpcTarget.All, targetLevel);
+    }
+
+    #endregion
+
     #endregion
 
     #region RPC Method 
@@ -502,6 +547,13 @@ public class ClassroomManager : MonoBehaviourPunCallbacks
     {
         newMonitorManager.SetMousePointerClick();
     }
+
+    [PunRPC]
+    void SetLoadingLevel(PunNetworkManager.LoadingLevel targetLevel)
+    {
+        PunNetworkManager.ins.SetLoadingLevel(targetLevel);
+    }
+
 
     #endregion
 

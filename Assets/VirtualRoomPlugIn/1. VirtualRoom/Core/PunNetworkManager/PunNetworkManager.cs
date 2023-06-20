@@ -8,6 +8,15 @@ using UnityEngine.Events;
 
 public class PunNetworkManager : MonoBehaviourPunCallbacks
 {
+    public enum LoadingLevel
+    {
+        Easy,
+        Normal,//大於20人
+        Hard, //大於40人
+        VeryHard, //大於60人
+    }
+
+
     public static PunNetworkManager ins;
 
     [TitleGroup("參數設定")]
@@ -129,6 +138,11 @@ public class PunNetworkManager : MonoBehaviourPunCallbacks
     public override void OnPlayerEnteredRoom(Photon.Realtime.Player other)
     {
         Debug.LogFormat("OnPlayerEnteredRoom() {0}", other.NickName); // not seen if you're the player connecting
+
+        if (PhotonNetwork.IsMasterClient)
+        {
+            ClassroomManager.ins.RPCUpdatePunLoadingLevel();
+        }
     }
 
     /// <summary>
@@ -142,6 +156,7 @@ public class PunNetworkManager : MonoBehaviourPunCallbacks
         if (PhotonNetwork.IsMasterClient)
         {
             Debug.LogFormat("OnPlayerLeftRoom IsMasterClient {0}", PhotonNetwork.IsMasterClient); // called before OnPlayerLeftRoom
+            ClassroomManager.ins.RPCUpdatePunLoadingLevel();
         }
     }
 
@@ -330,6 +345,45 @@ public class PunNetworkManager : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.PhotonServerSettings.AppSettings.AppIdRealtime = value;
     }
+
+    public void SetLoadingLevel(LoadingLevel targetLevel)
+    {
+        int serializationRate = 0, sendRate = 0;
+
+        switch (targetLevel)
+        {
+            case LoadingLevel.Easy:
+
+                serializationRate = 10;
+                sendRate = 10;
+
+                break;
+            case LoadingLevel.Normal:
+
+                serializationRate = 5;
+                sendRate = 5;
+
+                break;
+            case LoadingLevel.Hard:
+
+                serializationRate = 3;
+                sendRate = 3;
+
+                break;
+            case LoadingLevel.VeryHard:
+
+                serializationRate = 1;
+                sendRate = 1;
+
+                break;
+        }
+
+        PhotonNetwork.SerializationRate = serializationRate;
+        PhotonNetwork.SendRate = sendRate;
+
+        Debug.Log("PunNetworkManager LoadingLevel : " + targetLevel);
+    }
+
 
 
     #endregion

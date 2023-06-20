@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Sirenix.OdinInspector;
 
 public class DayNightEnvironmentControl : MonoBehaviour
 {
@@ -14,8 +15,6 @@ public class DayNightEnvironmentControl : MonoBehaviour
 
     private Material defaultSkyBox;
     private float sunY;
-
-    bool isInit;
 
     private void Awake()
     {
@@ -30,7 +29,20 @@ public class DayNightEnvironmentControl : MonoBehaviour
     private void OnEnable()
     {
         RenderSettings.skybox = mySkyBoxMat;
-        isInit = true;
+
+        sunY = sunTrans.position.y;
+        //白天
+        if (sunY > 0f)
+        {
+            SetDay();
+            isNight = false;
+        }
+        //晚上
+        else
+        {
+            SetNight();
+            isNight = true;
+        }
     }
 
     private void OnDisable()
@@ -48,32 +60,45 @@ public class DayNightEnvironmentControl : MonoBehaviour
     void SkyBoxHandle()
     {
         sunY = sunTrans.position.y;
-
         //Debug.Log("sunY:" + sunY);
 
         //白天
         if (sunY > 0f)
         {
-            if (isNight == true || isInit)
+            if (isNight)
             {
-                mySkyBoxMat.DOKill();
-                mySkyBoxMat.DOFloat(1f, "_Blend", 0.5f);
-                
+                SetDay();
                 isNight = false;
             }
         }
         //晚上
         else
         {
-            if (isNight == false || isInit)
+            if (!isNight)
             {
-                mySkyBoxMat.DOKill();
-                mySkyBoxMat.DOFloat(0f, "_Blend", 0.5f);
-
+                SetNight();
                 isNight = true;
             }
         }
 
     }
-    
+
+    [Button]
+    private void SetDay()
+    {
+        //Debug.Log("SetDay");
+
+        mySkyBoxMat.DOKill();
+        mySkyBoxMat.DOFloat(1f, "_Blend", 0.5f);
+    }
+
+    [Button]
+    private void SetNight()
+    {
+        //Debug.Log("SetNight");
+
+        mySkyBoxMat.DOKill();
+        mySkyBoxMat.DOFloat(0f, "_Blend", 0.5f);
+    }
+
 }
