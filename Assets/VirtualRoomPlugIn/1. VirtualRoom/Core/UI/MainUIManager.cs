@@ -70,8 +70,12 @@ public class MainUIManager : MonoBehaviourPunCallbacks
     //[FoldoutGroup("Lobby")]
     //public RoomListUpdater roomListUpdater; //在OnEnable 刷新自身清單，提供刷新清單的方法
 
-    [FoldoutGroup("ReName")]
+    [FoldoutGroup("Other")]
     public Rename rename;
+
+    [FoldoutGroup("Other")]
+    public TMP_InputField licsenceText;
+
 
     private string identity;
 
@@ -247,9 +251,9 @@ public class MainUIManager : MonoBehaviourPunCallbacks
         ClassroomManager.ins.RPCClearCanvas();
     }
 
-    public void SetLicenseKey(string value)
+    public void SetLicenseKey()
     {
-        //LicenseManager.ins.SetLicenseKey(value);
+        ClassroomManager.ins.SetLicsence(licsenceText.text);
     }
 
     public void CheckLicense()

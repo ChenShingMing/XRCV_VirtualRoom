@@ -5,9 +5,9 @@ using UnityEngine;
 public class LicenseInformation : MonoBehaviour
 {
     public string key;
+    public string logo;
     public string schoolName;
     public string photonAppID;
     public int seatInfo_Stu;
     public int seatInfo_Teacher;
-
 }

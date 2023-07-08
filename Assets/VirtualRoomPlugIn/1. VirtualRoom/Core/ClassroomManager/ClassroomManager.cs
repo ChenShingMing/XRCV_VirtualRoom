@@ -35,6 +35,9 @@ public class ClassroomManager : MonoBehaviourPunCallbacks
     public TopicManager topicManager;
 
     [FoldoutGroup("Manager")]
+    public FirebaseLicenseInfoManager firebaseLicenseInfoManager;
+
+    [FoldoutGroup("Controller")]
     public LicenseInformation licenseInformation;
 
     [FoldoutGroup("Controller")]
@@ -87,13 +90,14 @@ public class ClassroomManager : MonoBehaviourPunCallbacks
     {
         ResetClassroom();
 
+        /*
         InitPhotonInfo();
-
 
         currentTopicName = "No Topic Selected.";
         PunNetworkManager.ins.OnJoinRoomEvent.AddListener(InstantiatePlayer);
         PunNetworkManager.ins.OnJoinRoomEvent.AddListener(MappingClassroomProperties);
         PunNetworkManager.ins.OnDisconnectEvent.AddListener(ResetClassroom);
+        */
     }
 
 
@@ -232,6 +236,9 @@ public class ClassroomManager : MonoBehaviourPunCallbacks
         PhotonView photonView = PhotonView.Get(this);
         photonView.RPC("ClearCanvas", RpcTarget.All);
     }
+
+
+    
 
     #endregion
 
@@ -411,6 +418,12 @@ public class ClassroomManager : MonoBehaviourPunCallbacks
         {
             photonView.RPC("SendMoniterPointerClick", PunNetworkManager.GetPhotonPlayerByNickName(newMonitorManager.monitorReceivers[i]));
         }
+    }
+
+    public void SetLicsence(string key)
+    {
+        PlayerPrefs.SetString("LicenseKey", key);
+        firebaseLicenseInfoManager.ReadData(key, InitSetUp);
     }
 
     #endregion
