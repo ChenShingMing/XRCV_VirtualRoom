@@ -49,6 +49,8 @@ public class ClassroomManager : MonoBehaviourPunCallbacks
     [FoldoutGroup("Others")]
     public FirstPersonCam firstPersonCam;
 
+    [FoldoutGroup("參數設置")]
+    public bool useLicense = true;
 
     [ReadOnly]
     public JoinType joinType;
@@ -65,6 +67,12 @@ public class ClassroomManager : MonoBehaviourPunCallbacks
     public string currentTopicName;
 
     [HideInInspector]
+    public UnityEvent OnPassLicenseEvent = new UnityEvent();
+    [HideInInspector]
+    public UnityEvent OnFailLicenseEvent = new UnityEvent();
+
+
+    [HideInInspector]
     public UnityEvent OnSwitchTeachingTypeToGuidance = new UnityEvent();
     [HideInInspector]
     public UnityEvent OnSwitchTeachingTypeToSelfStudy = new UnityEvent();
@@ -73,6 +81,10 @@ public class ClassroomManager : MonoBehaviourPunCallbacks
     public UnityEvent OnSetTopic = new UnityEvent();
     [HideInInspector]
     public UnityEvent OnExitTopic = new UnityEvent();
+
+    [HideInInspector]
+    public string LICENCE_KEY = "LicenseKey";
+
 
     #region MonoBehavior
 
@@ -83,23 +95,31 @@ public class ClassroomManager : MonoBehaviourPunCallbacks
             ins = this;
         }
 
-        InitSetUp();
+        ResetClassroom();
+        mainUICanvas_Current.GetComponentInParent<MainUIManager>(true).InitSetUp();
+        OnPassLicenseEvent.AddListener(InitSetUp);
+
+
+        if(useLicense)
+        {
+            CheckListence();
+        }
+        else
+        {
+            InitSetUp();
+        }
+
     }
 
-    public void InitSetUp()
+    private void InitSetUp()
     {
-        ResetClassroom();
-
-        /*
         InitPhotonInfo();
 
         currentTopicName = "No Topic Selected.";
         PunNetworkManager.ins.OnJoinRoomEvent.AddListener(InstantiatePlayer);
         PunNetworkManager.ins.OnJoinRoomEvent.AddListener(MappingClassroomProperties);
         PunNetworkManager.ins.OnDisconnectEvent.AddListener(ResetClassroom);
-        */
     }
-
 
     #endregion
 
@@ -420,17 +440,7 @@ public class ClassroomManager : MonoBehaviourPunCallbacks
         }
     }
 
-    public void SetLicsence(string key)
-    {
-        PlayerPrefs.SetString("LicenseKey", key);
-        firebaseLicenseInfoManager.ReadData(key, InitSetUp);
-    }
-
-    #endregion
-
-
-    #region Classroom
-
+    
     //更新當前PhotonNetworkManager Loading 等級
     public void RPCUpdatePunLoadingLevel()
     {
@@ -464,6 +474,47 @@ public class ClassroomManager : MonoBehaviourPunCallbacks
 
         PhotonView photonView = PhotonView.Get(this);
         photonView.RPC("SetLoadingLevel", RpcTarget.All, targetLevel);
+    }
+
+
+    public void CheckListence()
+    {
+        if (PlayerPrefs.HasKey(LICENCE_KEY) && PlayerPrefs.GetString(LICENCE_KEY) != string.Empty)
+        {
+            SetLicense(PlayerPrefs.GetString(LICENCE_KEY));
+            firebaseLicenseInfoManager.ReadData(OnPassLicense, OnFailLicense);
+        }
+        else
+        {
+            OnFailLicense();
+        }
+    }
+
+
+    public void SetLicense(string key)
+    {
+        PlayerPrefs.SetString("LicenseKey", key);
+        firebaseLicenseInfoManager.SetDocumentID(key);
+    }
+
+    private void OnPassLicense()
+    {
+        Debug.Log("ClassroomManager OnPassLicense");
+
+        if(OnPassLicenseEvent != null)
+        {
+            OnPassLicenseEvent.Invoke();
+        }    
+    }
+
+    private void OnFailLicense()
+    {
+        Debug.Log("ClassroomManager OnFailLicense");
+
+        if (OnFailLicenseEvent != null)
+        {
+            OnFailLicenseEvent.Invoke();
+        }
     }
 
     #endregion

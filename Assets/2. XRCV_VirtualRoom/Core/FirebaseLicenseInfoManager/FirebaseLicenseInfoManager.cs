@@ -106,10 +106,14 @@ public class FirebaseLicenseInfoManager : MonoBehaviour
 
     public void ReadData(string _documentID, UnityAction OnSuccessEvent = null, UnityAction OnFailEvent = null)
     {
-        documentID = _documentID;
+        SetDocumentID(_documentID);
         ReadData(OnSuccessEvent, OnFailEvent);
     }    
 
+    public void SetDocumentID(string _documentID)
+    {
+        documentID = _documentID;
+    }
 
 
     private Dictionary<string, object> ConvertSampleDataToDictionary(SampleData sampleData)

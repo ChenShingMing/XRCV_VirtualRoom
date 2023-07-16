@@ -76,8 +76,11 @@ public class MainUIManager : MonoBehaviourPunCallbacks
     [FoldoutGroup("Other")]
     public TMP_InputField licsenceText;
 
+    [FoldoutGroup("Other")]
+    public GameObject licensePanel;
 
     private string identity;
+    private bool isInit;
 
     #region MonoBehavior
 
@@ -88,7 +91,7 @@ public class MainUIManager : MonoBehaviourPunCallbacks
             ins = this;
         }
 
-        InitSetUp();
+        //InitSetUp();
     }
 
     public void InitSetUp()
@@ -102,34 +105,20 @@ public class MainUIManager : MonoBehaviourPunCallbacks
         lobbyPanel.SetActive(false);
         inRoomPanel.gameObject.SetActive(false);
 
+        licsenceText.text = PlayerPrefs.GetString(ClassroomManager.ins.LICENCE_KEY);
+
         ReflashTopicList();
 
-        /*
-        if (LicenseManager.ins != null && LicenseManager.ins.gameObject.activeSelf)
-        {
-            if(changeLicenseBtn != null)
-                changeLicenseBtn.SetActive(true);
+        ClassroomManager.ins.OnPassLicenseEvent.AddListener(OnPassLicense);
+        ClassroomManager.ins.OnFailLicenseEvent.AddListener(OnFailLicense);
 
-            LicenseManager.ins.OnCheckSuccess.AddListener(OnLicenseCheckSuccess);
-            LicenseManager.ins.OnCheckFail.AddListener(OnLicenseCheckFail);
-        }
-        else
-        {
-            if (changeLicenseBtn != null)
-                changeLicenseBtn.SetActive(false);
-            OnLicenseCheckSuccess();
-        }
-        */
-
-        if (changeLicenseBtn != null)
-            changeLicenseBtn.SetActive(false);
-        OnLicenseCheckSuccess();
+        isInit = true;
     }
-
 
 
     public void FixedUpdate()
     {
+        if (!isInit) return;
         ReflashMonitorList();
     }
 
@@ -251,14 +240,14 @@ public class MainUIManager : MonoBehaviourPunCallbacks
         ClassroomManager.ins.RPCClearCanvas();
     }
 
-    public void SetLicenseKey()
+    public void SetLicenseKey(string key)
     {
-        ClassroomManager.ins.SetLicsence(licsenceText.text);
+        ClassroomManager.ins.SetLicense(licsenceText.text);
     }
 
     public void CheckLicense()
     {
-        //LicenseManager.ins.CheckLicense();
+        ClassroomManager.ins.CheckListence();
     }
 
 
@@ -339,23 +328,22 @@ public class MainUIManager : MonoBehaviourPunCallbacks
 
     #region UI Private Method
 
-    private void OnLicenseCheckSuccess()
+    private void OnPassLicense()
     {
-        /*
+        
         if(licensePanel != null)
             licensePanel.SetActive(false);
-        */
+        
 
         mainPanel.SetActive(true);
     }
 
-    private void OnLicenseCheckFail()
+    private void OnFailLicense()
     {
-        /*
         if (licensePanel != null)
             licensePanel.SetActive(true);
 
-        */
+        
         mainPanel.SetActive(false);
     }
 
@@ -371,7 +359,6 @@ public class MainUIManager : MonoBehaviourPunCallbacks
     {
         if (PhotonNetwork.InRoom == false) return;
         if (ClassroomManager.ins.GetIdentityInfo() != ClassroomManager.JoinType.Monitor.ToString()) return;
-
     }
 
     private void OnLeaveRoomWithSameName()
