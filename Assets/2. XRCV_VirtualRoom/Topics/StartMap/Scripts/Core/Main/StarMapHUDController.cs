@@ -13,16 +13,13 @@ public class StarMapHUDController : MonoBehaviour
     public Text DeBugText;
     public Text ActionText;
 
+    public List<string> specialStarList;
     public float textLerpSpeed;
 
     public static StarMapHUDController ins;
     RectTransform canvasRT;
     List<Zodiac_name_info> zodiac_name_infoList =new List<Zodiac_name_info>();
 
-    string[] specialStar = {
-        "北極星",
-        "天狼星"
-    };
 
     private void Awake()
     {
@@ -90,6 +87,7 @@ public class StarMapHUDController : MonoBehaviour
         return temp;
 
     }
+    
     void Zodiac_nameHandle() {
       
         for (int i = 0; i < zodiac_name_infoList.Count; i++) {
@@ -105,9 +103,9 @@ public class StarMapHUDController : MonoBehaviour
 
     bool IsSpecialStar(string _name)
     {
-        for (int i = 0; i < specialStar.Length; i++)
+        for (int i = 0; i < specialStarList.Count; i++)
         {
-            if (_name == specialStar[i])
+            if (_name == specialStarList[i])
             {
                 return true;
             }
