@@ -41,8 +41,10 @@ public class PunNetworkManager : MonoBehaviourPunCallbacks
     public UnityEvent OnDisconnectEvent = new UnityEvent();
     [HideInInspector]
     public UnityEvent OnLeaveRoomWithSameNameEvent = new UnityEvent();
+    [HideInInspector]
+    public UnityEvent OnRoomListUpdateEvent = new UnityEvent();
 
-
+    [SerializeField]
     private string roomName;
     private TypedLobby typedLobby;
 
@@ -86,7 +88,7 @@ public class PunNetworkManager : MonoBehaviourPunCallbacks
         cachedRoomList.Clear();
         Debug.LogFormat("OnDisconnected() was called by PUN with reason {0}", cause);
 
-        if(OnDisconnectEvent != null)
+        if (OnDisconnectEvent != null)
         {
             OnDisconnectEvent.Invoke();
         }
@@ -108,13 +110,13 @@ public class PunNetworkManager : MonoBehaviourPunCallbacks
         {
             if (item.Value.NickName == PhotonNetwork.NickName)
             {
-                if(item.Value != PhotonNetwork.LocalPlayer)
+                if (item.Value != PhotonNetwork.LocalPlayer)
                 {
                     Debug.Log("There are Player with same NickName : " + PhotonNetwork.NickName + " in the room : " + PhotonNetwork.CurrentRoom.Name);
                     canJoinRoom = false;
                     PhotonNetwork.LeaveRoom();
 
-                    if(OnLeaveRoomWithSameNameEvent != null)
+                    if (OnLeaveRoomWithSameNameEvent != null)
                     {
                         OnLeaveRoomWithSameNameEvent.Invoke();
                     }
@@ -208,6 +210,8 @@ public class PunNetworkManager : MonoBehaviourPunCallbacks
 
             Debug.Log("Find : " + roomList[i].Name);
         }
+
+        OnRoomListUpdateEvent?.Invoke();
     }
 
     #endregion
@@ -227,8 +231,8 @@ public class PunNetworkManager : MonoBehaviourPunCallbacks
         if (PhotonNetwork.IsConnected == false)
         {
             // #Critical, we must first and foremost connect to Photon Online Server.
-            PhotonNetwork.ConnectUsingSettings();
             PhotonNetwork.GameVersion = gameVersion;
+            PhotonNetwork.ConnectUsingSettings();
         }
     }
 
@@ -384,6 +388,27 @@ public class PunNetworkManager : MonoBehaviourPunCallbacks
         Debug.Log("PunNetworkManager LoadingLevel : " + targetLevel);
     }
 
+
+    [Button]
+    public void DebugInformation()
+    {
+        // 取得目前的大廳名稱
+        string lobbyName = PhotonNetwork.CurrentLobby.Name;
+
+        // 取得房間列表
+        int roomCount = PhotonNetwork.CountOfRooms;
+        int playerCount = PhotonNetwork.CountOfPlayers;
+
+        Debug.Log(lobbyName + " 玩家數量：" + playerCount + "房間數量：" + roomCount);
+    }
+
+    [Button]
+    void DogIPAddress()
+    {
+        // 打印當前連接的Photon伺服器地址
+        string serverAddress = PhotonNetwork.NetworkingClient.LoadBalancingPeer.ServerAddress;
+        Debug.Log($"當前連接的Photon伺服器地址：{serverAddress}");
+    }
 
 
     #endregion

@@ -35,14 +35,22 @@ public class LobbyPanel : MonoBehaviour
     public List<RoomInformation> roomInformations;
 
 
+
     private void OnEnable()
     {
+        PunNetworkManager.ins.OnRoomListUpdateEvent.AddListener(ReflashRoomList);
         ReflashRoomList();
 
         lobby.SetActive(true);
         createRoom.SetActive(false);
         enterRoomFail.SetActive(false);
     }
+
+    private void OnDisable()
+    {
+        PunNetworkManager.ins.OnRoomListUpdateEvent.RemoveListener(ReflashRoomList);
+    }
+
 
     public void ReflashRoomList()
     {
@@ -99,25 +107,27 @@ public class LobbyPanel : MonoBehaviour
     {
         //Debug.Log("UpdateRoomListCount " + roomInformations.Count + " " + PunNetworkManager.ins.cachedRoomList.Count);
 
-        while (roomInformations.Count != PunNetworkManager.ins.cachedRoomList.Count)
+        int currentRoomCount = roomInformations.Count;
+        int targetRoomCount = PunNetworkManager.ins.cachedRoomList.Count;
+
+
+        while (currentRoomCount != targetRoomCount)
         {
-            if(roomInformations.Count > PunNetworkManager.ins.cachedRoomList.Count)
+            if (currentRoomCount > targetRoomCount)
             {
                 Destroy(scrollViewContentParent.GetChild(scrollViewContentParent.childCount - 1).gameObject);
-                roomInformations.RemoveAt(roomInformations.Count-1);
+                roomInformations.RemoveAt(currentRoomCount - 1);
+                currentRoomCount--; // 更新計數
             }
-
-            if (roomInformations.Count < PunNetworkManager.ins.cachedRoomList.Count)
+            else if (currentRoomCount < targetRoomCount)
             {
                 GameObject temp = Instantiate(roomTemplate, scrollViewContentParent, false);
-                //temp.transform.SetParent(scrollViewContentParent);
-                //temp.transform.localPosition = new Vector3(temp.transform.localPosition.x, temp.transform.localPosition.y, 0);
-                //temp.transform.localRotation = Quaternion.identity;
                 temp.SetActive(true);
-
                 roomInformations.Add(temp.GetComponent<RoomInformation>());
+                currentRoomCount++; // 更新計數
             }
         }
+
     }
 
 }

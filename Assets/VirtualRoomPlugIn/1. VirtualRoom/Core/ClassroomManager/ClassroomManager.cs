@@ -21,6 +21,9 @@ public class ClassroomManager : MonoBehaviourPunCallbacks
 
     public static ClassroomManager ins;
 
+    [BoxGroup]
+    public string version;
+
     [FoldoutGroup("Player")]
     public GameObject playerPrefab;
 
