@@ -7199,12 +7199,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   licenseInformation: {fileID: 1012401382}
   cllection: Element
-  documentID: JGSP6-JLKVY-NHY09-DA2I5-SF8IK
+  documentID: 13486-50409-43217-70534-68892
   sampleData:
     logo: 
-    schoolName: "\u9577\u5B89\u570B\u5C0F"
-    photonAppID: ecb9c134-fbd8-44c6-9c0b-725f4d002708
-    seatInfo_Stu: 10
+    schoolName: "\u4E09\u4FAF\u570B\u4E2D"
+    photonAppID: 5c9c3eed-f45f-4520-8bbb-fade54dc6344
+    seatInfo_Stu: 1
     seatInfo_Teacher: 1
 --- !u!1 &230030338
 GameObject:
@@ -32384,12 +32384,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7ac4ec4fca8a1842a00c1b87b0dc189, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 
+  key: 83348-13850-19857-86345-80515
   logo: 
-  schoolName: 
-  photonAppID: 
-  seatInfo_Stu: 0
-  seatInfo_Teacher: 0
+  schoolName: "\u5927\u5FB7\u570B\u4E2D"
+  photonAppID: 260a1a66-cb8e-4e03-89bd-0e87dc3f5ccd
+  seatInfo_Stu: 10
+  seatInfo_Teacher: 1
 --- !u!4 &1012401383
 Transform:
   m_ObjectHideFlags: 0
@@ -64535,6 +64535,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1941645502}
   - component: {fileID: 1941645503}
+  - component: {fileID: 1941645504}
   m_Layer: 0
   m_Name: LicenseCreater
   m_TagString: Untagged
@@ -64573,7 +64574,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7deb4885cf240e44979f8401384b0fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  license: JGSP6-JLKVY-NHY09-DA2I5-SF8IK
+  license: A8UNV-111IB-7UAG2-C8UXU-NR8AM
+--- !u!114 &1941645504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941645501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3159edb2560066049920fb090d26dd62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  license: 13486-50409-43217-70534-68892
 --- !u!1 &1945020114
 GameObject:
   m_ObjectHideFlags: 0
