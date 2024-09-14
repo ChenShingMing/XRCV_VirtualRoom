@@ -9,7 +9,8 @@ public class PlatformSwitcher : SerializedMonoBehaviour
     public enum Platform
     {
         PC,
-        Oculus
+        Oculus,
+        Focus
     }
 
     [FoldoutGroup("物件設置")]
@@ -61,7 +62,7 @@ public class PlatformSwitcher : SerializedMonoBehaviour
 
 
         [FoldoutGroup("物件設置")]
-        public List<GameObject> activeGameObjects;
+        public List<GameObject> activeGameObjects = new List<GameObject>();
 
         public void SetEnable(bool value)
         {
