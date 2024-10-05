@@ -326,32 +326,31 @@ public class StarMap : MonoBehaviour
     #endregion
 
     //用顆粒顯示星星
-    void SetEfcStars(List<HipData> hipList, ParticleSystem paricleSystem, float distance)
+    void SetEfcStars(List<HipData> hipList, ParticleSystem particleSystem, float distance)
     {
         if (hipList == null) return;
-        if (paricleSystem == null) return;
+        if (particleSystem == null) return;
 
-        paricleSystem.Clear();
+        particleSystem.Clear();
 
-        ParticleSystem.MainModule pmm = paricleSystem.main;
+        ParticleSystem.MainModule pmm = particleSystem.main;
         pmm.maxParticles = 2000000;
         pmm.simulationSpace = ParticleSystemSimulationSpace.Local;
         pmm.scalingMode = ParticleSystemScalingMode.Hierarchy;
 
-        paricleSystem.Emit(hipList.Count);
+        particleSystem.Emit(hipList.Count);
         ParticleSystem.Particle[] stars = new ParticleSystem.Particle[hipList.Count];
-        paricleSystem.GetParticles(stars);
+        particleSystem.GetParticles(stars);
 
         for (int i = 0; i < hipList.Count; ++i)
         {
-            //人類最小可看到星等 數值越小越大
+            // 人類最小可看到星等，數值越小越大
             if (hipList[i].magnitude < 6.5f)
             {
                 stars[i].position = hipList[i].pos * distance;
 
                 stars[i].startSize = SetStarSize(hipList[i].magnitude);
-                stars[i].color = hipList[i].color;
-
+                stars[i].startColor = hipList[i].color;  // 修正了 `color` 成 `startColor`
             }
             else
             {
@@ -359,9 +358,8 @@ public class StarMap : MonoBehaviour
             }
         }
 
-        paricleSystem.Play();
-        paricleSystem.SetParticles(stars, hipList.Count);
-
+        particleSystem.Play();
+        particleSystem.SetParticles(stars, hipList.Count);
     }
 
     float SetStarSize(float mag)

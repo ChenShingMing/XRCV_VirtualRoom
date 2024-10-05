@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class InputHandler_OVR : InputHandler
 {
+    /*
     public static OVRCameraRig m_CameraRig;
 
     private void Start()
@@ -66,5 +67,15 @@ public class InputHandler_OVR : InputHandler
     {
         return GazeSphere.RayHitOnSphere(new Ray(Camera.main.transform.position,
                                     GetControllerRotation() * Vector3.forward));
+    }
+    */
+    public override Vector3 GetInputPointerOnGazeSphere()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void InputHandle()
+    {
+        throw new System.NotImplementedException();
     }
 }

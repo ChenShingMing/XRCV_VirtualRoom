@@ -5,7 +5,8 @@ using Photon.Pun;
 
 public class MenuUITip : MonoBehaviour
 {
-    public OVRInput.Controller targetPos;
+    
+    //public OVRInput.Controller targetPos;
     public AlignPosToController alignPosToController;
     public GameObject menuTip;
     public GameObject controllerTip;
@@ -18,10 +19,12 @@ public class MenuUITip : MonoBehaviour
 
     void Handle()
     {
+        bool controllersActive = false;
+        /*
         bool controllersActive = OVRInput.GetActiveController() == OVRInput.Controller.Touch ||
           OVRInput.GetActiveController() == OVRInput.Controller.LTouch ||
           OVRInput.GetActiveController() == OVRInput.Controller.RTouch;
-
+        */
 
         if (controllersActive
             && PhotonNetwork.InRoom
@@ -29,7 +32,7 @@ public class MenuUITip : MonoBehaviour
         {
             controllerTip.SetActive(false);
 
-            alignPosToController.targetPos = targetPos;
+            //alignPosToController.targetPos = targetPos;
             menuTip.SetActive(!ClassroomManager.ins.mainUICanvas_Current.activeSelf);
         }
         else
@@ -38,5 +41,6 @@ public class MenuUITip : MonoBehaviour
             controllerTip.SetActive(true);
         }
     }
+
 }
 

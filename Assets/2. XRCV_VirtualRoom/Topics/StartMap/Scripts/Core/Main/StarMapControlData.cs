@@ -318,6 +318,10 @@ public class StarMapControlData
                 rotateSpeedStauts = "Fast";
 
                 break;
+
+            default:
+                rotateSpeedStauts = "None";
+                break;
         }
 
     }

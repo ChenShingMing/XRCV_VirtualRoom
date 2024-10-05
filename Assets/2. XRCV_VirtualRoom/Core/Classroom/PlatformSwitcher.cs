@@ -10,7 +10,7 @@ public class PlatformSwitcher : SerializedMonoBehaviour
     {
         PC,
         Oculus,
-        Focus
+        OpenXR
     }
 
     [FoldoutGroup("物件設置")]

@@ -22,7 +22,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\Bin\Debug\</OutputPath>
-    <DefineConstants>UNITY_2021_3_29;UNITY_2021_3;UNITY_2021;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_RUNTIME_PERMISSIONS;ENABLE_ENGINE_CODE_STRIPPING;ENABLE_ONSCREEN_KEYBOARD;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;PLATFORM_ANDROID;TEXTCORE_1_0_OR_NEWER;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;UNITY_CAN_SHOW_SPLASH_SCREEN;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO;ENABLE_SPATIALTRACKING;ENABLE_ETC_COMPRESSION;PLATFORM_EXTENDS_VULKAN_DEVICE;PLATFORM_HAS_MULTIPLE_SWAPCHAINS;UNITY_ANDROID_SUPPORTS_SHADOWFILES;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_STANDARD_2_0;NET_STANDARD;NET_STANDARD_2_1;NETSTANDARD;NETSTANDARD2_1;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_INPUT_SYSTEM;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;ODIN_INSPECTOR;ODIN_INSPECTOR_3;ODIN_INSPECTOR_3_1;PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;PLAYMAKER;PLAYMAKER_1_9;PLAYMAKER_1_9_1;PLAYMAKER_1_8_OR_NEWER;PLAYMAKER_1_8_5_OR_NEWER;PLAYMAKER_1_9_OR_NEWER;PLAYMAKER_TMPRO;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <DefineConstants>UNITY_2021_3_29;UNITY_2021_3;UNITY_2021;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_RUNTIME_PERMISSIONS;ENABLE_ENGINE_CODE_STRIPPING;ENABLE_ONSCREEN_KEYBOARD;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;PLATFORM_ANDROID;TEXTCORE_1_0_OR_NEWER;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;UNITY_CAN_SHOW_SPLASH_SCREEN;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO;ENABLE_SPATIALTRACKING;ENABLE_ETC_COMPRESSION;PLATFORM_EXTENDS_VULKAN_DEVICE;PLATFORM_HAS_MULTIPLE_SWAPCHAINS;UNITY_ANDROID_SUPPORTS_SHADOWFILES;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_STANDARD_2_0;NET_STANDARD;NET_STANDARD_2_1;NETSTANDARD;NETSTANDARD2_1;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_INPUT_SYSTEM;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;ODIN_INSPECTOR;ODIN_INSPECTOR_3;ODIN_INSPECTOR_3_1;PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;PLAYMAKER;PLAYMAKER_1_9;PLAYMAKER_1_9_1;PLAYMAKER_1_8_OR_NEWER;PLAYMAKER_1_8_5_OR_NEWER;PLAYMAKER_1_9_OR_NEWER;PLAYMAKER_TMPRO;USE_INPUT_SYSTEM_POSE_CONTROL;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -57,7 +57,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\PlayMaker\Actions\Animator\SetAnimatorIKGoal.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportAimHandlerParabolic.cs" />
     <Compile Include="Assets\PlayMaker\Actions\EaseEditor.cs" />
     <Compile Include="Assets\VirtualRoomPlugIn\1. VirtualRoom\Other\LineController\CurvedLine\CurvedLine\CurvedLinePoint.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics\GetParticleCollisionInfo.cs" />
@@ -84,7 +83,6 @@
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\SetIsKinematic2d.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Gamepad\GamepadButtonComboEvents.cs" />
     <Compile Include="Assets\PlayMaker\Actions\RectTransform\RectTransformGetAnchorMax.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Scripts\PassthroughProjectionSurface.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUILayout\GUILayoutEndVertical.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerGetTargetCameraAlpha.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerSetTargetCameraAlpha.cs" />
@@ -95,7 +93,6 @@
     <Compile Include="Assets\PlayMaker\Actions\UI\Selectable\UiNavigationGetMode.cs" />
     <Compile Include="Assets\PlayMaker\UpdateHelper.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerGetAspectRatio.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Scripts\HandMeshUI.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\GetEventInfo.cs" />
     <Compile Include="Assets\PlayMaker\Actions\SpriteRenderer\GetSpriteMaskInteraction.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Array\ArrayReverse.cs" />
@@ -105,7 +102,6 @@
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\ChatAppIdCheckerUI.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Array\GetFsmArrayItem.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\AppSettingsExtensions.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\HandsInteraction\Scripts\Tools\InteractableTool.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\Selectable\UiSetIsInteractable.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUI\RotateGUI.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\Trigger2dEvent.cs" />
@@ -115,7 +111,6 @@
     <Compile Include="Assets\PlayMaker\Actions\Math\FloatAbs.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Logic\GameObjectTagSwitch.cs" />
     <Compile Include="Assets\PlayMaker\Actions\MathExpression\Mathos\MathExpression.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\Video\Plugins\Android\NativeVideoPlayer.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerGetControlledAudioTrackMaxCount.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Gamepad\GamepadStickEvents.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Input\ResetInputAxes.cs" />
@@ -129,16 +124,13 @@
     <Compile Include="Assets\PlayMaker\Actions\Transform\InterpolateTransform.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\Selectable\UiExplicitNavigationGetProperties.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Trigonometry\GetSine.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportDestination.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\GetAnimatorCurrentTransitionInfo.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Time\RandomWait.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerGetCanSetPlaybackSpeed.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GameObject\HasComponent.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Scripts\GrabObject.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\SetFsmVector2.cs" />
     <Compile Include="Assets\PlayMaker\Actions\String\GetStringLeft.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\Touch Object 2d Event.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Scripts\AugmentedObject.cs" />
     <Compile Include="Assets\PlayMaker\Actions\MathExpression\Mathos\MathParser.cs" />
     <Compile Include="Assets\VirtualRoomPlugIn\1. VirtualRoom\Core\MonitorManager\NewMonitorManager.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Vector2\Vector2Normalize.cs" />
@@ -147,12 +139,10 @@
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\GetFsmString.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\GetAnimatorCurrentStateInfoIsTag.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Audio\SetAudioLoop.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\HandsInteraction\Scripts\InteractableRegistry.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUI\GUIContentAction.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Logic\FsmStateSwitch.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Quaternion\QuaternionEuler.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Logic\GameObjectChanged.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\SceneManager\Scripts\PassthroughPlayInEditor.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Color\SetColorValue.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Camera\ScreenToWorldPoint.cs" />
     <Compile Include="Assets\PlayMaker\Actions\BaseUpdateAction.cs" />
@@ -164,18 +154,15 @@
     <Compile Include="Assets\PlayMaker\Actions\GameObject\ActivateGameObject.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Transform\GetRotation.cs" />
     <Compile Include="Assets\Panoramic\Scripts\PanoramicController.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportInputHandler.cs" />
     <Compile Include="Assets\PlayMaker\Actions\RectTransform\RectTransformSetPivot.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Device\GetLocationInfo.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\GetFsmVariables.cs" />
     <Compile Include="Assets\VirtualRoomPlugIn\1. VirtualRoom\Core\InputManager\InputActionManager.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\ChannelSelector.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Device\DeviceVibrate.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\SpatialAnchor\Scripts\AnchorSession.cs" />
     <Compile Include="Assets\PlayMaker\Actions\SceneManager\CreateScene.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\SequenceEvent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiScrollbarOnValueChangedEvent.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\SpatialAnchor\Scripts\SpatialAnchorSession.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\GetEventBoolData.cs" />
     <Compile Include="Assets\VirtualRoomPlugIn\1. VirtualRoom\Core\UI\InfoPanel.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\SetAnimatorBool.cs" />
@@ -211,7 +198,6 @@
     <Compile Include="Assets\PlayMaker\Actions\Tween\TweenPunch.cs" />
     <Compile Include="Assets\PlayMaker\Actions\ScriptControl\AddScript.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerFrameDroppedEvent.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\DistanceGrab\Scripts\PauseOnInputLoss.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Vector2\SelectRandomVector2.cs" />
     <Compile Include="Assets\PlayMaker\Actions\RectTransform\RectTransformGetAnchoredPosition.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Camera\CameraFadeIn.cs" />
@@ -219,7 +205,6 @@
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\SetCollider2dIsTrigger.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerGetPlaybackSpeed.cs" />
     <Compile Include="Assets\PlayMaker\Actions\RectTransform\RectTransformSetSizeDelta.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\DebugUI\Scripts\DebugUIBuilder.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Math\FloatInterpolate.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerSetPlaybackSpeed.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Math\IntOperator.cs" />
@@ -228,11 +213,11 @@
     <Compile Include="Assets\PlayMaker\Actions\Animator\AnimatorCrossFade.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Input\MouseLook2.cs" />
     <Compile Include="Assets\PlayMaker\Actions\SpriteRenderer\GetSpriteFlip.cs" />
+    <Compile Include="Assets\PlayMaker\Actions\Physics\GetMass.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\Components\PlayMakerUiPointerEvents.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Audio\AudioMute.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Transform\Rotate.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Trigonometry\GetAtan2.cs" />
-    <Compile Include="Assets\PlayMaker\Actions\Physics\GetMass.cs" />
     <Compile Include="Assets\PlayMaker\Actions\PlayerPrefs\PlayerPrefsSetString.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\GetFsmInt.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUI\SetGUIDepth.cs" />
@@ -240,37 +225,27 @@
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\GetFsmState.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiInputFieldGetIsFocused.cs" />
     <Compile Include="Assets\PlayMaker\Actions\SpriteRenderer\SetSpriteOrderInLayer.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportSupport.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\GetAnimatorPlaybackTime.cs" />
     <Compile Include="Assets\PlayMaker\Actions\PlayerPrefs\PlayerPrefsGetFloat.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\HandsInteraction\Scripts\ButtonController.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\CustomHands\Scripts\Hand.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\Selectable\UiGetIsInteractable.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\SetFsmColor.cs" />
-    <Compile Include="Assets\PlayMaker\Actions\UI\UiRawImageSetRaycastTarget.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\SetFsmEnum.cs" />
+    <Compile Include="Assets\PlayMaker\Actions\UI\UiRawImageSetRaycastTarget.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Audio\AudioPause.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GameObject\DestroySelf.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\LateUpdateEvent.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Scripts\Flashlight.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Input\MousePickEvent.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\SpatialAnchor\Scripts\AnchorSpawner.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Tween\TweenScale.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Vector2\Vector2Interpolate.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\AnimatorStartPlayback.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Vector3\Vector3ClampMagnitudeXZ.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiSliderSetDirection.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\Locomotion\Scripts\CharacterCapsule.cs" />
     <Compile Include="Assets\PlayMaker\Actions\RectTransform\RectTransformScreenPointToWorldPointInRectangle.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Vector2\Vector2SnapToAngle.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\LocomotionController.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerGetAudioTrackCount.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\SendEvent.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportTargetHandlerPhysical.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\TrainTrack.cs" />
     <Compile Include="Assets\PlayMaker\Actions\RectTransform\RectTransformSetAnchorMinAndMax.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\Components\PlayMakerUiDropEvent.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\DistanceGrab\Scripts\DistanceGrabber.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\SetFsmVector3.cs" />
     <Compile Include="Assets\PlayMaker\Actions\PlayerInput\PlayerInputCanceledEvent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Logic\GameObjectIsChildOf.cs" />
@@ -290,10 +265,8 @@
     <Compile Include="Assets\PlayMaker\Actions\Math\FloatMultiply.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GameObject\GetRandomObject.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Movie\PauseMovieTexture.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Scripts\PassthroughSurface.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\EventSystem\UiOnPointerEnterEvent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\SpriteRenderer\GetspriteSortPoint.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportPoint.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics\SetGravity.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GameObject\GetName.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Tween\TweenAudio.cs" />
@@ -331,7 +304,6 @@
     <Compile Include="Assets\PlayMaker\Actions\GUIElement\SetGUITexture.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Array\SetFsmArray.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerSetSkipOnDrop.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\AppDeeplink\UI\CustomDebugUI.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\SetEventTarget.cs" />
     <Compile Include="Assets\2. XRCV_VirtualRoom\Topics\StartMap\Scripts\Core\Main\Location.cs" />
     <Compile Include="Assets\2. XRCV_VirtualRoom\Topics\StartMap\Scripts\Core\Main\StarMapControlData.cs" />
@@ -351,7 +323,7 @@
     <Compile Include="Assets\2. XRCV_VirtualRoom\Topics\StartMap\Scripts\Core\Main\ZodiacsController.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Vector3\SelectRandomVector3.cs" />
     <Compile Include="Assets\PlayMaker\Actions\ScriptControl\CallMethod.cs" />
-    <Compile Include="Assets\2. XRCV_VirtualRoom\Core\Oculus\OculusUICanvasRaycasterAdder.cs" />
+    <Compile Include="Assets\2. XRCV_VirtualRoom\Core\Oculus\OpenXRCanvasRaycasterAdder.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUI\DrawTexture.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\GetAnimatorSpeed.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Vector2\Vector2HighPassFilter.cs" />
@@ -371,7 +343,6 @@
     <Compile Include="Assets\PlayMaker\Actions\Audio\AudioPlay.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics\WakeAllRigidBodies.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\AnimatorStopRecording.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Scripts\PassthroughController.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiGraphicSetColor.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\GetNextOverlapPoint2d.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\TextButtonTransition.cs" />
@@ -389,13 +360,11 @@
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\GetLastEvent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiSliderSetNormalizedValue.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\Layout\UiLayoutElementGetValues.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\WindmillController.cs" />
     <Compile Include="Assets\VirtualRoomPlugIn\1. VirtualRoom\TopicSample\DragGame\Scripts\DragDrop.cs" />
     <Compile Include="Assets\PlayMaker\Actions\SceneManager\MoveGameObjectToScene.cs" />
     <Compile Include="Assets\VirtualRoomPlugIn\1. VirtualRoom\Core\Camera\FirstPersonCam.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Math\SetFloatValue.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Debug\Assert.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportTransition.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Math\IntWrap.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerStartedEvent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\GetAnimatorPivot.cs" />
@@ -408,12 +377,10 @@
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\GetFsmEnum.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\SmoothLookAt2d.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics\GetRaycastHitInfo.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\SelectionCylinder.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Array\ArrayResize.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerSetTargetMaterialProperty.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Transform\Translate.cs" />
     <Compile Include="Assets\2. XRCV_VirtualRoom\Core\Oculus\AlignPosToController.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\PanelHMDFollower.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerGetTargetCamera.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiScrollbarSetValue.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerGetCanSetTime.cs" />
@@ -432,12 +399,10 @@
     <Compile Include="Assets\PlayMaker\Actions\Level\DontDestroyOnLoad.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\SetFsmString.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\SetAnimatorPlaybackTime.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\DebugUI\DebugUISample.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Tween\TweenFade.cs" />
     <Compile Include="Assets\PlayMaker\Actions\RenderSettings\SetFogDensity.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Trigonometry\GetAtan2FromVector2.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Debug\Comment.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Scripts\BrushController.cs" />
     <Compile Include="Assets\PlayMaker\Actions\SpriteRenderer\SetSpriteSortingLayerById.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GameObject\GetParent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Tween\TweenPosition.cs" />
@@ -486,14 +451,12 @@
     <Compile Include="Assets\PlayMaker\Actions\Debug\DebugEnum.cs" />
     <Compile Include="Assets\PlayMaker\Actions\RectTransform\RectTransformGetRect.cs" />
     <Compile Include="Assets\PlayMaker\Actions\PlayerInput\PlayerInputEnableAction.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\DistanceGrab\Scripts\DistanceGrabberSample.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUILayout\GUILayoutToolbar.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Array\ArrayAdd.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\EventSystem\UiGetLastPointerEventDataInputButton.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerSetRenderMode.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Quaternion\GetQuaternionEulerAngles.cs" />
     <Compile Include="Assets\2. XRCV_VirtualRoom\Core\LicenseInformation\LicenseCreater.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\HandsInteraction\Scripts\HandsManager.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUILayout\GUILayoutIntLabel.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Camera\SetMainCamera.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\EventSystem\UiOnEndDragEvent.cs" />
@@ -505,11 +468,9 @@
     <Compile Include="Assets\2. XRCV_VirtualRoom\Topics\StartMap\Scripts\Core\Main\BVColorTest.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUI\GUIBox.cs" />
     <Compile Include="Assets\PlayMaker\Actions\SceneManager\UnloadScene.cs" />
-    <Compile Include="Assets\PlayMaker\Actions\GUI\ScaleGUI.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Input\GetMouseButtonDown.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Scripts\SceneSampler.cs" />
+    <Compile Include="Assets\PlayMaker\Actions\GUI\ScaleGUI.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Device\GetTouchCount.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportTargetHandlerNode.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GameObject\GetLayer.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Character\GetControllerVelocity.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\AddRelativeForce2d.cs" />
@@ -520,9 +481,6 @@
     <Compile Include="Assets\PlayMaker\Actions\Animator\GetAnimatorHumanScale.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GameObject\DestroyObject.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Transform\SetScale.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\TrainLocomotive.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportOrientationHandlerThumbstick.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\TrainCrossingController.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\EventSystem\UiEventSystemCurrentRayCastAll.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUIElement\SetGUITextureAlpha.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUILayout\GUILayoutBeginArea.cs" />
@@ -537,7 +495,6 @@
     <Compile Include="Assets\PlayMaker\Actions\Debug\DebugLog.cs" />
     <Compile Include="Assets\VirtualRoomPlugIn\1. VirtualRoom\Core\UI\Room_Student.cs" />
     <Compile Include="Assets\PlayMaker\Actions\SceneManager\GetSceneProperties.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Scripts\HandMeshMask.cs" />
     <Compile Include="Assets\PlayMaker\Actions\ActionHelpers.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\GetEventVector2Data.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoClip\VideoClipGetFrameRate.cs" />
@@ -546,13 +503,13 @@
     <Compile Include="Assets\PlayMaker\Actions\String\StringJoin.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Convert\ConvertVector2ToVector3.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Movie\MovieTextureAudioSettings.cs" />
+    <Compile Include="Assets\VIVEOpenXRInstaller.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerGetRenderMode.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportTransitionBlink.cs" />
-    <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerGetTexture.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiSliderGetMinMax.cs" />
+    <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerGetTexture.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\GetAnimatorIsLayerInTransition.cs" />
-    <Compile Include="Assets\PlayMaker\Actions\UI\Selectable\UiExplicitNavigationSetProperties.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Quaternion\QuaternionAngleAxis.cs" />
+    <Compile Include="Assets\PlayMaker\Actions\UI\Selectable\UiExplicitNavigationSetProperties.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Array\ArrayRemove.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Logic\GameObjectHasChildren.cs" />
     <Compile Include="Assets\4. Develop\DebugUIManager.cs" />
@@ -576,7 +533,6 @@
     <Compile Include="Assets\PlayMaker\Actions\AnimateVariables\EaseColor.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\GetEventSentBy.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Vector3\Vector3RotateTowards.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\SceneManager\Scripts\BouncingBallLogic.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiTextGetText.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics\SetControllerVelocity.cs" />
     <Compile Include="Assets\2. XRCV_VirtualRoom\Topics\StartMap\Scripts\Core\UI\Time_Show.cs" />
@@ -586,7 +542,6 @@
     <Compile Include="Assets\PlayMaker\Actions\UI\EventSystem\UiGetSelectedGameObject.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\SetAnimatorLookAt.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoClip\VideoClipGetAudioTrackCount.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportTransitionInstant.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\SyncAnimatorBoolToState.cs" />
     <Compile Include="Assets\PlayMaker\Actions\AnimateVariables\EaseFloat.cs" />
     <Compile Include="Assets\VirtualRoomPlugIn\1. VirtualRoom\Core\UI\PenPanel.cs" />
@@ -595,6 +550,7 @@
     <Compile Include="Assets\PlayMaker\Actions\Transform\AlignToDirection.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\GetFsmTexture.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Color\GetColorRGBA.cs" />
+    <Compile Include="Assets\2. XRCV_VirtualRoom\Core\OpenXR\InputHandler_OpenXR.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GameObject\GetDistanceXYZ.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\GetAnimatorBoneGameObject.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Array\ArraySet.cs" />
@@ -605,7 +561,6 @@
     <Compile Include="Assets\PlayMaker\Actions\UI\UiInputFieldGetText.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\RunFSM.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GameObject\SetGameObject.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Scripts\OverlayPassthrough.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUI\DrawFullscreenColor.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Vector3\SetVector3XYZ.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\Canvas\UiCanvasGroupSetProperties.cs" />
@@ -629,30 +584,25 @@
     <Compile Include="Assets\PlayMaker\Actions\Animator\GetAnimatorIsMatchingTarget.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\GetNextOverlapArea2d.cs" />
     <Compile Include="Assets\2. XRCV_VirtualRoom\Core\Classroom\MenuUITip.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Scripts\FlashlightController.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Material\SetMaterial.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerStop.cs" />
     <Compile Include="Assets\PlayMaker\Actions\ScriptControl\CallStaticMethod.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\Loop.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\SpatialAnchor\Scripts\AnchorHelpers.cs" />
     <Compile Include="Assets\PlayMaker\Actions\RectTransform\RectTransformGetSizeDelta.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\SetFsmQuaternion.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GameObject\SelectRandomGameObject.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\HandsInteraction\Scripts\Tools\RayToolView.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Lights\SetLightFlare.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\Canvas\UiCanvasScalerSetScaleFactor.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Level\LoadLevelNum.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiSliderGetNormalizedValue.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Transform\TransformPoint.cs" />
     <Compile Include="Assets\PlayMaker\Actions\AnimateVariables\AnimateFsmAction.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\TrainCarBase.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\TextToggleIsOnTransition.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\GetFsmGameObject.cs" />
     <Compile Include="Assets\PlayMaker\Actions\RectTransform\RectTransformGetOffsetMin.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Logic\BoolTest.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Vector2\SetVector2XY.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiInputfieldSetCaretBlinkRate.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\HandsInteraction\Scripts\Tools\RayTool.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Logic\ColorCompare.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\GetAnimatorIKGoal.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Logic\GameObjectCompareTag.cs" />
@@ -679,7 +629,6 @@
     <Compile Include="Assets\PlayMaker\Actions\String\GetSubstring.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Transform\SetRandomRotation.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Math\FloatWrap.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Scripts\SelectivePassthroughExperience.cs" />
     <Compile Include="Assets\PlayMaker\Actions\AnimateVariables\AnimateRect.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\SetAnimatorSpeed.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Logic\StringSwitch.cs" />
@@ -688,11 +637,9 @@
     <Compile Include="Assets\PlayMaker\Actions\Tween\TweenCamera.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Tween\BaseActions\TweenEnums.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\WakeUp2d.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\TrackSegment.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Tween\BaseActions\TweenComponentBase.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Tween\TweenVector3.cs" />
     <Compile Include="Assets\Photon\PhotonRealtime\Demos\DemoLoadBalancing\ConnectAndJoinRandomLb.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportOrientationHandlerHMD.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics\SetMass.cs" />
     <Compile Include="Assets\PlayMaker\Actions\TestAction.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Math\SetIntFromFloat.cs" />
@@ -704,7 +651,6 @@
     <Compile Include="Assets\PlayMaker\Actions\GUI\GUITooltip.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Convert\ConvertIntToString.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\SetWheelJoint2dProperties.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\HandsActiveChecker.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\ScreenPick2d.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Convert\ConvertMaterialToObject.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUILayout\GUILayoutLabel.cs" />
@@ -716,7 +662,6 @@
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerGetPlayOnAwake.cs" />
     <Compile Include="Assets\2. XRCV_VirtualRoom\Topics\StartMap\Scripts\Core\Main\StarMapHUDController.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\EventSystem\UiOnMoveEvent.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\SceneManager\Scripts\BouncingBallMgr.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiInputFieldGetCaretBlinkRate.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUILayout\UseGUILayout.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Gamepad\GamepadButtonEvents.cs" />
@@ -745,24 +690,19 @@
     <Compile Include="Assets\PlayMaker\Actions\SceneManager\Internal\GetSceneActionBase.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\EventSystem\UiOnSelectEvent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Debug\DrawStateLabel.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\CowController.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Device\StopLocationServiceUpdates.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Vector3\Vector3Interpolate.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\GetAnimatorFloat.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\GetAnimatorTarget.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\SceneManager\Scripts\VolumeAndPlaneSwitcher.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\SetEventData.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\FinishFSM.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\CustomHands\Scripts\HandPose.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Logic\BoolNoneTrue.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Scripts\EnableUnpremultipliedAlpha.cs" />
     <Compile Include="Assets\2. XRCV_VirtualRoom\Topics\StartMap\Scripts\VirtualRoomPlugIn\StarMapTopic.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Debug\DebugVector3.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Vector3\GetVector3XYZ.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\SetAnimatorFeetPivotActive.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\GetFsmVector2.cs" />
     <Compile Include="Assets\PlayMaker\Actions\AnimateVariables\AnimateVector3.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportAimVisualLaser.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerErrorEvent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Input\GetMouseX.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\IsFixedAngle2d.cs" />
@@ -773,8 +713,6 @@
     <Compile Include="Assets\PlayMaker\Actions\UI\UiScrollbarGetDirection.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Array\ArrayForEach.cs" />
     <Compile Include="Assets\PlayMaker\Actions\SpriteRenderer\SetSpriteSortPoint.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\Video\Scripts\MoviePlayerSample.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\TrainButtonVisualController.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Quaternion\QuaternionBaseAction.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUI\EnableGUI.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Array\ArrayGetNext.cs" />
@@ -782,7 +720,6 @@
     <Compile Include="Assets\PlayMaker\Actions\UI\UiInputFieldGetTextAsFloat.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Movie\StopMovieTexture.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Time\PerSecond.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\SimpleCapsuleWithStickMovement.cs" />
     <Compile Include="Assets\VirtualRoomPlugIn\1. VirtualRoom\Core\UI\LobbyPanel.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\AnimatorPlay.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Math\FloatDivide.cs" />
@@ -799,25 +736,20 @@
     <Compile Include="Assets\PlayMaker\Actions\Color\SetColorRGBA.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\SendEventByName.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\GetAnimatorIsHuman.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\DebugUI\Scripts\HandedInputSelector.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Math\SetBoolValue.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\EventSystem\UiGetLastPointerDataInfo.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\DistanceGrab\Scripts\DistanceGrabbable.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUI\GUIVerticalSlider.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\Utils\Pose.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\SetFsmBool.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GameObject\DetachChildren.cs" />
     <Compile Include="Assets\PlayMaker\Actions\AnimateVariables\EaseVector3.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Convert\ConvertFloatToString.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Device\GetDeviceAcceleration.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Convert\ConvertBoolToInt.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportInputHandlerHMD.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GameObject\CreateObject.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animation\AnimationSettings.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerSetWaitForFirstFrame.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\BlockEvents.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\GetAnimatorCurrentStateInfo.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\DistanceGrab\Scripts\GrabManager.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\GetEventVector3Data.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics\Explosion.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UnityObject\SetProperty.cs" />
@@ -826,10 +758,8 @@
     <Compile Include="Assets\PlayMaker\Actions\UI\EventSystem\UiOnDeselectEvent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerGetSkipOnDrop.cs" />
     <Compile Include="Assets\VirtualRoomPlugIn\1. VirtualRoom\Core\UI\Room_Teacher.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\CharacterCameraConstraint.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Application\GetScreenHeight.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Input\GetAxis.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\SceneManager\Scripts\SimpleResizer\SimpleResizable.cs" />
     <Compile Include="Assets\PlayMaker\Actions\AnimateVariables\CurveFloat.cs" />
     <Compile Include="Assets\PlayMaker\Actions\SceneManager\GetSceneCount.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\SetGravity2dScale.cs" />
@@ -841,10 +771,8 @@
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerGetSource.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiGraphicCrossFadeColor.cs" />
     <Compile Include="Assets\VirtualRoomPlugIn\1. VirtualRoom\TopicSample\DragGame\Scripts\DragGameController.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportTransitionWarp.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Array\ArrayLength.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Input\GetAxisVector.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\Video\Scripts\VectorUtil.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\SetVelocity2d.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animation\PlayRandomAnimation.cs" />
     <Compile Include="Assets\PlayMaker\Actions\RectTransform\RectTransformPixelAdjustRect.cs" />
@@ -872,7 +800,6 @@
     <Compile Include="Assets\PlayMaker\Actions\Vector3\Vector3Subtract.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Web\WWWObject.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerGetCanSetSkipOnDrop.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\HandsInteraction\Scripts\InteractableToolsCreator.cs" />
     <Compile Include="Assets\PlayMaker\Actions\SpriteRenderer\GetSpriteOrderInLayer.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\GetVelocity2d.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\SetFsmMaterial.cs" />
@@ -895,15 +822,13 @@
     <Compile Include="Assets\PlayMaker\Actions\Vector2\Vector2LowPassFilter.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\Components\PlayMakerCanvasRaycastFilterProxy.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Vector2\DebugVector2.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportOrientationHandler.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiScrollRectSetNormalizedPosition.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Vector2\Vector2ClampMagnitude.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics\SetJointConnectedBody.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\GetFsmColor.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\SetAnimatorPlayBackSpeed.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\Locomotion\Scripts\LocomotionSampleSupport.cs" />
-    <Compile Include="Assets\PlayMaker\Actions\Character\ControllerMoveInAir.cs" />
     <Compile Include="Assets\PlayMaker\Actions\RectTransform\RectTransformSetOffsetMax.cs" />
+    <Compile Include="Assets\PlayMaker\Actions\Character\ControllerMoveInAir.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\LookAt2dGameObject.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUI\SetGUISkin.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Convert\ConvertStringToInt.cs" />
@@ -919,7 +844,6 @@
     <Compile Include="Assets\PlayMaker\Actions\UI\UiDropDownClearOptions.cs" />
     <Compile Include="Assets\VirtualRoomPlugIn\1. VirtualRoom\Core\Component\UnityEventTrigger.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Device\GetDeviceRoll.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\SpatialAnchor\Scripts\SpatialAnchorLoader.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\GetTrigger2dInfo.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\SetFsmGameObject.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Transform\MoveObject.cs" />
@@ -935,12 +859,9 @@
     <Compile Include="Assets\PlayMaker\Actions\GUILayout\GUILayoutHorizontalSlider.cs" />
     <Compile Include="Assets\PlayMaker\Actions\RenderSettings\SetFlareStrength.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Vector2\Vector2AddXY.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\HandsInteraction\Scripts\Interactable.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUILayout\GUILayoutBox.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\GetAnimatorBody.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\TouchControllers\TouchController.cs" />
     <Compile Include="Assets\PlayMaker\Actions\AnimateVariables\CurveFsmAction.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\TrainCar.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Application\ApplicationRunInBackground.cs" />
     <Compile Include="Assets\VirtualRoomPlugIn\1. VirtualRoom\Other\GazeController\Scripts\GazeSphere.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUILayout\GUILayoutTextField.cs" />
@@ -950,7 +871,6 @@
     <Compile Include="Assets\PlayMaker\Actions\RectTransform\RectTransformSetScreenPosition.cs" />
     <Compile Include="Assets\PlayMaker\Actions\PlayerPrefs\PlayerPrefsSetFloat.cs" />
     <Compile Include="Assets\2. XRCV_VirtualRoom\Topics\StartMap\Scripts\Core\Main\SunRotate.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\HandsInteraction\Scripts\Tools\FingerTipPokeTool.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiImageGetSprite.cs" />
     <Compile Include="Assets\2. XRCV_VirtualRoom\Core\LoadingScene\LoadingManager.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUILayout\GUILayoutPasswordField.cs" />
@@ -978,7 +898,6 @@
     <Compile Include="Assets\PlayMaker\Actions\UI\UiInputFieldGetPlaceHolder.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Quaternion\GetQuaternionFromRotation.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Enum\SetEnumValue.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportTargetHandlerNavMesh.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GameObject\SetTag.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Logic\GameObjectCompare.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Material\SetTextureScale.cs" />
@@ -987,16 +906,12 @@
     <Compile Include="Assets\PlayMaker\Actions\GameObject\SetName.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Quaternion\GetQuaternionMultipliedByVector.cs" />
     <Compile Include="Assets\PlayMaker\Actions\RectTransform\RectTransformGetAnchorMinAndMax.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\ControllerBoxController.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\GetAnimatorCullingMode.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\SceneManager\Scripts\Spawnable.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Camera\ClampOrthographicView.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Quaternion\QuaternionSlerp.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\Video\Scripts\ButtonDownListener.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiInputFieldOnValueChangeEvent.cs" />
     <Compile Include="Assets\2. XRCV_VirtualRoom\Topics\StartMap\Scripts\VirtualRoomPlugIn\StarMapTopicController.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Array\ArrayRemoveAll.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportAimHandlerLaser.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Character\ControllerMove.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\IsSleeping2d.cs" />
     <Compile Include="Assets\2. XRCV_VirtualRoom\Topics\StartMap\Scripts\Core\Main\StarMap.cs" />
@@ -1017,7 +932,6 @@
     <Compile Include="Assets\PlayMaker\Actions\Vector2\Vector2Lerp.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Effects\Flicker.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\Components\PlayMakerUiIntValueChangedEvent.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Scripts\PassthroughBrush.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Vector2\SetVector2Value.cs" />
     <Compile Include="Assets\PlayMaker\Actions\SceneManager\GetScenePath.cs" />
     <Compile Include="Assets\PlayMaker\Actions\ScriptControl\InvokeMethod.cs" />
@@ -1033,23 +947,19 @@
     <Compile Include="Assets\PlayMaker\Actions\Animator\NavMeshAgentAnimatorSynchronizer.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Vector3\Vector3Multiply.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerGetTime.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\HandsInteraction\Scripts\ColliderZone.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\MousePick2dEvent.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\Video\Scripts\MoviePlayerSampleControls.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\GetAnimatorLayerName.cs" />
     <Compile Include="Assets\PlayMaker\Actions\SceneManager\GetSceneUnLoadedEventData.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\RayCast2d.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerSetAspectRatio.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Scripts\SPPquad.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Rect\SetRectValue.cs" />
     <Compile Include="Assets\PlayMaker\Actions\ProceduralMaterial\SetProceduralFloat.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiInputFieldDeactivate.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUI\GUIElementHitTest.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animation\StopAnimation.cs" />
+    <Compile Include="Assets\PlayMaker\Actions\Physics\GetVelocity.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Gamepad\GamepadReadStickValue.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animation\BlendAnimation.cs" />
-    <Compile Include="Assets\PlayMaker\Actions\Physics\GetVelocity.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\DebugUI\Scripts\LaserPointer.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerSetTimeSource.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Vector3\Vector3Invert.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animation\SetAnimationSpeed.cs" />
@@ -1070,7 +980,6 @@
     <Compile Include="Assets\PlayMaker\Actions\Transform\InverseTransformPoint.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Logic\BoolAnyTrue.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Vector2\Vector2SnapToGrid.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\AppDeeplink\AppDeeplinkUI.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerPrepare.cs" />
     <Compile Include="Assets\2. XRCV_VirtualRoom\Core\LicenseInformation\LicenseInformation.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Movie\PlayMovieTexture.cs" />
@@ -1079,7 +988,6 @@
     <Compile Include="Assets\PlayMaker\Actions\Vector2\Vector2MoveTowards.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Device\TouchGUIEvent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\GetAnimatorFeetPivotActive.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\SceneManager\Scripts\MyCustomSceneModelLoader.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Math\FloatAdd.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiGraphicGetColor.cs" />
     <Compile Include="Assets\PlayMaker\Actions\PlayerPrefs\PlayerPrefsHasKey.cs" />
@@ -1088,7 +996,6 @@
     <Compile Include="Assets\PlayMaker\Actions\Debug\BaseLogAction.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\GetFsmBool.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Audio\PlayRandomSound.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\HandsInteraction\Scripts\ButtonTriggerZone.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\Canvas\UiCanvasGroupSetAlpha.cs" />
     <Compile Include="Assets\PlayMaker\Actions\SceneManager\AllowSceneActivation.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Math\FloatOperator.cs" />
@@ -1104,16 +1011,13 @@
     <Compile Include="Assets\PlayMaker\Actions\Logic\ObjectCompare.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerGetCanSetTimeSource.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUILayout\GUILayoutBeginVertical.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\HandsInteraction\Scripts\BoneCapsuleTriggerLogic.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUILayout\GUILayoutEndScrollView.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Convert\ConvertBoolToFloat.cs" />
     <Compile Include="Assets\PlayMaker\Actions\SpriteRenderer\GetSpriteColor.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Transform\SmoothLookAtDirection.cs" />
     <Compile Include="Assets\PlayMaker\Actions\RectTransform\RectTransformContainsScreenPoint.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\DistanceGrab\Scripts\ColorGrabbable.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUILayout\GUILayoutRepeatButton.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Character\ControllerCheckHeight.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\Video\Scripts\MediaPlayerImage.cs" />
     <Compile Include="Assets\PlayMaker\Actions\PlayerPrefs\PlayerPrefsSetInt.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Application\GetScreenWidth.cs" />
     <Compile Include="Assets\2. XRCV_VirtualRoom\Topics\StartMap\Scripts\Core\LocationData\LocationDataManager.cs" />
@@ -1142,7 +1046,6 @@
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\GetPreviousStateName.cs" />
     <Compile Include="Assets\VirtualRoomPlugIn\1. VirtualRoom\Core\TopicManager\Topic.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\SetFsmInt.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\DistanceGrab\Scripts\GrabbableCrosshair.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics\GetJointBreakInfo.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics\SetDrag.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\SetAnimatorStabilizeFeet.cs" />
@@ -1155,13 +1058,11 @@
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\GetNextRayCast2d.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\BaseFsmVariableAction.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Logic\BoolOperator.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\StartScene\Scripts\StartMenu.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animation\AddAnimationClip.cs" />
     <Compile Include="Assets\PlayMaker\Actions\RectTransform\RectTransformGetLocalRotation.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Vector2\Vector2Multiply.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Gamepad\GamepadReadButtonValue.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Math\IntClamp.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\SceneManager\Scripts\FurnitureSpawner.cs" />
     <Compile Include="Assets\VirtualRoomPlugIn\1. VirtualRoom\Other\GazeController\Scripts\GazeController.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Character\ControllerJump.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Material\SetVisibility.cs" />
@@ -1182,11 +1083,9 @@
     <Compile Include="Assets\PlayMaker\Actions\String\SelectRandomString.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Time\Wait.cs" />
     <Compile Include="Assets\2. XRCV_VirtualRoom\Core\Oculus\LaserScalePointer.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\HandsInteraction\Scripts\Tools\PinchStateModule.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\ForwardEvent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUILayout\GUILayoutBeginAreaFollowObject.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Gamepad\GamepadGetButtonValues.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\WindmillBladesController.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Vector2\Vector2Substract.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics\Sleep.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\Selectable\UiTransitionSetType.cs" />
@@ -1195,14 +1094,12 @@
     <Compile Include="Assets\PlayMaker\Actions\Vector3\Vector3PerSecond.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUILayout\GUILayoutBeginHorizontal.cs" />
     <Compile Include="Assets\PlayMaker\Actions\PlayerInput\PlayerInputButtonEvents.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportInputHandlerTouch.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Character\ControllerSimpleMove.cs" />
     <Compile Include="Assets\PlayMaker\Actions\PlayerPrefs\PlayerPrefsLoadVariable.cs" />
     <Compile Include="Assets\VirtualRoomPlugIn\1. VirtualRoom\Core\UI\RoomSelect.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animation\BaseAnimationAction.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiSliderOnValueChangedEvent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\AnimateVariables\AnimateColor.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\SceneManager\Scripts\RequestCaptureFlow.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GameObject\FindChild.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUILayout\GUILayoutToggle.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics\SetIsKinematic.cs" />
@@ -1220,9 +1117,6 @@
     <Compile Include="Assets\PlayMaker\Actions\Color\ColorInterpolate.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\EventSystem\UiOnSubmitEvent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\Selectable\UiGetBlockColor.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\SpatialAnchor\Scripts\Anchor.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\SceneManager\Scripts\SimpleResizer\SimpleResizer.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\HandsInteraction\Scripts\Tools\InteractableToolView.cs" />
     <Compile Include="Assets\PlayMaker\Actions\PlayerInput\PlayerInputEnableActionMap.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Device\GetTouchInfo.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Audio\SetGameVolume.cs" />
@@ -1231,12 +1125,10 @@
     <Compile Include="Assets\PlayMaker\Actions\Logic\FloatCompare.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\FriendItem.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Input\GetButtonUp.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\HandsInteraction\Scripts\InteractableToolsInputRouter.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Camera\SetCameraFOV.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiDropDownGetSelectedData.cs" />
     <Compile Include="Assets\VirtualRoomPlugIn\1. VirtualRoom\Core\UI\InRoomPanel.cs" />
     <Compile Include="Assets\PlayMaker\Actions\String\BuildString.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Scripts\ObjectManipulator.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Device\StartLocationServiceUpdates.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Material\SetMaterialFloat.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\AnimatorStopPlayback.cs" />
@@ -1247,7 +1139,6 @@
     <Compile Include="Assets\PlayMaker\Actions\Lights\SetShadowStrength.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Array\ArraySort.cs" />
     <Compile Include="Assets\VirtualRoomPlugIn\1. VirtualRoom\Core\UI\MonitorSelect.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\LocomotionTeleport.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUILayout\GUILayoutConfirmPasswordField.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Input\GetMouseY.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Audio\PlaySound.cs" />
@@ -1259,10 +1150,7 @@
     <Compile Include="Assets\PlayMaker\Actions\ProceduralMaterial\SetProceduralVector2.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Input\MousePick.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiToggleOnValueChangedEvent.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\OVROverlayCanvas\Scripts\OVROverlayCanvas.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\GetAnimatorCurrentTransitionInfoIsUserName.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportOrientationHandler360.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportAimHandler.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiScrollRectSetVertical.cs" />
     <Compile Include="Assets\PlayMaker\Actions\AnimateVariables\EaseFsmAction.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Logic\BoolAllTrue.cs" />
@@ -1287,7 +1175,6 @@
     <Compile Include="Assets\PlayMaker\Actions\Array\ArrayGetRandom.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiInputFieldSetPlaceHolder.cs" />
     <Compile Include="Assets\VirtualRoomPlugIn\1. VirtualRoom\Other\PointerController\Scripts\Pointer.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\HandsInteraction\Scripts\Tools\FingerTipPokeToolView.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiScrollbarSetSize.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Trigonometry\GetTan.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Math\FloatDeltaAngle.cs" />
@@ -1297,17 +1184,13 @@
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerGetSendFrameReadyEvents.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Lights\SetLightType.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUILayout\GUILayoutAction.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\OVROverlay\Scripts\OVROverlaySample.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Logic\BoolChanged.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\OnStartDelete.cs" />
     <Compile Include="Assets\PlayMaker\Actions\String\StringReplace.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Material\GetMaterialTexture.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Math\FloatClamp.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\EventSystem\UiSetSelectedGameObject.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportTargetHandler.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Color\SelectRandomColor.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Scripts\PassthroughStyler.cs" />
-    <Compile Include="Assets\Oculus\SampleFramework\Usage\SpatialAnchor\Scripts\AnchorUIManager.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Vector2\Vector2Operator.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUI\SetGUIContentColor.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUILayout\GUILayoutEndArea.cs" />
@@ -1320,42 +1203,25 @@
     <Compile Include="Assets\PlayMaker\Actions\UI\EventSystem\EventTriggerActionBase.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUIElement\SetGUITextureColor.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Debug\DebugInt.cs" />
-    <Compile Include="Assets\2. XRCV_VirtualRoom\Core\Focus\InputHandler_Focus.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Shaders\XingLightShader.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
-    <None Include="Assets\Oculus\SampleFramework\Usage\SceneManager\Shaders\Hidden.shader" />
-    <None Include="Assets\Oculus\SampleFramework\Usage\SceneManager\Shaders\Wall.shader" />
     <None Include="Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\PlayMaker\Readme.txt" />
-    <None Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Shaders\ButtonGlow.shader" />
     <None Include="Assets\Firebase\Plugins\x86_64\FirebaseCppFirestore.dll" />
     <None Include="Assets\Photon\PhotonUnityNetworking\changelog.txt" />
-    <None Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Materials\SelectivePassthrough.shader" />
-    <None Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Materials\SelectivePassthroughSoft.shader" />
-    <None Include="Assets\Oculus\SampleFramework\Usage\SceneManager\Shaders\OverwriteAlpha.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
-    <None Include="Assets\Oculus\SampleFramework\Usage\DistanceGrab\Materials\CrosshairZCheat.shader" />
-    <None Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Shaders\GradientSkybox.shader" />
     <None Include="Assets\PlayMaker\Templates\Readme.txt" />
-    <None Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Materials\PassthroughLine.shader" />
-    <None Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Materials\BackgroundColor.shader" />
     <None Include="Assets\Firebase\Plugins\Firebase.App.dll" />
-    <None Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Materials\FatFingers.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\2. XRCV_VirtualRoom\Topics\StartMap\Art\Shader\PanoramicBlend.shader" />
     <None Include="Assets\Photon\PhotonLibs\WebSocket\websocket-sharp.dll" />
     <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-firestore-unity\maven-metadata.xml" />
     <None Include="Assets\VirtualRoomPlugIn\ReadMe.txt" />
-    <None Include="Assets\Oculus\SampleFramework\Usage\SceneManager\Shaders\InvisibleOccluder.shader" />
     <None Include="Assets\PlayMaker\ConditionalExpression.dll" />
-    <None Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Shaders\OculusSampleTrainPropsShader.shader" />
-    <None Include="Assets\Oculus\SampleFramework\Usage\DistanceGrab\Materials\ToyCubeWithOutline.shader" />
     <None Include="Assets\Firebase\Plugins\iOS\Firebase.Firestore.dll" />
-    <None Include="Assets\Oculus\SampleFramework\Core\Locomotion\Materials\ColumnGlow.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\2. XRCV_VirtualRoom\Topics\StartMap\Art\Shader\PointCloud.shader" />
     <None Include="Assets\Panoramic\Shader\PanoramicBlend.shader" />
@@ -1364,10 +1230,6 @@
     <None Include="Assets\1. Art\Front\frequency.txt" />
     <None Include="Assets\PlayMaker\Resources\PlayMakerAssemblies.txt" />
     <None Include="Assets\PlayMaker\Actions\MathExpression\Mathos\MathosLicense.txt" />
-    <None Include="Assets\Oculus\SampleFramework\Core\Video\Shaders\Multiview Stereo.shader" />
-    <None Include="Assets\Oculus\SampleFramework\Core\DebugUI\Fonts\Montserrat\OFL.txt" />
-    <None Include="Assets\Oculus\SampleFramework\Usage\OVROverlayCanvas\Shaders\UI Default Correct.shader" />
-    <None Include="Assets\Oculus\SampleFramework\Core\CustomHands\Shaders\Hands_01.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -1384,42 +1246,26 @@
     <None Include="Assets\Photon\PhotonUnityNetworking\readme.txt" />
     <None Include="Assets\Photon\PhotonChat\Demos\DemoChat\Files\eurof_tt.txt" />
     <None Include="Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll" />
-    <None Include="Assets\Oculus\SampleFramework\Core\HandsInteraction\Shaders\OculusSampleAlphaHandOutline.shader" />
     <None Include="Assets\Photon\PhotonLibs\Photon3Unity3D.dll" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\2. XRCV_VirtualRoom\Topics\StartMap\Art\Shader\Force Field.shader" />
     <None Include="Assets\Photon\PhotonLibs\Metro\Photon3Unity3D.dll" />
     <None Include="Assets\Firebase\Plugins\Firebase.Firestore.dll" />
-    <None Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Materials\GlowEffect.shader" />
     <None Include="Assets\2. XRCV_VirtualRoom\Topics\StartMap\Art\Shader\Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
-    <None Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Shaders\OculusSampleTrainSmokeShader.shader" />
-    <None Include="Assets\Oculus\SampleFramework\Usage\OVROverlayCanvas\Shaders\UI Prerendered Opaque.shader" />
-    <None Include="Assets\Oculus\SampleFramework\Core\Video\Plugins\Android\Audio360\NOTICE.txt" />
-    <None Include="Assets\Oculus\SampleFramework\Usage\SceneManager\Shaders\PassthroughShadow.shader" />
     <None Include="Assets\Firebase\Plugins\Firebase.Platform.dll" />
-    <None Include="Assets\Oculus\SampleFramework\Usage\Locomotion\Shaders\TriPlanarWorld.shader" />
     <None Include="Assets\Photon\PhotonLibs\Photon3Unity3D.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
-    <None Include="Assets\Oculus\SampleFramework\Core\Video\Plugins\Android\Audio360\ThirdPartyNotices.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
-    <None Include="Assets\Oculus\SampleFramework\Usage\SceneManager\Shaders\SceneObjectPreview.shader" />
-    <None Include="Assets\Oculus\SampleFramework\Usage\OVROverlayCanvas\Shaders\UI Prerendered.shader" />
     <None Include="Assets\PlayMaker\Actions\Tween\EasingFunctionLicense.txt" />
     <None Include="Assets\Firebase\Plugins\Google.MiniJson.dll" />
-    <None Include="Assets\Oculus\SampleFramework\Core\CustomHands\Materials\Hands_Transparent.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
-    <None Include="Assets\Oculus\SampleFramework\Usage\SceneManager\Shaders\StylizedOcclusions.shader" />
     <None Include="Assets\Photon\PhotonUnityNetworking\link.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
-    <None Include="Assets\Oculus\SampleFramework\Core\CustomHands\Shaders\Hands_02.shader" />
-    <None Include="Assets\Oculus\SampleFramework\Usage\SceneManager\Shaders\GlassMask.shader" />
-    <None Include="Assets\Oculus\SampleFramework\Core\CustomHands\Materials\Hands_DiffBump.shader" />
     <None Include="Assets\Firebase\Plugins\iOS\Firebase.App.dll" />
     <None Include="Assets\PlayMaker\Actions\Tween\Readme.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\2. XRCV_VirtualRoom\Topics\StartMap\Art\Shader\Blended.shader" />
-    <None Include="Assets\Oculus\SampleFramework\license.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -2094,6 +1940,9 @@
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="VIVE.OpenXR">
+      <HintPath>Library\ScriptAssemblies\VIVE.OpenXR.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -2108,6 +1957,9 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="VIVE.OpenXR.Editor">
+      <HintPath>Library\ScriptAssemblies\VIVE.OpenXR.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProBuilder">
       <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.dll</HintPath>
@@ -2127,14 +1979,26 @@
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>Library\ScriptAssemblies\UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.XR.OpenXR.Features.MetaQuestSupport">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.OpenXR.Features.MetaQuestSupport.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.EditorCoroutines.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
       <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.XR.CoreUtils.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.CoreUtils.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.OpenXR.Features.MetaQuestSupport.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.OpenXR.Features.MetaQuestSupport.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.XR.Management">
       <HintPath>Library\ScriptAssemblies\Unity.XR.Management.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Oculus.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.XR.Oculus.Editor.dll</HintPath>
@@ -2148,6 +2012,9 @@
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.XR.OpenXR.Features.OculusQuestSupport.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.OpenXR.Features.OculusQuestSupport.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.XR.Management.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.XR.Management.Editor.dll</HintPath>
     </Reference>
@@ -2157,11 +2024,11 @@
     <Reference Include="Unity.TextMeshPro">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.XR.Interaction.Toolkit">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.Interaction.Toolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Core.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Subsystem.Registration">
-      <HintPath>Library\ScriptAssemblies\Unity.Subsystem.Registration.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProBuilder.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.Editor.dll</HintPath>
@@ -2172,8 +2039,14 @@
     <Reference Include="Unity.PlasticSCM.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.XR.OpenXR.Features.OculusQuestSupport">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.OpenXR.Features.OculusQuestSupport.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Core">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
       <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
@@ -2184,6 +2057,9 @@
     <Reference Include="Unity.VisualScripting.Shared.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.XR.OpenXR.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.OpenXR.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.InputSystem.ForUI">
       <HintPath>Library\ScriptAssemblies\Unity.InputSystem.ForUI.dll</HintPath>
     </Reference>
@@ -2193,8 +2069,17 @@
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.XR.CoreUtils">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.CoreUtils.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.XR.LegacyInputHelpers">
       <HintPath>Library\ScriptAssemblies\UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.OpenXR">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.OpenXR.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.Interaction.Toolkit.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.Interaction.Toolkit.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Oculus">
       <HintPath>Library\ScriptAssemblies\Unity.XR.Oculus.dll</HintPath>
@@ -2204,6 +2089,12 @@
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.OpenXR.Features.ConformanceAutomation">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.OpenXR.Features.ConformanceAutomation.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.OpenXR.Features.RuntimeDebugger.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.OpenXR.Features.RuntimeDebugger.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
@@ -2218,34 +2109,6 @@
       <Project>{174CDEB5-EFE2-9FCF-5210-4EC84EA470DC}</Project>
       <Name>PhotonChat</Name>
     </ProjectReference>
-    <ProjectReference Include="Oculus.Platform.csproj">
-      <Project>{1FB3364E-A2D7-BF66-5687-BD83ECC5C46C}</Project>
-      <Name>Oculus.Platform</Name>
-    </ProjectReference>
-    <ProjectReference Include="AssistantCoreSDKEditor.csproj">
-      <Project>{714E8AFF-0404-AA49-9BAB-B4473B02C938}</Project>
-      <Name>AssistantCoreSDKEditor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Oculus.Voice.Demo.csproj">
-      <Project>{FC48D63E-604A-49B0-7076-6D6256D3B6EB}</Project>
-      <Name>Oculus.Voice.Demo</Name>
-    </ProjectReference>
-    <ProjectReference Include="Oculus.AudioManager.csproj">
-      <Project>{54290BB4-27D8-0B11-D804-2088F1D824E9}</Project>
-      <Name>Oculus.AudioManager</Name>
-    </ProjectReference>
-    <ProjectReference Include="Oculus.Interaction.csproj">
-      <Project>{4230B11D-6BC3-B1DA-9D71-45D77EE6BDF6}</Project>
-      <Name>Oculus.Interaction</Name>
-    </ProjectReference>
-    <ProjectReference Include="AssistantCoreSDKRuntime.csproj">
-      <Project>{D1109BE3-9982-8A7A-59CE-C0EE092567B5}</Project>
-      <Name>AssistantCoreSDKRuntime</Name>
-    </ProjectReference>
-    <ProjectReference Include="Oculus.AudioManager.Utils.Editor.csproj">
-      <Project>{E41EF11B-0BE8-A23D-656D-336FB68368AA}</Project>
-      <Name>Oculus.AudioManager.Utils.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Editor.csproj">
       <Project>{8118DBAD-6A8A-EA93-7C57-81A807A2199C}</Project>
       <Name>PhotonUnityNetworking.Editor</Name>
@@ -2258,33 +2121,21 @@
       <Project>{FAE22FA1-57BB-1C5A-7BCD-7028C4927FA4}</Project>
       <Name>PunDemos.DemoHubEditor</Name>
     </ProjectReference>
+    <ProjectReference Include="Sirenix.OdinInspector.Modules.UnityMathematics.csproj">
+      <Project>{212A5309-E4AD-DD49-DAC8-064590BEB58A}</Project>
+      <Name>Sirenix.OdinInspector.Modules.UnityMathematics</Name>
+    </ProjectReference>
     <ProjectReference Include="Sirenix.OdinInspector.CompatibilityLayer.Editor.csproj">
       <Project>{3B100995-528A-AA13-D31B-66F5AC326125}</Project>
       <Name>Sirenix.OdinInspector.CompatibilityLayer.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Facebook.WitAI.csproj">
-      <Project>{CE895F33-330B-440C-7B15-35812437EB33}</Project>
-      <Name>Facebook.WitAI</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.csproj">
       <Project>{03711B47-1B6B-930C-7E28-556AF68386DF}</Project>
       <Name>PhotonUnityNetworking</Name>
     </ProjectReference>
-    <ProjectReference Include="Oculus.VR.csproj">
-      <Project>{F67445E7-032D-0B08-F266-5CD866CE36E3}</Project>
-      <Name>Oculus.VR</Name>
-    </ProjectReference>
-    <ProjectReference Include="Oculus.AudioManager.Audio.Editor.csproj">
-      <Project>{31F38F0C-BC2E-7FAE-F613-29465F73BA14}</Project>
-      <Name>Oculus.AudioManager.Audio.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Oculus.Platform.Editor.csproj">
-      <Project>{2E98FCA5-87B3-8A3F-62BE-8D9EF9C224E2}</Project>
-      <Name>Oculus.Platform.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Oculus.Spatializer.Editor.csproj">
-      <Project>{EEF6EAE5-A3E8-1983-4E60-3E98F30A44B7}</Project>
-      <Name>Oculus.Spatializer.Editor</Name>
+    <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj">
+      <Project>{A070C1BD-92BF-708F-CFCB-F44586D3F3F0}</Project>
+      <Name>Unity.XR.Interaction.Toolkit.Samples.StarterAssets</Name>
     </ProjectReference>
     <ProjectReference Include="PunDemos.DemoSlotcarEditor.csproj">
       <Project>{387B427E-5134-CDE0-BEFE-61C70EBA73F0}</Project>
@@ -2293,26 +2144,6 @@
     <ProjectReference Include="PhotonUnityNetworking.Utilities.Culling.Editor.csproj">
       <Project>{EF559CA4-BF65-5CFD-FD0C-CEF0381BC716}</Project>
       <Name>PhotonUnityNetworking.Utilities.Culling.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Oculus.Interaction.Samples.csproj">
-      <Project>{145C65E6-931B-A4D3-9D26-3761BC3FB670}</Project>
-      <Name>Oculus.Interaction.Samples</Name>
-    </ProjectReference>
-    <ProjectReference Include="Oculus.VR.Editor.csproj">
-      <Project>{541C2EDA-7DD1-50C6-657D-9BCF8E233E6B}</Project>
-      <Name>Oculus.VR.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Oculus.Interaction.Editor.csproj">
-      <Project>{206CE623-9646-33C3-A4E5-30D1876F28E2}</Project>
-      <Name>Oculus.Interaction.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Oculus.VR.Scripts.Editor.csproj">
-      <Project>{B9F613E9-6172-C154-5360-A4B54459F7E8}</Project>
-      <Name>Oculus.VR.Scripts.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Oculus.Spatializer.csproj">
-      <Project>{B4242DC8-7B3F-EC5C-1813-13F3A0CBE03C}</Project>
-      <Name>Oculus.Spatializer</Name>
     </ProjectReference>
     <ProjectReference Include="Sirenix.OdinInspector.CompatibilityLayer.csproj">
       <Project>{FD102D15-7E60-9081-B8DD-F7B117F772FC}</Project>
@@ -2326,33 +2157,13 @@
       <Project>{B6B2323F-E92B-FF09-BE68-58BBC2364264}</Project>
       <Name>PhotonUnityNetworking.Utilities</Name>
     </ProjectReference>
-    <ProjectReference Include="VoiceSDK.Editor.csproj">
-      <Project>{7B32D603-FD89-BD81-CD37-C14C6C7B4A9A}</Project>
-      <Name>VoiceSDK.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Oculus.Interaction.InterfaceSupport.csproj">
-      <Project>{795D8BC9-A76F-0486-B2B9-D4D417CE13A0}</Project>
-      <Name>Oculus.Interaction.InterfaceSupport</Name>
-    </ProjectReference>
-    <ProjectReference Include="Facebook.Wit.Editor.csproj">
-      <Project>{C55D809A-B880-8019-9FA4-D9C1C994EA8E}</Project>
-      <Name>Facebook.Wit.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Oculus.LipSync.Editor.csproj">
-      <Project>{C02B0B0F-DE09-3577-A0C5-4B008F085292}</Project>
-      <Name>Oculus.LipSync.Editor</Name>
+    <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.csproj">
+      <Project>{360DF5FD-B8F6-D579-AC5F-FFC8E16523E5}</Project>
+      <Name>Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Demos.csproj">
       <Project>{D120F444-CE68-5599-55DB-A234234C1896}</Project>
       <Name>PhotonUnityNetworking.Demos</Name>
-    </ProjectReference>
-    <ProjectReference Include="Oculus.LipSync.csproj">
-      <Project>{E08348DC-2366-18A1-17ED-9FC6B3DEF7E6}</Project>
-      <Name>Oculus.LipSync</Name>
-    </ProjectReference>
-    <ProjectReference Include="VoiceSDK.Runtime.csproj">
-      <Project>{4979B8F2-154D-A98E-5067-624AF9B576AD}</Project>
-      <Name>VoiceSDK.Runtime</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

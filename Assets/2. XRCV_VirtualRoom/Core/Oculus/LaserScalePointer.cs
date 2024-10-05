@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LaserScalePointer : OVRCursor
+//public class LaserScalePointer : OVRCursor
+public class LaserScalePointer :MonoBehaviour
 {
+    /*
     public enum LaserBeamBehavior
     {
         On,        // laser beam always on
@@ -168,4 +170,6 @@ public class LaserScalePointer : OVRCursor
         OVRManager.InputFocusAcquired -= OnInputFocusAcquired;
         OVRManager.InputFocusLost -= OnInputFocusLost;
     }
+
+    */
 }
