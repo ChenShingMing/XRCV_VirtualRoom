@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Inputs;
 
 public class InputHandler_OpenXR : InputHandler
 {
     public static InputHandler_OpenXR ins;
+
+    public XRRayInteractor rayInteractor;
+    public LayerMask uiLayerMask;
 
     public InputActionAsset inputActions; // 把你的 Input Action Asset 拖到這裡
     public InputActionReference leftHandPositionActionRef;
@@ -79,25 +84,25 @@ public class InputHandler_OpenXR : InputHandler
               ClassroomManager.ins.inputActionManager.TriggerMenu();
           }
 
-          //送出鍵，放提示點
-          //if (!LaserScalePointer.isHitTarget)
-          //{
-          if (triggerAction.WasPressedThisFrame())
-          {
-              //Debug.Log("GetMouseButtonDown");
-              ClassroomManager.ins.inputActionManager.OnSubmitDownTrigger(rightHandRotationActionRef.action.ReadValue<Quaternion>());
-          }
-          if (triggerAction.IsPressed())
-          {
-              //Debug.Log("GetMouseButton");
-              ClassroomManager.ins.inputActionManager.OnSubmitTrigger(rightHandRotationActionRef.action.ReadValue<Quaternion>());
-          }
-          if (triggerAction.WasReleasedThisFrame())
-          {
-              //Debug.Log("GetMouseButtonUp");
-              ClassroomManager.ins.inputActionManager.OnSubmitUpTrigger(rightHandRotationActionRef.action.ReadValue<Quaternion>());
-          }
-          //}
+        //送出鍵，放提示點
+        if (!IsPointingAtUI())
+        {
+            if (triggerAction.WasPressedThisFrame())
+            {
+                //Debug.Log("GetMouseButtonDown");
+                ClassroomManager.ins.inputActionManager.OnSubmitDownTrigger(rightHandRotationActionRef.action.ReadValue<Quaternion>());
+            }
+            if (triggerAction.IsPressed())
+            {
+                //Debug.Log("GetMouseButton");
+                ClassroomManager.ins.inputActionManager.OnSubmitTrigger(rightHandRotationActionRef.action.ReadValue<Quaternion>());
+            }
+            if (triggerAction.WasReleasedThisFrame())
+            {
+                //Debug.Log("GetMouseButtonUp");
+                ClassroomManager.ins.inputActionManager.OnSubmitUpTrigger(rightHandRotationActionRef.action.ReadValue<Quaternion>());
+            }
+        }
 
           if (penModeAction.IsPressed())
           {
@@ -121,5 +126,25 @@ public class InputHandler_OpenXR : InputHandler
     {
         return GazeSphere.RayHitOnSphere(new Ray(Camera.main.transform.position,
                                     GetControllerRotation() * Vector3.forward));
+    }
+
+    private bool IsPointingAtUI()
+    {
+        // 檢查 XRRayInteractor 是否指向了 UI
+        if (rayInteractor.TryGetCurrentUIRaycastResult(out RaycastResult raycastResult))
+        {
+            if (raycastResult.gameObject != null && IsUILayer(raycastResult.gameObject))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private bool IsUILayer(GameObject obj)
+    {
+        // 檢查物體是否屬於 UI 圖層
+        return (uiLayerMask == (uiLayerMask | (1 << obj.layer)));
     }
 }
