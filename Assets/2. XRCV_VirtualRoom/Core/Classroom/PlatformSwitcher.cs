@@ -9,7 +9,6 @@ public class PlatformSwitcher : SerializedMonoBehaviour
     public enum Platform
     {
         PC,
-        Oculus,
         OpenXR
     }
 

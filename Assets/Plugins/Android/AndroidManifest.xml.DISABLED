@@ -15,11 +15,11 @@
   </application>
 
   <!-- Oculus Specific Features -->
-  <uses-feature android:name="oculus.software.overlay_keyboard" android:required="false" />
+  <!-- uses-feature android:name="oculus.software.overlay_keyboard" android:required="false"-->
 
   <!-- VIVE Focus 3 Specific Features -->
-  <uses-feature android:name="com.htc.hardware.vr.headtracking" android:required="true" />
-  <uses-feature android:name="com.htc.software.vr.keyboard" android:required="false" />
+  <!-- uses-feature android:name="com.htc.hardware.vr.headtracking" android:required="true" -->
+  <!-- uses-feature android:name="com.htc.software.vr.keyboard" android:required="false" -->
 
   <!-- General VR permissions -->
   <uses-permission android:name="android.permission.INTERNET" />

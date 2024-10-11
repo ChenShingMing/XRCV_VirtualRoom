@@ -973,6 +973,7 @@
     <Compile Include="Assets\PlayMaker\Actions\PlayerPrefs\PlayerPrefsSaveVariable.cs" />
     <Compile Include="Assets\PlayMaker\Actions\String\FormatString.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerGetCurrentFrameIndex.cs" />
+    <Compile Include="Assets\2. XRCV_VirtualRoom\Core\OpenXR\OpenXRInputFieldKeyboardListener.cs" />
     <Compile Include="Assets\VirtualRoomPlugIn\1. VirtualRoom\Core\UI\Rename.cs" />
     <Compile Include="Assets\PlayMaker\Actions\String\StringSplit.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Trigonometry\GetAtan.cs" />
@@ -1203,7 +1204,14 @@
     <Compile Include="Assets\PlayMaker\Actions\UI\EventSystem\EventTriggerActionBase.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUIElement\SetGUITextureColor.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Debug\DebugInt.cs" />
-    <Compile Include="Assets\2. XRCV_VirtualRoom\Core\OpenXR\OpenXRInputFieldKeyboardListener.cs" />
+    <Compile Include="Assets\MRTK\SDK\Experimental\NonNativeKeyboard\Scripts\AxisSlider.cs" />
+    <Compile Include="Assets\MRTK\SDK\Experimental\NonNativeKeyboard\Scripts\SymbolKeyboard.cs" />
+    <Compile Include="Assets\MRTK\SDK\Experimental\NonNativeKeyboard\Scripts\UICollection.cs" />
+    <Compile Include="Assets\MRTK\SDK\Experimental\NonNativeKeyboard\Scripts\NonNativeKeyboard.cs" />
+    <Compile Include="Assets\MRTK\SDK\Experimental\NonNativeKeyboard\Scripts\SymbolDisableHighlight.cs" />
+    <Compile Include="Assets\MRTK\SDK\Experimental\NonNativeKeyboard\Scripts\KeyboardValueKey.cs" />
+    <Compile Include="Assets\MRTK\SDK\Experimental\NonNativeKeyboard\Scripts\KeyboardKeyFunc.cs" />
+    <Compile Include="Assets\MRTK\SDK\Experimental\NonNativeKeyboard\Scripts\CapsLockHighlight.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Oculus\VR\Plugins\1.72.0\Win64OpenXR\OVRPlugin.dll" />
@@ -1253,6 +1261,8 @@
     <None Include="Assets\2. XRCV_VirtualRoom\Topics\StartMap\Art\Shader\Force Field.shader" />
     <None Include="Assets\Photon\PhotonLibs\Metro\Photon3Unity3D.dll" />
     <None Include="Assets\Firebase\Plugins\Firebase.Firestore.dll" />
+    <None Include="Assets\MRTK\StandardAssets\Shaders\MixedRealityTextMeshPro.shader" />
+    <None Include="Assets\MRTK\StandardAssets\Shaders\MixedRealityShaderUtils.cginc" />
     <None Include="Assets\2. XRCV_VirtualRoom\Topics\StartMap\Art\Shader\Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\Firebase\Plugins\Firebase.Platform.dll" />
@@ -1942,6 +1952,9 @@
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="VIVE.OpenXR">
+      <HintPath>Library\ScriptAssemblies\VIVE.OpenXR.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -1956,6 +1969,9 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="VIVE.OpenXR.Editor">
+      <HintPath>Library\ScriptAssemblies\VIVE.OpenXR.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProBuilder">
       <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.dll</HintPath>
@@ -1975,14 +1991,26 @@
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>Library\ScriptAssemblies\UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.XR.OpenXR.Features.MetaQuestSupport">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.OpenXR.Features.MetaQuestSupport.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.EditorCoroutines.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
       <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.XR.CoreUtils.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.CoreUtils.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.OpenXR.Features.MetaQuestSupport.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.OpenXR.Features.MetaQuestSupport.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.XR.Management">
       <HintPath>Library\ScriptAssemblies\Unity.XR.Management.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Oculus.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.XR.Oculus.Editor.dll</HintPath>
@@ -1996,6 +2024,9 @@
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.XR.OpenXR.Features.OculusQuestSupport.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.OpenXR.Features.OculusQuestSupport.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.XR.Management.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.XR.Management.Editor.dll</HintPath>
     </Reference>
@@ -2004,6 +2035,9 @@
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.Interaction.Toolkit">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.Interaction.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Core.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
@@ -2017,8 +2051,14 @@
     <Reference Include="Unity.PlasticSCM.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.XR.OpenXR.Features.OculusQuestSupport">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.OpenXR.Features.OculusQuestSupport.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Core">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
       <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
@@ -2029,6 +2069,9 @@
     <Reference Include="Unity.VisualScripting.Shared.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.XR.OpenXR.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.OpenXR.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.InputSystem.ForUI">
       <HintPath>Library\ScriptAssemblies\Unity.InputSystem.ForUI.dll</HintPath>
     </Reference>
@@ -2038,8 +2081,17 @@
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.XR.CoreUtils">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.CoreUtils.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.XR.LegacyInputHelpers">
       <HintPath>Library\ScriptAssemblies\UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.OpenXR">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.OpenXR.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.Interaction.Toolkit.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.Interaction.Toolkit.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Oculus">
       <HintPath>Library\ScriptAssemblies\Unity.XR.Oculus.dll</HintPath>
@@ -2050,56 +2102,14 @@
     <Reference Include="Unity.TestTools.CodeCoverage.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.State">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.XR.OpenXR.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.XR.OpenXR.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.XR.CoreUtils">
-      <HintPath>Library\ScriptAssemblies\Unity.XR.CoreUtils.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.XR.OpenXR">
-      <HintPath>Library\ScriptAssemblies\Unity.XR.OpenXR.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.XR.CoreUtils.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.XR.CoreUtils.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Mathematics.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.XR.OpenXR.Features.OculusQuestSupport">
-      <HintPath>Library\ScriptAssemblies\Unity.XR.OpenXR.Features.OculusQuestSupport.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.XR.Interaction.Toolkit.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.XR.Interaction.Toolkit.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="VIVE.OpenXR">
-      <HintPath>Library\ScriptAssemblies\VIVE.OpenXR.dll</HintPath>
-    </Reference>
-    <Reference Include="VIVE.OpenXR.Editor">
-      <HintPath>Library\ScriptAssemblies\VIVE.OpenXR.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.XR.OpenXR.Features.OculusQuestSupport.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.XR.OpenXR.Features.OculusQuestSupport.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.XR.Interaction.Toolkit">
-      <HintPath>Library\ScriptAssemblies\Unity.XR.Interaction.Toolkit.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.XR.OpenXR.Features.MetaQuestSupport.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.XR.OpenXR.Features.MetaQuestSupport.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Mathematics">
-      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.XR.OpenXR.Features.MetaQuestSupport">
-      <HintPath>Library\ScriptAssemblies\Unity.XR.OpenXR.Features.MetaQuestSupport.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.XR.OpenXR.Features.ConformanceAutomation">
       <HintPath>Library\ScriptAssemblies\Unity.XR.OpenXR.Features.ConformanceAutomation.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.OpenXR.Features.RuntimeDebugger.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.XR.OpenXR.Features.RuntimeDebugger.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.State">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -2123,6 +2133,10 @@
       <Project>{FAE22FA1-57BB-1C5A-7BCD-7028C4927FA4}</Project>
       <Name>PunDemos.DemoHubEditor</Name>
     </ProjectReference>
+    <ProjectReference Include="Sirenix.OdinInspector.Modules.UnityMathematics.csproj">
+      <Project>{212A5309-E4AD-DD49-DAC8-064590BEB58A}</Project>
+      <Name>Sirenix.OdinInspector.Modules.UnityMathematics</Name>
+    </ProjectReference>
     <ProjectReference Include="Sirenix.OdinInspector.CompatibilityLayer.Editor.csproj">
       <Project>{3B100995-528A-AA13-D31B-66F5AC326125}</Project>
       <Name>Sirenix.OdinInspector.CompatibilityLayer.Editor</Name>
@@ -2130,6 +2144,10 @@
     <ProjectReference Include="PhotonUnityNetworking.csproj">
       <Project>{03711B47-1B6B-930C-7E28-556AF68386DF}</Project>
       <Name>PhotonUnityNetworking</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj">
+      <Project>{A070C1BD-92BF-708F-CFCB-F44586D3F3F0}</Project>
+      <Name>Unity.XR.Interaction.Toolkit.Samples.StarterAssets</Name>
     </ProjectReference>
     <ProjectReference Include="PunDemos.DemoSlotcarEditor.csproj">
       <Project>{387B427E-5134-CDE0-BEFE-61C70EBA73F0}</Project>
@@ -2151,21 +2169,13 @@
       <Project>{B6B2323F-E92B-FF09-BE68-58BBC2364264}</Project>
       <Name>PhotonUnityNetworking.Utilities</Name>
     </ProjectReference>
-    <ProjectReference Include="PhotonUnityNetworking.Demos.csproj">
-      <Project>{D120F444-CE68-5599-55DB-A234234C1896}</Project>
-      <Name>PhotonUnityNetworking.Demos</Name>
-    </ProjectReference>
-    <ProjectReference Include="Sirenix.OdinInspector.Modules.UnityMathematics.csproj">
-      <Project>{212A5309-E4AD-DD49-DAC8-064590BEB58A}</Project>
-      <Name>Sirenix.OdinInspector.Modules.UnityMathematics</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.csproj">
       <Project>{360DF5FD-B8F6-D579-AC5F-FFC8E16523E5}</Project>
       <Name>Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj">
-      <Project>{A070C1BD-92BF-708F-CFCB-F44586D3F3F0}</Project>
-      <Name>Unity.XR.Interaction.Toolkit.Samples.StarterAssets</Name>
+    <ProjectReference Include="PhotonUnityNetworking.Demos.csproj">
+      <Project>{D120F444-CE68-5599-55DB-A234234C1896}</Project>
+      <Name>PhotonUnityNetworking.Demos</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
