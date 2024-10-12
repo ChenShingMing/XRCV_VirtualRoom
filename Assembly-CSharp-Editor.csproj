@@ -159,6 +159,7 @@
     <Compile Include="Assets\PlayMaker\Actions\Animator\Editor\SetAnimatorBoolActionEditor.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Quaternion\Editor\QuaternionLerpCustomEditor.cs" />
     <Compile Include="Assets\PlayMaker\Editor\FsmGlobalsWindow.cs" />
+    <Compile Include="Assets\2. XRCV_VirtualRoom\Core\Classroom\Editor\PlatformBuilder.cs" />
     <Compile Include="Assets\PlayMaker\Editor\PreUpdateChecker.cs" />
     <Compile Include="Assets\PlayMaker\Editor\PlayMakerBuildCallbacks.cs" />
     <Compile Include="Assets\PlayMaker\Actions\SceneManager\Editor\SetActiveSceneCustomEditor.cs" />
@@ -179,7 +180,6 @@
     <Compile Include="Assets\PlayMaker\Actions\SceneManager\Editor\LoadSceneCustomEditor.cs" />
     <Compile Include="Assets\PlayMaker\Editor\FsmEventsWindow.cs" />
     <Compile Include="Assets\PlayMaker\Editor\PlayMakerEditorStartup.cs" />
-    <Compile Include="Assets\2. XRCV_VirtualRoom\Core\Classroom\Editor\XRPluginSwitcher.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\PlayMaker\Editor\Install\Resources\CheckActions.txt" />

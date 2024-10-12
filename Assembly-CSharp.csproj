@@ -110,6 +110,7 @@
     <Compile Include="Assets\PlayMaker\Actions\Animator\SetAnimatorFloat.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Math\FloatAbs.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Logic\GameObjectTagSwitch.cs" />
+    <Compile Include="Assets\MRTK\SDK\Experimental\NonNativeKeyboard\Scripts\CapsLockHighlight.cs" />
     <Compile Include="Assets\PlayMaker\Actions\MathExpression\Mathos\MathExpression.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerGetControlledAudioTrackMaxCount.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Gamepad\GamepadStickEvents.cs" />
@@ -168,6 +169,7 @@
     <Compile Include="Assets\PlayMaker\Actions\Animator\SetAnimatorBool.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Logic\StringChanged.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\SetGravity2d.cs" />
+    <Compile Include="Assets\MRTK\SDK\Experimental\NonNativeKeyboard\Scripts\NonNativeKeyboard.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Debug\DebugFsmVariable.cs" />
     <Compile Include="Assets\PlayMaker\Actions\String\StringAppend.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Logic\GameObjectIsVisibleToCamera.cs" />
@@ -603,6 +605,7 @@
     <Compile Include="Assets\PlayMaker\Actions\Logic\BoolTest.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Vector2\SetVector2XY.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiInputfieldSetCaretBlinkRate.cs" />
+    <Compile Include="Assets\MRTK\SDK\Experimental\NonNativeKeyboard\Scripts\AxisSlider.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Logic\ColorCompare.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\GetAnimatorIKGoal.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Logic\GameObjectCompareTag.cs" />
@@ -798,6 +801,7 @@
     <Compile Include="Assets\PlayMaker\Actions\ScriptControl\AxisEvent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\Sleep2d.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Vector3\Vector3Subtract.cs" />
+    <Compile Include="Assets\MRTK\SDK\Experimental\NonNativeKeyboard\Scripts\KeyboardValueKey.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Web\WWWObject.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerGetCanSetSkipOnDrop.cs" />
     <Compile Include="Assets\PlayMaker\Actions\SpriteRenderer\GetSpriteOrderInLayer.cs" />
@@ -963,6 +967,7 @@
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerSetTimeSource.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Vector3\Vector3Invert.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animation\SetAnimationSpeed.cs" />
+    <Compile Include="Assets\MRTK\SDK\Experimental\NonNativeKeyboard\Scripts\SymbolKeyboard.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Tween\TweenInt.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Input\GetButtonDown.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Device\DeviceShakeEvent.cs" />
@@ -1035,6 +1040,7 @@
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\NextFrameEvent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\MovePosition2d.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics\CollisionEvent.cs" />
+    <Compile Include="Assets\MRTK\SDK\Experimental\NonNativeKeyboard\Scripts\KeyboardKeyFunc.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Array\GetFsmArray.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Array\ArrayTransferValue.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Level\LoadLevel.cs" />
@@ -1093,6 +1099,7 @@
     <Compile Include="Assets\Panoramic\Scripts\PanoramicManager.cs" />
     <Compile Include="Assets\PlayMaker\Actions\RectTransform\RectTransformSetAnchorRectPosition.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Vector3\Vector3PerSecond.cs" />
+    <Compile Include="Assets\MRTK\SDK\Experimental\NonNativeKeyboard\Scripts\SymbolDisableHighlight.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUILayout\GUILayoutBeginHorizontal.cs" />
     <Compile Include="Assets\PlayMaker\Actions\PlayerInput\PlayerInputButtonEvents.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Character\ControllerSimpleMove.cs" />
@@ -1153,6 +1160,7 @@
     <Compile Include="Assets\PlayMaker\Actions\UI\UiToggleOnValueChangedEvent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\GetAnimatorCurrentTransitionInfoIsUserName.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiScrollRectSetVertical.cs" />
+    <Compile Include="Assets\MRTK\SDK\Experimental\NonNativeKeyboard\Scripts\UICollection.cs" />
     <Compile Include="Assets\PlayMaker\Actions\AnimateVariables\EaseFsmAction.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Logic\BoolAllTrue.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiSliderSetValue.cs" />
@@ -1204,14 +1212,6 @@
     <Compile Include="Assets\PlayMaker\Actions\UI\EventSystem\EventTriggerActionBase.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUIElement\SetGUITextureColor.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Debug\DebugInt.cs" />
-    <Compile Include="Assets\MRTK\SDK\Experimental\NonNativeKeyboard\Scripts\AxisSlider.cs" />
-    <Compile Include="Assets\MRTK\SDK\Experimental\NonNativeKeyboard\Scripts\SymbolKeyboard.cs" />
-    <Compile Include="Assets\MRTK\SDK\Experimental\NonNativeKeyboard\Scripts\UICollection.cs" />
-    <Compile Include="Assets\MRTK\SDK\Experimental\NonNativeKeyboard\Scripts\NonNativeKeyboard.cs" />
-    <Compile Include="Assets\MRTK\SDK\Experimental\NonNativeKeyboard\Scripts\SymbolDisableHighlight.cs" />
-    <Compile Include="Assets\MRTK\SDK\Experimental\NonNativeKeyboard\Scripts\KeyboardValueKey.cs" />
-    <Compile Include="Assets\MRTK\SDK\Experimental\NonNativeKeyboard\Scripts\KeyboardKeyFunc.cs" />
-    <Compile Include="Assets\MRTK\SDK\Experimental\NonNativeKeyboard\Scripts\CapsLockHighlight.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Oculus\VR\Plugins\1.72.0\Win64OpenXR\OVRPlugin.dll" />

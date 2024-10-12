@@ -29,6 +29,30 @@ public class PlatformSwitcher : SerializedMonoBehaviour
         
     }
 
+    public void OnSwitchToPC()
+    {
+        // PC 切換邏輯
+        Debug.Log("PlatformSwitcher Switched to PC.");
+        platform = Platform.PC;
+        SwitchPlatform();
+    }
+
+    public void OnSwitchToOpenXR()
+    {
+        // OpenXR 切換邏輯
+        Debug.Log("PlatformSwitcher Switched to OpenXR.");
+        platform = Platform.OpenXR;
+        SwitchPlatform();
+    }
+
+    public void OnSwitchToOculus()
+    {
+        // Oculus 切換邏輯
+        Debug.Log("PlatformSwitcher Switched to Oculus.");
+        platform = Platform.OpenXR;
+        SwitchPlatform();
+    }
+
 
     void SwitchPlatform()
     {
