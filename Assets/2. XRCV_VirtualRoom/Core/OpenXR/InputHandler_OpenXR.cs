@@ -71,80 +71,11 @@ public class InputHandler_OpenXR : InputHandler
 
     public override void InputHandle()
     {
-        
-          //主選單
-          if (mainMenuAction.WasReleasedThisFrame())
-          {
-              ClassroomManager.ins.inputActionManager.TriggerMainMenu();
-          }
-
-          //教材控制器選單
-          if (menuAction.WasReleasedThisFrame())
-          {
-              ClassroomManager.ins.inputActionManager.TriggerMenu();
-          }
-
-        //送出鍵，放提示點
-        if (!IsPointingAtUI())
+        //教材控制器選單
+        if (menuAction.WasReleasedThisFrame())
         {
-            if (triggerAction.WasPressedThisFrame())
-            {
-                //Debug.Log("GetMouseButtonDown");
-                ClassroomManager.ins.inputActionManager.OnSubmitDownTrigger(rightHandRotationActionRef.action.ReadValue<Quaternion>());
-            }
-            if (triggerAction.IsPressed())
-            {
-                //Debug.Log("GetMouseButton");
-                ClassroomManager.ins.inputActionManager.OnSubmitTrigger(rightHandRotationActionRef.action.ReadValue<Quaternion>());
-            }
-            if (triggerAction.WasReleasedThisFrame())
-            {
-                //Debug.Log("GetMouseButtonUp");
-                ClassroomManager.ins.inputActionManager.OnSubmitUpTrigger(rightHandRotationActionRef.action.ReadValue<Quaternion>());
-            }
+            StarMapController.ins.TriggerControlCanvas();
         }
 
-          if (penModeAction.IsPressed())
-          {
-              ClassroomManager.ins.inputActionManager.SetPenPode(true);
-          }
-          else
-          {
-              ClassroomManager.ins.inputActionManager.SetPenPode(false);
-          }
-
-      
-
-    }
-
-    public Quaternion GetControllerRotation()
-    {
-        return rightHandRotationActionRef.action.ReadValue<Quaternion>();
-    }
-
-    public override Vector3 GetInputPointerOnGazeSphere()
-    {
-        return GazeSphere.RayHitOnSphere(new Ray(Camera.main.transform.position,
-                                    GetControllerRotation() * Vector3.forward));
-    }
-
-    private bool IsPointingAtUI()
-    {
-        // 檢查 XRRayInteractor 是否指向了 UI
-        if (rayInteractor.TryGetCurrentUIRaycastResult(out RaycastResult raycastResult))
-        {
-            if (raycastResult.gameObject != null && IsUILayer(raycastResult.gameObject))
-            {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    private bool IsUILayer(GameObject obj)
-    {
-        // 檢查物體是否屬於 UI 圖層
-        return (uiLayerMask == (uiLayerMask | (1 << obj.layer)));
     }
 }
