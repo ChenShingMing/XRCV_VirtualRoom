@@ -145,6 +145,7 @@ public class PlatformBuilder : EditorWindow
         EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Standalone, BuildTarget.StandaloneWindows64);
         Debug.Log("Switched to PC platform (Windows).");
         CallPlatformSwitcherMethod("OnSwitchToPC");
+        CallClassroomManagerMethod();
         SaveCurrentScene(); // 保存場景
     }
 
@@ -176,7 +177,6 @@ public class PlatformBuilder : EditorWindow
     public void BuildPC(string fileName)
     {
         SwitchToPC();
-        CallClassroomManagerMethod();
         string path = $"Build/{dateFolder}/{fileName}_PC_v" + System.DateTime.Now.ToString("yyyyMMdd");
         Directory.CreateDirectory(path); // 確保資料夾存在
         BuildPipeline.BuildPlayer(EditorBuildSettings.scenes, $"{path}/{fileName}_PC_v{System.DateTime.Now.ToString("yyyyMMdd")}.exe", BuildTarget.StandaloneWindows64, BuildOptions.None);
