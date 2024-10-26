@@ -65,10 +65,14 @@
     <Compile Include="Assets\PlayMaker\Actions\RenderSettings\SetHaloStrength.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Trigonometry\GetASine.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\SetAnimatorLayersAffectMassCenter.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Mapper\GameViewEncoder.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiInputFieldMoveCaretToTextEnd.cs" />
     <Compile Include="Assets\2. XRCV_VirtualRoom\Core\InputManager\InputHandler_PC.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Features\DemoObjectAnimation.cs" />
     <Compile Include="Assets\PlayMaker\Actions\SpriteRenderer\SetSpriteMaskInteraction.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\AnimatorMatchTarget.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Features\SceneManager_helper.cs" />
+    <Compile Include="Assets\2. XRCV_VirtualRoom\Core\FMETP\SetRenderCameraParent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Array\SetFsmArrayItem.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Input\WaitAnyKey.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Convert\ConvertIntToFloat.cs" />
@@ -97,6 +101,7 @@
     <Compile Include="Assets\PlayMaker\Actions\Physics\GetSpeed.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\GetAnimatorLayersAffectMassCenter.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Array\GetFsmArrayItem.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMWebSocket\Scripts\SocketIO\FM_Event\Ack.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\Selectable\UiSetIsInteractable.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUI\RotateGUI.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\Trigger2dEvent.cs" />
@@ -125,6 +130,7 @@
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerGetCanSetPlaybackSpeed.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GameObject\HasComponent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\SetFsmVector2.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Networking\ConnectionDebugText.cs" />
     <Compile Include="Assets\PlayMaker\Actions\String\GetStringLeft.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\Touch Object 2d Event.cs" />
     <Compile Include="Assets\PlayMaker\Actions\MathExpression\Mathos\MathParser.cs" />
@@ -144,6 +150,7 @@
     <Compile Include="Assets\PlayMaker\Actions\Quaternion\GetQuaternionMultipliedByQuaternion.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animation\EnableAnimation.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiScrollbarGetValue.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMWebSocket\Scripts\SocketIO\FM_Packet\Packet.cs" />
     <Compile Include="Assets\2. XRCV_VirtualRoom\Core\StartMap\Scripts\Core\UI\InfoCanvasUI.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics\AddForce.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GameObject\ActivateGameObject.cs" />
@@ -155,12 +162,15 @@
     <Compile Include="Assets\PlayMaker\Actions\Device\DeviceVibrate.cs" />
     <Compile Include="Assets\PlayMaker\Actions\SceneManager\CreateScene.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\SequenceEvent.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Mapper\FMPCStreamEncoder.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiScrollbarOnValueChangedEvent.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMWebSocket\Scripts\SocketIO\FM_Event\SocketIOEvent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\GetEventBoolData.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\SetAnimatorBool.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Logic\StringChanged.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\SetGravity2d.cs" />
     <Compile Include="Assets\MRTK\SDK\Experimental\NonNativeKeyboard\Scripts\NonNativeKeyboard.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Mapper\TextureEncoder.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Debug\DebugFsmVariable.cs" />
     <Compile Include="Assets\PlayMaker\Actions\String\StringAppend.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Logic\GameObjectIsVisibleToCamera.cs" />
@@ -214,6 +224,7 @@
     <Compile Include="Assets\PlayMaker\Actions\PlayerPrefs\PlayerPrefsSetString.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\GetFsmInt.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUI\SetGUIDepth.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Features\Interactive\ZoomManager.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics\MovePosition.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\GetFsmState.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiInputFieldGetIsFocused.cs" />
@@ -221,12 +232,14 @@
     <Compile Include="Assets\PlayMaker\Actions\Animator\GetAnimatorPlaybackTime.cs" />
     <Compile Include="Assets\PlayMaker\Actions\PlayerPrefs\PlayerPrefsGetFloat.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\Selectable\UiGetIsInteractable.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMNetwork\Scripts\LargeFileDecoder.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\SetFsmColor.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\SetFsmEnum.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiRawImageSetRaycastTarget.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Audio\AudioPause.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GameObject\DestroySelf.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\LateUpdateEvent.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Features\FillCameraBackground.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Input\MousePickEvent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Tween\TweenScale.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Vector2\Vector2Interpolate.cs" />
@@ -237,13 +250,15 @@
     <Compile Include="Assets\PlayMaker\Actions\Vector2\Vector2SnapToAngle.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerGetAudioTrackCount.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\SendEvent.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Mapper\GameViewDecoder.cs" />
     <Compile Include="Assets\PlayMaker\Actions\RectTransform\RectTransformSetAnchorMinAndMax.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\Components\PlayMakerUiDropEvent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\SetFsmVector3.cs" />
     <Compile Include="Assets\PlayMaker\Actions\PlayerInput\PlayerInputCanceledEvent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Logic\GameObjectIsChildOf.cs" />
-    <Compile Include="Assets\PlayMaker\Actions\Vector3\Vector3SnapToGrid.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\SetHingeJoint2dProperties.cs" />
+    <Compile Include="Assets\PlayMaker\Actions\Vector3\Vector3SnapToGrid.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMNetwork\Scripts\LargeFileEncoder.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerPause.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GameObject\SetTagsOnChildren.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Rect\SetRectFromPoints.cs" />
@@ -265,6 +280,7 @@
     <Compile Include="Assets\PlayMaker\Actions\Tween\BaseActions\TweenActionBase.cs" />
     <Compile Include="Assets\PlayMaker\Actions\RenderSettings\EnableFog.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Effects\ParticleSystemPlay.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Networking\NetworkAction\NetworkActionDemo.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Tween\TweenUiPosition.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\GetAnimatorCurrentStateInfoIsName.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\RunFSMAction.cs" />
@@ -279,6 +295,7 @@
     <Compile Include="Assets\PlayMaker\Actions\UI\UiInputFieldActivate.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\BroadcastEvent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Math\SampleCurve.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Networking\NetworkAction\NetworkActions_Debug.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Input\GetKeyUp.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\EventSystem\UiOnCancelEvent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerGetTimeSource.cs" />
@@ -325,6 +342,7 @@
     <Compile Include="Assets\PlayMaker\Actions\SpriteRenderer\SetSpriteColor.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Vector3\SetVector3Value.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Time\GetSystemDateTime.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMWebSocket\Scripts\SocketIO\FM_IO\Parser.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Math\FloatAddMultiple.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Array\ArrayInsert.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Transform\GetPosition2d.cs" />
@@ -351,6 +369,7 @@
     <Compile Include="Assets\2. XRCV_VirtualRoom\Core\FirstPersonCam.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Math\SetFloatValue.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Debug\Assert.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Mapper\AudioDecoder.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Math\IntWrap.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerStartedEvent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\GetAnimatorPivot.cs" />
@@ -362,6 +381,7 @@
     <Compile Include="Assets\PlayMaker\Actions\Animation\CapturePoseAsAnimationClip.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\GetFsmEnum.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\SmoothLookAt2d.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMNetwork\Scripts\FMNetworkManager.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics\GetRaycastHitInfo.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Array\ArrayResize.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerSetTargetMaterialProperty.cs" />
@@ -401,6 +421,7 @@
     <Compile Include="Assets\PlayMaker\Actions\Device\TouchObjectEvent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiImageSetSprite.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\GetAnimatorApplyRootMotion.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Features\DemoScreenshot.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\GetFsmRect.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiTextSetText.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics\FindOverlaps.cs" />
@@ -411,6 +432,7 @@
     <Compile Include="Assets\PlayMaker\Actions\Transform\InverseTransformDirection.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\AddForce2d.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\SetFsmFloat.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Features\GyroController.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Tween\TweenFloat.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Logic\IntCompare.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiSliderSetMinMax.cs" />
@@ -504,6 +526,7 @@
     <Compile Include="Assets\PlayMaker\Actions\UI\UiInputFieldSetText.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\EnableFSM.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics\TriggerEvent.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Features\WebcamManager.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics\IsSleeping.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Input\GetMouseButton.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\GetAnimatorCurrentTransitionInfoIsName.cs" />
@@ -528,6 +551,7 @@
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\GetFsmTexture.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Color\GetColorRGBA.cs" />
     <Compile Include="Assets\2. XRCV_VirtualRoom\Core\OpenXR\InputHandler_OpenXR.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMNetwork\Scripts\Demo\FMNetwork_Demo.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GameObject\GetDistanceXYZ.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\GetAnimatorBoneGameObject.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Array\ArraySet.cs" />
@@ -536,11 +560,13 @@
     <Compile Include="Assets\PlayMaker\Actions\GameObject\ActivateSolo.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerSeekCompletedEvent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiInputFieldGetText.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Networking\NetworkAction\NetworkActionClient.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\RunFSM.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GameObject\SetGameObject.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUI\DrawFullscreenColor.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Vector3\SetVector3XYZ.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\Canvas\UiCanvasGroupSetProperties.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMWebSocket\Scripts\FMWebSocketNetwork_debug.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\GetAnimatorLeftFootBottomHeight.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics\UseGravity.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUI\GUILabel.cs" />
@@ -560,6 +586,7 @@
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerSetSendFrameReadyEvents.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\GetAnimatorIsMatchingTarget.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\GetNextOverlapArea2d.cs" />
+    <Compile Include="Assets\FMETP_STREAM\Common\Scripts\Events\UnityEventClass.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Material\SetMaterial.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerStop.cs" />
     <Compile Include="Assets\PlayMaker\Actions\ScriptControl\CallStaticMethod.cs" />
@@ -591,11 +618,13 @@
     <Compile Include="Assets\PlayMaker\FsmProcessor.cs" />
     <Compile Include="Assets\2. XRCV_VirtualRoom\Core\StartMap\Scripts\Core\UI\StudentTipController.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\SetEventStringData.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMWebSocket\Scripts\SocketIO\FM_IO\Encoder.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\ForwardAllEvents.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Quaternion\QuaternionLookRotation.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Transform\SetRotation.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GameObject\DeactivateSelf.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUI\SetGUIColor.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Features\Interactive\PointerEvents.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Material\SetMaterialColor.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerSetTargetCamera.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Device\TouchEvent.cs" />
@@ -624,11 +653,13 @@
     <Compile Include="Assets\PlayMaker\Actions\Animator\GetAnimatorPlayBackSpeed.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUI\GUITooltip.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Convert\ConvertIntToString.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Features\TargetProjectionMatrix.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\SetWheelJoint2dProperties.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\ScreenPick2d.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Convert\ConvertMaterialToObject.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUILayout\GUILayoutLabel.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiInputFieldSetCharacterLimit.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\EnergySaving\FPSManager.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\EventSystem\UiOnPointerDownEvent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\EasingFunction.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Tween\TweenUiSize.cs" />
@@ -640,6 +671,7 @@
     <Compile Include="Assets\PlayMaker\Actions\GUILayout\UseGUILayout.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Gamepad\GamepadButtonEvents.cs" />
     <Compile Include="Assets\PlayMaker\Actions\PlayerInput\PlayerInputPerformedEvent.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMNetwork\Scripts\FMClient.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerSetTargetTexture.cs" />
     <Compile Include="Assets\PlayMaker\Actions\RenderSettings\SetSkybox.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Camera\SetBackgroundColor.cs" />
@@ -663,8 +695,10 @@
     <Compile Include="Assets\PlayMaker\Actions\SceneManager\Internal\GetSceneActionBase.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\EventSystem\UiOnSelectEvent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Debug\DrawStateLabel.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMWebSocket\Scripts\SocketIO\FM_IO\FMSocketIOManager.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Device\StopLocationServiceUpdates.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Vector3\Vector3Interpolate.cs" />
+    <Compile Include="Assets\FMETP_STREAM\Common\Scripts\Loom.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\GetAnimatorFloat.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\GetAnimatorTarget.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\SetEventData.cs" />
@@ -675,12 +709,13 @@
     <Compile Include="Assets\PlayMaker\Actions\Animator\SetAnimatorFeetPivotActive.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\GetFsmVector2.cs" />
     <Compile Include="Assets\PlayMaker\Actions\AnimateVariables\AnimateVector3.cs" />
-    <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerErrorEvent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Input\GetMouseX.cs" />
+    <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerErrorEvent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\IsFixedAngle2d.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerGetFrameCount.cs" />
     <Compile Include="Assets\PlayMaker\Actions\RectTransform\RectTransformScreenPointToLocalPointInRectangle.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\EventSystem\UiOnPointerExitEvent.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMWebSocket\Scripts\SocketIO\FM_IO\SocketIOException.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiDropDownSetValue.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiScrollbarGetDirection.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Array\ArrayForEach.cs" />
@@ -713,7 +748,9 @@
     <Compile Include="Assets\PlayMaker\Actions\GameObject\DetachChildren.cs" />
     <Compile Include="Assets\PlayMaker\Actions\AnimateVariables\EaseVector3.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Convert\ConvertFloatToString.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Features\Interactive\WorldSpaceButton\OffScreenTrigger.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Device\GetDeviceAcceleration.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Features\Interactive\TouchVisualization.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Convert\ConvertBoolToInt.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GameObject\CreateObject.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animation\AnimationSettings.cs" />
@@ -793,6 +830,7 @@
     <Compile Include="Assets\PlayMaker\Actions\Vector2\Vector2ClampMagnitude.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics\SetJointConnectedBody.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\GetFsmColor.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Features\Interactive\WorldSpaceButton\WorldToScreenSpace.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\SetAnimatorPlayBackSpeed.cs" />
     <Compile Include="Assets\PlayMaker\Actions\RectTransform\RectTransformSetOffsetMax.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Character\ControllerMoveInAir.cs" />
@@ -819,6 +857,7 @@
     <Compile Include="Assets\PlayMaker\Actions\UI\EventSystem\UiOnDropEvent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Quaternion\QuaternionRotateTowards.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\Components\PlayMakerUiEventBase.cs" />
+    <Compile Include="Assets\2. XRCV_VirtualRoom\Core\CanvasGetMainCamera.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiImageSetFillAmount.cs" />
     <Compile Include="Assets\2. XRCV_VirtualRoom\Core\StartMap\Scripts\Core\Main\StarMapRotate.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Character\GetControllerCollisionFlags.cs" />
@@ -891,6 +930,7 @@
     <Compile Include="Assets\PlayMaker\Actions\RectTransform\RectTransformGetAnchorMin.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Vector2\Vector2Lerp.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Effects\Flicker.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\EnergySaving\EnergySavingManager.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\Components\PlayMakerUiIntValueChangedEvent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Vector2\SetVector2Value.cs" />
     <Compile Include="Assets\PlayMaker\Actions\SceneManager\GetScenePath.cs" />
@@ -929,6 +969,7 @@
     <Compile Include="Assets\PlayMaker\Actions\ScriptControl\StartCoroutine.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Vector3\GetVectorLength.cs" />
     <Compile Include="Assets\PlayMaker\Actions\SceneManager\GetSceneIsValid.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMWebSocket\Scripts\SocketIO\FM_Packet\SocketPacketType.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiButtonArray.cs" />
     <Compile Include="Assets\PlayMaker\Actions\PlayerPrefs\PlayerPrefsSaveVariable.cs" />
     <Compile Include="Assets\PlayMaker\Actions\String\FormatString.cs" />
@@ -957,6 +998,7 @@
     <Compile Include="Assets\PlayMaker\Actions\SceneManager\AllowSceneActivation.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Math\FloatOperator.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Character\GetControllerHitInfo.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Mapper\FMPCStreamDecoder.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\GotoPreviousState.cs" />
     <Compile Include="Assets\PlayMaker\Actions\PlayerPrefs\PlayerPrefsGetString.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics\GetTriggerInfo.cs" />
@@ -988,7 +1030,9 @@
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\NextFrameEvent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\MovePosition2d.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics\CollisionEvent.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Networking\NetworkAction\NetworkActionServer.cs" />
     <Compile Include="Assets\MRTK\SDK\Experimental\NonNativeKeyboard\Scripts\KeyboardKeyFunc.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Networking\NetworkDiscovery.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Array\GetFsmArray.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Array\ArrayTransferValue.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Level\LoadLevel.cs" />
@@ -1006,6 +1050,7 @@
     <Compile Include="Assets\PlayMaker\Actions\GUIElement\SetGUIText.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Vector3\Vector3Operator.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Vector3\Vector3ClampMagnitude.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Mapper\MicEncoder.cs" />
     <Compile Include="Assets\PlayMaker\Actions\SceneManager\MergeScenes.cs" />
     <Compile Include="Assets\PlayMaker\Actions\ProceduralMaterial\RebuildTextures.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\GetNextRayCast2d.cs" />
@@ -1018,6 +1063,7 @@
     <Compile Include="Assets\PlayMaker\Actions\Math\IntClamp.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Character\ControllerJump.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Material\SetVisibility.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMWebSocket\Scripts\SocketIO\FM_Packet\EnginePacketType.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Physics2D\IsKinematic2d.cs" />
     <Compile Include="Assets\PlayMaker\Actions\SceneManager\SendActiveSceneChangedEvent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerGetIsPlaying.cs" />
@@ -1045,6 +1091,7 @@
     <Compile Include="Assets\PlayMaker\Actions\Vector3\Vector3PerSecond.cs" />
     <Compile Include="Assets\MRTK\SDK\Experimental\NonNativeKeyboard\Scripts\SymbolDisableHighlight.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUILayout\GUILayoutBeginHorizontal.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMNetwork\Scripts\Demo\FMNetwork_DemoAnimation.cs" />
     <Compile Include="Assets\PlayMaker\Actions\PlayerInput\PlayerInputButtonEvents.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Character\ControllerSimpleMove.cs" />
     <Compile Include="Assets\PlayMaker\Actions\PlayerPrefs\PlayerPrefsLoadVariable.cs" />
@@ -1060,18 +1107,22 @@
     <Compile Include="Assets\PlayMaker\Actions\Vector3\Vector3Lerp.cs" />
     <Compile Include="Assets\PlayMaker\Actions\RectTransform\RectTransformSetAnchoredPosition.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUILayout\GUILayoutFloatLabel.cs" />
+    <Compile Include="Assets\Scripts\react.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\UiRebuild.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Rect\RectOverlaps.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerGetUrl.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Lights\SetLightRange.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Color\ColorInterpolate.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\EventSystem\UiOnSubmitEvent.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMWebSocket\Scripts\SocketIO\FM_IO\SocketIOComponentWebGL.cs" />
     <Compile Include="Assets\PlayMaker\Actions\UI\Selectable\UiGetBlockColor.cs" />
     <Compile Include="Assets\PlayMaker\Actions\PlayerInput\PlayerInputEnableActionMap.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Device\GetTouchInfo.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMNetwork\Scripts\FMServer.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Audio\SetGameVolume.cs" />
     <Compile Include="Assets\PlayMaker\Actions\RectTransform\RectTransformGetOffsetMax.cs" />
     <Compile Include="Assets\PlayMaker\Actions\RectTransform\RectTransformSetLocalRotation.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Mapper\AudioEncoder.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Logic\FloatCompare.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Input\GetButtonUp.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Camera\SetCameraFOV.cs" />
@@ -1088,6 +1139,7 @@
     <Compile Include="Assets\PlayMaker\Actions\Array\ArraySort.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUILayout\GUILayoutConfirmPasswordField.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Input\GetMouseY.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMWebSocket\Scripts\SocketIO\FM_IO\SocketIOComponent.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Audio\PlaySound.cs" />
     <Compile Include="Assets\PlayMaker\Actions\VideoPlayer\VideoPlayerStepForward.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Quaternion\QuaternionCompare.cs" />
@@ -1110,6 +1162,7 @@
     <Compile Include="Assets\PlayMaker\Actions\RectTransform\RectTransformSetScreenRectFromPoints.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Audio\SetAudioPitch.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Time\GetTimeInfo.cs" />
+    <Compile Include="Assets\FMETP_STREAM\FMWebSocket\Scripts\SocketIO\FM_IO\Decoder.cs" />
     <Compile Include="Assets\PlayMaker\Actions\StateMachine\GetEventFloatData.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Input\AnyKey.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\SetAnimatorTrigger.cs" />
@@ -1146,59 +1199,7 @@
     <Compile Include="Assets\PlayMaker\Actions\UI\EventSystem\EventTriggerActionBase.cs" />
     <Compile Include="Assets\PlayMaker\Actions\GUIElement\SetGUITextureColor.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Debug\DebugInt.cs" />
-    <Compile Include="Assets\FMETP_STREAM\Common\Scripts\Events\UnityEventClass.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Mapper\AudioDecoder.cs" />
-    <Compile Include="Assets\FMETP_STREAM\Common\Scripts\Loom.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMNetwork\Scripts\Demo\FMNetwork_Demo.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMWebSocket\Scripts\SocketIO\FM_Packet\Packet.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Features\DemoObjectAnimation.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMNetwork\Scripts\LargeFileEncoder.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Mapper\FMPCStreamEncoder.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Networking\NetworkAction\NetworkActions_Debug.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Networking\ConnectionDebugText.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Features\SceneManager_helper.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMWebSocket\Scripts\SocketIO\FM_Packet\EnginePacketType.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Mapper\FMPCStreamDecoder.cs" />
-    <Compile Include="Assets\Scripts\react.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMNetwork\Scripts\LargeFileDecoder.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Features\Interactive\WorldSpaceButton\OffScreenTrigger.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Features\Interactive\PointerEvents.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Features\Interactive\TouchVisualization.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Features\DemoScreenshot.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Networking\NetworkAction\NetworkActionDemo.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMWebSocket\Scripts\SocketIO\FM_Event\Ack.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMWebSocket\Scripts\SocketIO\FM_IO\SocketIOComponent.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Mapper\MicEncoder.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMNetwork\Scripts\Demo\FMNetwork_DemoAnimation.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Features\TargetProjectionMatrix.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMWebSocket\Scripts\SocketIO\FM_Event\SocketIOEvent.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMNetwork\Scripts\FMNetworkManager.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMWebSocket\Scripts\SocketIO\FM_IO\SocketIOComponentWebGL.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Mapper\GameViewEncoder.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Features\Interactive\WorldSpaceButton\WorldToScreenSpace.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Networking\NetworkAction\NetworkActionServer.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Mapper\TextureEncoder.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMNetwork\Scripts\FMClient.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMWebSocket\Scripts\SocketIO\FM_IO\SocketIOException.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Networking\NetworkDiscovery.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Features\WebcamManager.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Mapper\GameViewDecoder.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Features\GyroController.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\EnergySaving\EnergySavingManager.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Networking\NetworkAction\NetworkActionClient.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMWebSocket\Scripts\SocketIO\FM_Packet\SocketPacketType.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMNetwork\Scripts\FMServer.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMWebSocket\Scripts\SocketIO\FM_IO\Decoder.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMWebSocket\Scripts\SocketIO\FM_IO\Parser.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\EnergySaving\FPSManager.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Mapper\AudioEncoder.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Features\FillCameraBackground.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMWebSocket\Scripts\SocketIO\FM_IO\Encoder.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMWebSocket\Scripts\SocketIO\FM_IO\FMSocketIOManager.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMCore\Scripts\Features\Interactive\ZoomManager.cs" />
-    <Compile Include="Assets\FMETP_STREAM\FMWebSocket\Scripts\FMWebSocketNetwork_debug.cs" />
-    <Compile Include="Assets\2. XRCV_VirtualRoom\Core\FMETP\SetRenderCameraParent.cs" />
-    <Compile Include="Assets\2. XRCV_VirtualRoom\Core\CanvasGetMainCamera.cs" />
+    <Compile Include="Assets\2. XRCV_VirtualRoom\Core\HTCButtonController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Oculus\VR\Plugins\1.72.0\Win64OpenXR\OVRPlugin.dll" />
@@ -1508,6 +1509,9 @@
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.29f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
+    <Reference Include="FMDesktopWrapper">
+      <HintPath>Assets\FMETP_STREAM\FMCore\Plugins\FMDesktop\FMDesktopWrapper.dll</HintPath>
+    </Reference>
     <Reference Include="Sirenix.OdinInspector.Attributes">
       <HintPath>Assets\Plugins\Sirenix\Assemblies\Sirenix.OdinInspector.Attributes.dll</HintPath>
     </Reference>
@@ -1532,26 +1536,23 @@
     <Reference Include="Sirenix.Serialization">
       <HintPath>Assets\Plugins\Sirenix\Assemblies\Sirenix.Serialization.dll</HintPath>
     </Reference>
-    <Reference Include="ConditionalExpression">
-      <HintPath>Assets\PlayMaker\ConditionalExpression.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.OdinInspector.Editor">
-      <HintPath>Assets\Plugins\Sirenix\Assemblies\Sirenix.OdinInspector.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="PlayMaker">
-      <HintPath>Assets\Plugins\PlayMaker\PlayMaker.dll</HintPath>
-    </Reference>
-    <Reference Include="FMDesktopWrapper">
-      <HintPath>Assets\FMETP_STREAM\FMCore\Plugins\FMDesktop\FMDesktopWrapper.dll</HintPath>
-    </Reference>
     <Reference Include="websocket-sharp">
       <HintPath>Assets\FMETP_STREAM\FMWebSocket\Plugins\WebsocketSharp\websocket-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="ConditionalExpression">
+      <HintPath>Assets\PlayMaker\ConditionalExpression.dll</HintPath>
     </Reference>
     <Reference Include="FMSharpZip">
       <HintPath>Assets\FMETP_STREAM\FMCore\Plugins\FMZip\FMSharpZip.dll</HintPath>
     </Reference>
     <Reference Include="FMTurbojpegWrapper">
       <HintPath>Assets\FMETP_STREAM\FMCore\Plugins\FMTurboJpeg\FMTurboJpegWrapper\FMTurbojpegWrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.OdinInspector.Editor">
+      <HintPath>Assets\Plugins\Sirenix\Assemblies\Sirenix.OdinInspector.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="PlayMaker">
+      <HintPath>Assets\Plugins\PlayMaker\PlayMaker.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.29f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -1958,6 +1959,9 @@
     <Reference Include="Unity.ProBuilder">
       <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
+      <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
@@ -1978,9 +1982,6 @@
     </Reference>
     <Reference Include="Unity.EditorCoroutines.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
-      <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.CoreUtils.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.XR.CoreUtils.Editor.dll</HintPath>
