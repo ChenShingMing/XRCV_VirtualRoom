@@ -5,7 +5,7 @@ using System;
 using Sirenix.OdinInspector;
 
 
-public class StarMapController : MonoBehaviour
+public class StarMapController : TMControllerBase
 {
     public static StarMapController ins;
 
@@ -70,7 +70,7 @@ public class StarMapController : MonoBehaviour
     #region Public Method
 
     [Button]
-    public void TriggerControlCanvas()
+    public override void TriggerControlCanvas()
     {
         controlCanvasManager.Trigger();
     }
