@@ -16,7 +16,8 @@ public class InputHandler_PC : InputHandler
         //課程選單鍵
         if (Input.GetKeyDown(KeyCode.O))
         {
-            StarMapController.ins.TriggerControlCanvas();
+            TMControllerBase.instance.TriggerControlCanvas();
+            //StarMapController.ins.TriggerControlCanvas();
         }
 
         //轉視角

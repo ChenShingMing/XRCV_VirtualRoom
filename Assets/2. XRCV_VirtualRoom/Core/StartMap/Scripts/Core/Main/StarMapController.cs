@@ -49,6 +49,7 @@ public class StarMapController : TMControllerBase
 
     private void OnEnable()
     {
+        instance = this;
         starMapControlData.OnInit();
         Invoke("starMapControlData.SetPanoramicPhoto", 0.5f);
     }

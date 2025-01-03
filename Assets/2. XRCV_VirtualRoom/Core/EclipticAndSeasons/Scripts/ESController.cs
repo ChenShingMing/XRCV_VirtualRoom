@@ -66,6 +66,12 @@ public class ESController : TMControllerBase
     [OnValueChanged("SetSeasonCamPosEditor")]
     public SeasonsCamPos seasonsCamPos = SeasonsCamPos.Default;
 
+    private Vector3 pcCamRootInitPos;
+    private Quaternion pcCamRootInitRot;
+    private Vector3 openXRCamRootInitPos;
+    private Quaternion openXRCamRootInitRot;
+
+
     private Material defaultSkyBox;
 
     #region MonoBehavior
@@ -77,11 +83,19 @@ public class ESController : TMControllerBase
             ins = this;
         }
 
+        pcCamRootInitPos = pcCamRoot.position;
+        pcCamRootInitRot = pcCamRoot.rotation;
+
+        openXRCamRootInitPos = openXRCamRoot.position;
+        openXRCamRootInitRot = openXRCamRoot.rotation;
+
         defaultSkyBox = RenderSettings.skybox;
     }
 
     private void OnEnable()
     {
+        instance = this;
+
         RenderSettings.skybox = mySkyBoxMat;
         desplayMode = DesplayMode.Ecliptic;
         seasonsCamPos = SeasonsCamPos.Default;
@@ -92,6 +106,12 @@ public class ESController : TMControllerBase
 
     private void OnDisable()
     {
+        pcCamRoot.position = pcCamRootInitPos;
+        pcCamRoot.rotation = pcCamRootInitRot;
+
+        openXRCamRoot.position = openXRCamRootInitPos;
+        openXRCamRoot.rotation = openXRCamRootInitRot;
+
         RenderSettings.skybox = defaultSkyBox;
     }
 
