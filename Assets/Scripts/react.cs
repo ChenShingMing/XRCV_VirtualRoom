@@ -10,8 +10,14 @@ public class react : MonoBehaviour
     public static int pairLabel = 1001;
     public static string localIP;
     public static bool isConnected = false;
-    public GameObject ShowWarnObj;
-    public Text ShowIP;
+
+    
+    public List<GameObject> ShowWarnObj;
+    public List<Text> ShowIP;
+
+
+
+
     private bool isSend = false;
     private string StudentIP;
     private int ScreenHeight, ScreenWidth;
@@ -31,8 +37,17 @@ public class react : MonoBehaviour
         sendScreenW = 512;
         sendScreenH = 288;
         isSend = false;
-        ShowWarnObj.SetActive(false);
-        ShowIP.text = "";
+
+        for (int i = 0; i < ShowWarnObj.Count; i++)
+        {
+            ShowWarnObj[i].SetActive(false);
+        }
+
+        for (int j = 0; j < ShowIP.Count; j++)
+        {
+            ShowIP[j].text = "";
+        }
+
     }
 
     // Update is called once per frame
@@ -54,12 +69,21 @@ public class react : MonoBehaviour
         string[] sData;
         //Debug.Log("Received Data: " + _string);
         sData = _string.Split(' ');
+        
+        
         if(IPShowCheck == 0)
         {
             IPShowCheck = 1;
-            ShowIP.text = StudentIP;
+
+            for (int j = 0; j < ShowIP.Count; j++)
+            {
+                ShowIP[j].text = StudentIP;
+            }
 
         }
+
+
+
         if (sData[0] == "screen1")
         {
             //SenderObj.SetActive(true);
@@ -123,18 +147,32 @@ public class react : MonoBehaviour
         }
         else if (sData[0] == "Open1")
         {
-            ShowWarnObj.SetActive(true);
+
+            for (int i = 0; i < ShowWarnObj.Count; i++)
+            {
+                ShowWarnObj[i].SetActive(true);
+            }
+
         } else if (sData[0] == "Close1")
         {
-            ShowWarnObj.SetActive(false);
+            for (int i = 0; i < ShowWarnObj.Count; i++)
+            {
+                ShowWarnObj[i].SetActive(false);
+            }
         }
         else if (sData[0] == "Open2")
         {
-            ShowWarnObj.SetActive(true);
+            for (int i = 0; i < ShowWarnObj.Count; i++)
+            {
+                ShowWarnObj[i].SetActive(true);
+            }
         }
         else if (sData[0] == "Close2")
         {
-            ShowWarnObj.SetActive(false);
+            for (int i = 0; i < ShowWarnObj.Count; i++)
+            {
+                ShowWarnObj[i].SetActive(false);
+            }
         }
 
     }

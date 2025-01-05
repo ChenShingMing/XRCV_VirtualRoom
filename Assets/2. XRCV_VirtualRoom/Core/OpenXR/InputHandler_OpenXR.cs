@@ -74,7 +74,7 @@ public class InputHandler_OpenXR : InputHandler
         //教材控制器選單
         if (menuAction.WasReleasedThisFrame())
         {
-            StarMapController.ins.TriggerControlCanvas();
+            TMControllerBase.instance.TriggerControlCanvas();
         }
 
     }
