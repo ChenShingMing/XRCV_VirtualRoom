@@ -10,7 +10,8 @@ public class AlignPosToController : MonoBehaviour
 
     private void OnEnable()
     {
-        align.transform.position = InputHandler_OpenXR.ins.leftHandPositionActionRef.action.ReadValue<Vector3>() + offset;
+        if(InputHandler_OpenXR.ins != null)
+            align.transform.position = InputHandler_OpenXR.ins.leftHandPositionActionRef.action.ReadValue<Vector3>() + offset;
     }
 
     // Update is called once per frame

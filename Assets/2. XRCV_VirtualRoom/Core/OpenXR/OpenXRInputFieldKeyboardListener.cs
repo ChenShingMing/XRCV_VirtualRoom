@@ -21,6 +21,7 @@ public class OpenXRInputFieldKeyboardListener : MonoBehaviour
 
         foreach (TMP_InputField inputField in inputFields)
         {
+            inputField.shouldHideSoftKeyboard = true;
             // 為每個 InputField 註冊 OnSelect 事件，當被選擇時呼叫 ShowVirtualKeyboard
             inputField.onSelect.AddListener(x=> OpenKeyboard(inputField));
         }
