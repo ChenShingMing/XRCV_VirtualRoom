@@ -23,8 +23,14 @@ public class StarMapHUDController : MonoBehaviour
 
     private void Awake()
     {
-        ins = this;
+        if (ins == null)
+            ins = this;
         canvasRT = GetComponent<RectTransform>();
+    }
+
+    private void OnDestroy()
+    {
+        if (ins == this) ins = null;
     }
     // Use this for initialization
     void Start() 

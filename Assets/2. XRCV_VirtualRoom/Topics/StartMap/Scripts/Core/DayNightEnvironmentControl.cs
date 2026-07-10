@@ -18,12 +18,15 @@ public class DayNightEnvironmentControl : MonoBehaviour
 
     private void Awake()
     {
-        if(ins == null)
-        {
+        if (ins == null)
             ins = this;
-        }
 
         defaultSkyBox = RenderSettings.skybox;
+    }
+
+    private void OnDestroy()
+    {
+        if (ins == this) ins = null;
     }
 
     private void OnEnable()

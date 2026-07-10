@@ -856,7 +856,6 @@
     <Compile Include="Assets\PlayMaker\Actions\SceneManager\GetSceneRootGameObjects.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Animator\GetAnimatorDelta.cs" />
     <Compile Include="Assets\Panoramic\Scripts\PanoramicManager.cs" />
-    <Compile Include="Assets\2. XRCV_VirtualRoom\Core\Oculus\InputHandler_OVR.cs" />
     <Compile Include="Assets\PlayMaker\Actions\Logic\BoolAllTrue.cs" />
     <Compile Include="Assets\VirtualRoomPlugIn\1. VirtualRoom\Core\UI\Rename.cs" />
     <Compile Include="Assets\PlayMaker\Actions\SceneManager\UnloadSceneAsynch.cs" />

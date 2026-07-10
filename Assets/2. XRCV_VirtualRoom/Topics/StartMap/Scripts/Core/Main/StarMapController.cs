@@ -42,9 +42,12 @@ public class StarMapController : MonoBehaviour
     private void Awake()
     {
         if (ins == null)
-        {
             ins = this;
-        }
+    }
+
+    private void OnDestroy()
+    {
+        if (ins == this) ins = null;
     }
 
     private void OnEnable()
