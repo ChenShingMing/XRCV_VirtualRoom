@@ -1,14 +1,21 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ZodiacsController : MonoBehaviour 
+public class ZodiacsController : MonoBehaviour
 {
     public CreateHipHierarchy createHipHierarchy;
 
-    // Update is called once per frame
-    void FixedUpdate () 
+    [Tooltip("星座可見性更新間隔（秒）")]
+    public float checkInterval = 0.1f;
+
+    private float _timer = 0f;
+
+    void Update()
     {
+        _timer += Time.deltaTime;
+        if (_timer < checkInterval) return;
+        _timer = 0f;
         CheckAllZodiacsStatus();
     }
 
@@ -18,8 +25,8 @@ public class ZodiacsController : MonoBehaviour
         {
             Vector3 pos = Camera.main.WorldToViewportPoint(createHipHierarchy.zodiac_Datas[i].world_transform.position);
 
-            if (pos.x < 0.8 && pos.x > 0.2
-                && pos.y < 0.9 && pos.y > 0.1)
+            if (pos.x < 0.8f && pos.x > 0.2f
+                && pos.y < 0.9f && pos.y > 0.1f)
             {
                 createHipHierarchy.OpenZodiac(createHipHierarchy.zodiac_Datas[i]);
             }
@@ -29,5 +36,4 @@ public class ZodiacsController : MonoBehaviour
             }
         }
     }
-    
 }
