@@ -1,81 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
+// P1: Quest 已改為 OpenXR 路徑（見 PlatformBuilder.SwitchToQuestForAndroid），
+// 此 InputHandler 不再使用。保留類別殼以避免場景中 Input_OVR (inactive) 的 Missing Script 警告。
+// 待確認 Input_OVR GameObject 可從場景移除後，整個檔案可一併刪除。
+[System.Obsolete("Quest 已使用 InputHandler_OpenXR，此類別不再有效")]
 public class InputHandler_OVR : InputHandler
 {
-    /*
-    public static OVRCameraRig m_CameraRig;
-
-    private void Start()
-    {
-        InputHandler_OVR.m_CameraRig = FindObjectOfType<OVRCameraRig>();
-    }
-
-
-    public static Quaternion GetControllerRotation()
-    {
-        return InputHandler_OVR.m_CameraRig.rightControllerAnchor.rotation;
-    }
-
-    public override void InputHandle()
-    {
-        //主選單
-        if (OVRInput.GetUp(OVRInput.Button.Start))
-        {
-            ClassroomManager.ins.inputActionManager.TriggerMainMenu();
-        }
-
-        //教材控制器選單
-        if (OVRInput.GetUp(OVRInput.Button.SecondaryHandTrigger))
-        {
-            ClassroomManager.ins.inputActionManager.TriggerMenu();
-        }
-
-        //送出鍵，放提示點
-        if (!LaserScalePointer.isHitTarget)
-        {
-            if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
-            {
-                //Debug.Log("GetMouseButtonDown");
-                ClassroomManager.ins.inputActionManager.OnSubmitDownTrigger(InputHandler_OVR.m_CameraRig.rightControllerAnchor.rotation);
-            }
-            if (OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger))
-            {
-                //Debug.Log("GetMouseButton");
-                ClassroomManager.ins.inputActionManager.OnSubmitTrigger(InputHandler_OVR.m_CameraRig.rightControllerAnchor.rotation);
-            }
-            if (OVRInput.GetUp(OVRInput.Button.SecondaryIndexTrigger))
-            {
-                //Debug.Log("GetMouseButtonUp");
-                ClassroomManager.ins.inputActionManager.OnSubmitUpTrigger(InputHandler_OVR.m_CameraRig.rightControllerAnchor.rotation);
-            }
-        }
-
-        if (OVRInput.Get(OVRInput.Button.PrimaryHandTrigger))
-        {
-            ClassroomManager.ins.inputActionManager.SetPenPode(true);
-        }
-        else
-        {
-            ClassroomManager.ins.inputActionManager.SetPenPode(false);
-        }
-    }
-
-    public override Vector3 GetInputPointerOnGazeSphere()
-    {
-        return GazeSphere.RayHitOnSphere(new Ray(Camera.main.transform.position,
-                                    GetControllerRotation() * Vector3.forward));
-    }
-    */
-    public override Vector3 GetInputPointerOnGazeSphere()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public override void InputHandle()
-    {
-        throw new System.NotImplementedException();
-    }
+    public override Vector3 GetInputPointerOnGazeSphere() => throw new System.NotSupportedException();
+    public override void InputHandle() => throw new System.NotSupportedException();
 }

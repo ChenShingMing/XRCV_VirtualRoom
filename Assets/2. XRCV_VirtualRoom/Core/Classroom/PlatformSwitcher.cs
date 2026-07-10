@@ -9,7 +9,8 @@ public class PlatformSwitcher : SerializedMonoBehaviour
     public enum Platform
     {
         PC,
-        OpenXR
+        OpenXR,
+        Quest   // Quest 目前共用 OpenXR 的 PlatformSetting，保留 enum 供未來獨立配置
     }
 
     [FoldoutGroup("物件設置")]
@@ -47,29 +48,25 @@ public class PlatformSwitcher : SerializedMonoBehaviour
 
     public void OnSwitchToOculus()
     {
-        // Oculus 切換邏輯
-        Debug.Log("PlatformSwitcher Switched to Oculus.");
-        platform = Platform.OpenXR;
+        Debug.Log("PlatformSwitcher Switched to Quest.");
+        platform = Platform.Quest;
         SwitchPlatform();
     }
 
 
     void SwitchPlatform()
     {
+        // Quest 目前沒有獨立設置，共用 OpenXR PlatformSetting
+        Platform key = (platform == Platform.Quest && !platformSwitchSettings.ContainsKey(Platform.Quest))
+            ? Platform.OpenXR
+            : platform;
 
-        classroomManager.mainUICanvas_Current = platformSwitchSettings[platform].mainUIGameObject;
-        classroomManager.inputActionManager.SetCurrentInputHandler(platformSwitchSettings[platform].inputHandler);
+        classroomManager.mainUICanvas_Current = platformSwitchSettings[key].mainUIGameObject;
+        classroomManager.inputActionManager.SetCurrentInputHandler(platformSwitchSettings[key].inputHandler);
 
-        foreach (KeyValuePair<Platform, PlatformSetting> settins in platformSwitchSettings)
+        foreach (KeyValuePair<Platform, PlatformSetting> setting in platformSwitchSettings)
         {
-            if (settins.Key == platform)
-            {
-                settins.Value.SetEnable(true);
-            }
-            else
-            {
-                settins.Value.SetEnable(false);
-            }
+            setting.Value.SetEnable(setting.Key == key);
         }
 
         Debug.Log("Switch To " + platform.ToString());

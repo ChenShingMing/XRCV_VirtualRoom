@@ -9,6 +9,9 @@ public class StarMapTopicController : TopicController
     public StarMapController starMapController;
     private StarMapTopicData selfStarMapTopicData = new StarMapTopicData();
 
+    // 單一同步 key：topic名稱 + 固定標識 + sender名稱
+    private string SyncKey(string senderName) => topic.topicName + "_starMapData_" + senderName;
+
     #region MonoBehavior
 
     public override void OnEnable()
@@ -22,7 +25,6 @@ public class StarMapTopicController : TopicController
         base.OnDisable();
     }
 
-
     #endregion
 
     void SetSelfStarMapTopicData()
@@ -32,76 +34,43 @@ public class StarMapTopicController : TopicController
 
     void SetStarMapControlData()
     {
-        starMapController.starMapControlData.graticule = selfStarMapTopicData.graticule;
-        starMapController.starMapControlData.linkLine = selfStarMapTopicData.linkLine;
-        starMapController.starMapControlData.nameAndModel = selfStarMapTopicData.nameAndModel;
-
-        starMapController.starMapControlData.Year = selfStarMapTopicData.Year;
-        starMapController.starMapControlData.Month = selfStarMapTopicData.Month;
-        starMapController.starMapControlData.Day = selfStarMapTopicData.Day;
-        starMapController.starMapControlData.Hour = selfStarMapTopicData.Hour;
-        starMapController.starMapControlData.rotateSpeed = selfStarMapTopicData.rotateSpeed;
-
-        starMapController.starMapControlData.usePanoramic = selfStarMapTopicData.usePanoramic;
-        starMapController.starMapControlData.currentlocalicationIndex = selfStarMapTopicData.currentlocalicationIndex;
-        starMapController.starMapControlData.currentLocalicationName = selfStarMapTopicData.currentLocalicationName;
-        starMapController.starMapControlData.latitude = selfStarMapTopicData.latitude;
-        starMapController.starMapControlData.longitude = selfStarMapTopicData.longitude;
+        selfStarMapTopicData.ApplyTo(starMapController.starMapControlData);
     }
 
     #region TopicController
 
     public override void SendTopicControllerProperties()
     {
+        // 13 個欄位打包成單一 JSON，減少 Photon 封包數
+        var snapshot = new StarMapTopicData();
+        snapshot.SetData(starMapController.starMapControlData);
+
         props.Clear();
-
-        props.Add(topic.topicName + "_starMapControlData_graticule_" + Player.localPlayer.playerName, this.starMapController.starMapControlData.graticule);
-        props.Add(topic.topicName + "_starMapControlData_linkLine_" + Player.localPlayer.playerName, this.starMapController.starMapControlData.linkLine);
-        props.Add(topic.topicName + "_starMapControlData_nameAndModel_" + Player.localPlayer.playerName, this.starMapController.starMapControlData.nameAndModel);
-        props.Add(topic.topicName + "_starMapControlData_Year_" + Player.localPlayer.playerName, this.starMapController.starMapControlData.Year);
-        props.Add(topic.topicName + "_starMapControlData_Month_" + Player.localPlayer.playerName, this.starMapController.starMapControlData.Month);
-        props.Add(topic.topicName + "_starMapControlData_Day_" + Player.localPlayer.playerName, this.starMapController.starMapControlData.Day);
-        props.Add(topic.topicName + "_starMapControlData_Hour_" + Player.localPlayer.playerName, this.starMapController.starMapControlData.Hour);
-        props.Add(topic.topicName + "_starMapControlData_rotateSpeed_" + Player.localPlayer.playerName, this.starMapController.starMapControlData.rotateSpeed);
-        props.Add(topic.topicName + "_starMapControlData_usePanoramic_" + Player.localPlayer.playerName, this.starMapController.starMapControlData.usePanoramic);
-        props.Add(topic.topicName + "_starMapControlData_currentlocalicationIndex_" + Player.localPlayer.playerName, this.starMapController.starMapControlData.currentlocalicationIndex);
-        props.Add(topic.topicName + "_starMapControlData_currentLocalicationName_" + Player.localPlayer.playerName, this.starMapController.starMapControlData.currentLocalicationName);
-        props.Add(topic.topicName + "_starMapControlData_latitude_" + Player.localPlayer.playerName, this.starMapController.starMapControlData.latitude);
-        props.Add(topic.topicName + "_starMapControlData_longitude_" + Player.localPlayer.playerName, this.starMapController.starMapControlData.longitude);
-        
-
+        props.Add(SyncKey(Player.localPlayer.playerName), JsonUtility.ToJson(snapshot));
         PhotonNetwork.CurrentRoom.SetCustomProperties(props);
     }
 
     public override void UpdateTopicControllerProperties()
     {
-        ExitGames.Client.Photon.Hashtable temp = PhotonNetwork.CurrentRoom.CustomProperties;
-        
-        this.starMapController.starMapControlData.graticule = (bool)temp[topic.topicName + "_starMapControlData_graticule_" + topic.syncSenderName];
-        this.starMapController.starMapControlData.linkLine = (bool)temp[topic.topicName + "_starMapControlData_linkLine_" + topic.syncSenderName];
-        this.starMapController.starMapControlData.nameAndModel = (bool)temp[topic.topicName + "_starMapControlData_nameAndModel_" + topic.syncSenderName];
-        this.starMapController.starMapControlData.Year = (int)temp[topic.topicName + "_starMapControlData_Year_" + topic.syncSenderName];
-        this.starMapController.starMapControlData.Month = (int)temp[topic.topicName + "_starMapControlData_Month_" + topic.syncSenderName];
-        this.starMapController.starMapControlData.Day = (int)temp[topic.topicName + "_starMapControlData_Day_" + topic.syncSenderName];
-        this.starMapController.starMapControlData.Hour = (int)temp[topic.topicName + "_starMapControlData_Hour_" + topic.syncSenderName];
-        this.starMapController.starMapControlData.rotateSpeed = (float)temp[topic.topicName + "_starMapControlData_rotateSpeed_" + topic.syncSenderName];
-        this.starMapController.starMapControlData.usePanoramic = (bool)temp[topic.topicName + "_starMapControlData_usePanoramic_" + topic.syncSenderName];
-        this.starMapController.starMapControlData.currentlocalicationIndex = (int)temp[topic.topicName + "_starMapControlData_currentlocalicationIndex_" + topic.syncSenderName];
-        this.starMapController.starMapControlData.currentLocalicationName = (string)temp[topic.topicName + "_starMapControlData_currentLocalicationName_" + topic.syncSenderName];
-        this.starMapController.starMapControlData.latitude = (float)temp[topic.topicName + "_starMapControlData_latitude_" + topic.syncSenderName];
-        this.starMapController.starMapControlData.longitude = (float)temp[topic.topicName + "_starMapControlData_longitude_" + topic.syncSenderName];
+        string key = SyncKey(topic.syncSenderName);
+        var temp = PhotonNetwork.CurrentRoom.CustomProperties;
+
+        if (!temp.ContainsKey(key)) return;
+
+        var snapshot = JsonUtility.FromJson<StarMapTopicData>((string)temp[key]);
+        snapshot.ApplyTo(starMapController.starMapControlData);
     }
 
     public override void OnSwitchTeachingToGuidance()
     {
         selfStarMapTopicData.SetData(starMapController.starMapControlData);
-        Debug.Log("�������ɾǼҦ��A�������escore");
+        Debug.Log("切換到導學模式，儲存當前星圖狀態");
     }
 
     public override void OnSwitchTeachingToSelfStudy()
     {
         SetStarMapControlData();
-        Debug.Log("�������۾ǼҦ��A��_score�ܤW���۾Ǯ�");
+        Debug.Log("切換到自學模式，還原自學狀態");
     }
 
     #endregion
