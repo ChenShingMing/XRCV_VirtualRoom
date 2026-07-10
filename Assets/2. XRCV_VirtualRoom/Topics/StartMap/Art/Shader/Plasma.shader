@@ -90,7 +90,8 @@ Shader "Ultimate 10+ Shaders/Plasma"
             alphaPixel = tex2D (_NoiseTex, IN.uv_NoiseTex);
             
             pixel = tex2D (_MainTex, IN.uv_MainTex) * _Color * alphaPixel.r;
-            o.Albedo = pixel.rgb;
+            o.Albedo = 0;
+            o.Emission = pixel.rgb;
 
             o.Normal = tex2D(_Normal, IN.uv_Normal);
             
