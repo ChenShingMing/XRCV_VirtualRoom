@@ -18,14 +18,15 @@ public class StarMapHUDController : MonoBehaviour
 
     public static StarMapHUDController ins;
     RectTransform canvasRT;
-    List<Zodiac_name_info> zodiac_name_infoList =new List<Zodiac_name_info>();
-
+    List<Zodiac_name_info> zodiac_name_infoList = new List<Zodiac_name_info>();
+    private Camera _mainCamera;
 
     private void Awake()
     {
         if (ins == null)
             ins = this;
         canvasRT = GetComponent<RectTransform>();
+        _mainCamera = Camera.main;
     }
 
     private void OnDestroy()
@@ -102,7 +103,7 @@ public class StarMapHUDController : MonoBehaviour
                zodiac_name_infoList[i].zodiac_Data.world_transform.position,
                textLerpSpeed * Time.deltaTime);
 
-           zodiac_name_infoList[i].obj.transform.forward = Camera.main.transform.forward;
+           zodiac_name_infoList[i].obj.transform.forward = _mainCamera.transform.forward;
          
         }
     }

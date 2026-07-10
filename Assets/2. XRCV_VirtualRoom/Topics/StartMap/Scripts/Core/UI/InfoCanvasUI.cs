@@ -6,39 +6,51 @@ using Sirenix.OdinInspector;
 
 public class InfoCanvasUI : MonoBehaviour
 {
-    [FoldoutGroup("ª«¥ó³]¸m")]
+    [FoldoutGroup("ç‰©ä»¶è¨­ç½®")]
     public StarMapController starMapController;
-    [FoldoutGroup("ª«¥ó³]¸m")]
-    [BoxGroup("ª«¥ó³]¸m/Date")]
+    [FoldoutGroup("ç‰©ä»¶è¨­ç½®")]
+    [BoxGroup("ç‰©ä»¶è¨­ç½®/Date")]
     public Text year;
-    [BoxGroup("ª«¥ó³]¸m/Date")]
+    [BoxGroup("ç‰©ä»¶è¨­ç½®/Date")]
     public Text month;
-    [BoxGroup("ª«¥ó³]¸m/Date")]
+    [BoxGroup("ç‰©ä»¶è¨­ç½®/Date")]
     public Text day;
-    [BoxGroup("ª«¥ó³]¸m/Date")]
+    [BoxGroup("ç‰©ä»¶è¨­ç½®/Date")]
     public Text hour;
 
-    [BoxGroup("ª«¥ó³]¸m/location")]
+    [BoxGroup("ç‰©ä»¶è¨­ç½®/location")]
     public Text localicationName;
-    [BoxGroup("ª«¥ó³]¸m/location")]
+    [BoxGroup("ç‰©ä»¶è¨­ç½®/location")]
     public Text longitude;
-    [BoxGroup("ª«¥ó³]¸m/location")]
+    [BoxGroup("ç‰©ä»¶è¨­ç½®/location")]
     public Text latitude;
-    
+
+    private Camera _mainCamera;
+    private float _timer;
+    private const float UPDATE_INTERVAL = 0.1f;
+
+    private void Awake()
+    {
+        _mainCamera = Camera.main;
+    }
 
     private void Update()
     {
-        Vector3 rot = new Vector3(0, Camera.main.transform.rotation.eulerAngles.y, 0);
+        Vector3 rot = new Vector3(0, _mainCamera.transform.rotation.eulerAngles.y, 0);
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(rot), 10 * Time.deltaTime);
 
-        year.text = starMapController.starMapControlData.dateTime.Year.ToString();
-        month.text = starMapController.starMapControlData.dateTime.Month.ToString();
-        day.text = starMapController.starMapControlData.dateTime.Day.ToString();
-        hour.text = starMapController.starMapControlData.dateTime.Hour.ToString();
+        _timer += Time.deltaTime;
+        if (_timer < UPDATE_INTERVAL) return;
+        _timer = 0f;
 
-        localicationName.text = starMapController.starMapControlData.currentLocalicationName;
-        longitude.text = starMapController.starMapControlData.longitude.ToString(); //¸g«×
-        latitude.text = starMapController.starMapControlData.latitude.ToString(); //½n«×
+        var data = starMapController.starMapControlData;
+        year.text  = data.Year.ToString();
+        month.text = data.Month.ToString();
+        day.text   = data.Day.ToString();
+        hour.text  = data.Hour.ToString();
+
+        localicationName.text = data.currentLocalicationName;
+        longitude.text        = data.longitude.ToString();
+        latitude.text         = data.latitude.ToString();
     }
-
 }

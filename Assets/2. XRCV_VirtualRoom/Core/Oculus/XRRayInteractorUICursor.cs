@@ -8,13 +8,15 @@ using UnityEngine.UI;
 //public class LaserScalePointer : OVRCursor
 public class XRRayInteractorUICursor :MonoBehaviour
 {
-    public UnityEngine.XR.Interaction.Toolkit.Interactors.XRRayInteractor rayInteractor;      // �N�A�� XRRayInteractor ��i��
-    public GameObject cursorInstance;         // ���Ъ����
-    private RectTransform canvasRect;          // ���e UI �� Canvas �x��
+    public UnityEngine.XR.Interaction.Toolkit.Interactors.XRRayInteractor rayInteractor;
+    public GameObject cursorInstance;
+    private RectTransform canvasRect;
+    private Camera _mainCamera;
 
     void Start()
     {
-        cursorInstance.SetActive(false); // ��l���A�������
+        _mainCamera = Camera.main;
+        cursorInstance.SetActive(false);
     }
 
     void Update()
@@ -49,7 +51,7 @@ public class XRRayInteractorUICursor :MonoBehaviour
     private void FaceCamera(Transform cursorTransform)
     {
         // �ϥ��Э��V�۾�
-        Vector3 directionToCamera = cursorTransform.position - Camera.main.transform.position;
+        Vector3 directionToCamera = cursorTransform.position - _mainCamera.transform.position;
         cursorTransform.rotation = Quaternion.LookRotation(directionToCamera);
     }
 }

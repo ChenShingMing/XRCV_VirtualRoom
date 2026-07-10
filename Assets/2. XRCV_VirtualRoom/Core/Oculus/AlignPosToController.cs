@@ -8,6 +8,13 @@ public class AlignPosToController : MonoBehaviour
     public Vector3 offset;
     public float lerpSpeed;
 
+    private Camera _mainCamera;
+
+    private void Awake()
+    {
+        _mainCamera = Camera.main;
+    }
+
     private void OnEnable()
     {
         align.transform.position = InputHandler_OpenXR.ins.leftHandPositionActionRef.action.ReadValue<Vector3>() + offset;
@@ -32,7 +39,7 @@ public class AlignPosToController : MonoBehaviour
         Vector3 menuPosition = InputHandler_OpenXR.ins.leftHandPositionActionRef.action.ReadValue<Vector3>() + (InputHandler_OpenXR.ins.leftHandRotationActionRef.action.ReadValue<Quaternion>().normalized * offset);
 
         align.transform.position = Vector3.Lerp(align.transform.position, menuPosition, lerpSpeed * Time.deltaTime);
-        align.transform.rotation = Quaternion.LookRotation(menuPosition - Camera.main.transform.position);
+        align.transform.rotation = Quaternion.LookRotation(menuPosition - _mainCamera.transform.position);
     }
     
 }

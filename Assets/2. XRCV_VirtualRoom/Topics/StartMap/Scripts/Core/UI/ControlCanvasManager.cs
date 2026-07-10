@@ -51,12 +51,14 @@ public class ControlCanvasManager : MonoBehaviour
 
     #region MonoBehavior
 
-    // Update is called once per frame
+    private float _uiTimer;
+    private const float UI_UPDATE_INTERVAL = 0.1f;
+
     void Update()
     {
-        //Vector3 rot = new Vector3(0, Camera.main.transform.rotation.eulerAngles.y, 0);
-        //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(rot), 10 * Time.deltaTime);
-
+        _uiTimer += Time.deltaTime;
+        if (_uiTimer < UI_UPDATE_INTERVAL) return;
+        _uiTimer = 0f;
         UIUpdateHandle();
     }
 
@@ -101,24 +103,30 @@ public class ControlCanvasManager : MonoBehaviour
 
     void UIUpdateHandle()
     {
-        graticule.isOn = starMapController.starMapControlData.graticule;
-        linkLine.isOn = starMapController.starMapControlData.linkLine;
-        nameAndModel.isOn = starMapController.starMapControlData.nameAndModel;
+        var data = starMapController.starMapControlData;
 
-        rotateSpeed_None.isOn = starMapController.starMapControlData.rotateSpeed == 0;
-        rotateSpeed_Fast.isOn = starMapController.starMapControlData.rotateSpeed == 8f;
-        rotateSpeed_Normal.isOn = starMapController.starMapControlData.rotateSpeed == 3f;
-        rotateSpeed_Slow.isOn = starMapController.starMapControlData.rotateSpeed == 0.5f;
+        // Toggle 加值比對，避免值未改變時觸發 onValueChanged 事件
+        SetToggle(graticule,          data.graticule);
+        SetToggle(linkLine,           data.linkLine);
+        SetToggle(nameAndModel,       data.nameAndModel);
+        SetToggle(usePanoramic,       data.usePanoramic);
+        SetToggle(rotateSpeed_None,   data.rotateSpeed == 0f);
+        SetToggle(rotateSpeed_Fast,   data.rotateSpeed == 8f);
+        SetToggle(rotateSpeed_Normal, data.rotateSpeed == 3f);
+        SetToggle(rotateSpeed_Slow,   data.rotateSpeed == 0.5f);
 
-        year.text = starMapController.starMapControlData.dateTime.Year.ToString();
-        month.text = starMapController.starMapControlData.dateTime.Month.ToString();
-        day.text = starMapController.starMapControlData.dateTime.Day.ToString();
-        hour.text = starMapController.starMapControlData.dateTime.Hour.ToString();
+        year.text             = data.Year.ToString();
+        month.text            = data.Month.ToString();
+        day.text              = data.Day.ToString();
+        hour.text             = data.Hour.ToString();
+        localicationName.text = data.currentLocalicationName;
+        latitude.text         = data.latitude.ToString();
+        longitude.text        = data.longitude.ToString();
+    }
 
-        localicationName.text = starMapController.starMapControlData.currentLocalicationName;
-        latitude.text = starMapController.starMapControlData.latitude.ToString(); //緯度
-        longitude.text = starMapController.starMapControlData.longitude.ToString(); //經度
-        usePanoramic.isOn = starMapController.starMapControlData.usePanoramic;
+    private static void SetToggle(Toggle toggle, bool value)
+    {
+        if (toggle.isOn != value) toggle.isOn = value;
     }
 
     #endregion
