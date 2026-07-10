@@ -80,7 +80,7 @@ Camera  [active]
 | OculusXR Feature | ✅ | Quest Android 必要 |
 | VIVEFocus3Profile | ✅ | VIVE Focus 3 控制器 |
 | VIVE XR Support（內建於 VIVE package） | ✅ | VIVE 裝置支援 |
-| OculusTouchControllerProfile | ❌ | Android Quest 未啟用（OculusLoader 路徑不需要） |
+| OculusTouchControllerProfile | ❌ | PlatformBuilder 切換 Quest 時自動啟用（VIVE 時關閉）|
 | MetaQuestTouchPlusControllerProfile | ❌ | — |
 | 其餘 VIVE features | ❌ | 依需求啟用 |
 

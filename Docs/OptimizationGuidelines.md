@@ -144,7 +144,7 @@ public void SwitchToQuestForAndroid()
 
 ### 待觀察
 
-- `com.unity.xr.oculus 4.5.2`：Unity 6 可用但 deprecated，追蹤 Meta 後續更新
+- `com.unity.xr.oculus 4.5.2`：✅ 已從 manifest.json 移除（2026-07-11）
 - `DynamicMoveProvider` 使用 `#pragma warning disable CS0618`（繼承 deprecated 基類），等 XRI 提供正式替代方案後更新
 
 ---
@@ -163,18 +163,28 @@ public void SwitchToQuestForAndroid()
 
 ```
 P0 ✅（2026-07-11 完成）:
-  └─ PlatformBuilder 改為 OpenXR Feature 切換，移除 OculusLoader 依賴
+  ├─ PlatformBuilder 改為 OpenXR Feature 切換，移除 OculusLoader 依賴
+  └─ com.unity.xr.oculus 套件從 manifest.json 移除
 
 P1 ✅（2026-07-11 完成）:
   ├─ InputHandler_PC：確認已存在（VirtualRoomPlugIn/）
   ├─ PlatformSwitcher：加入 Quest enum + fallback 邏輯
-  ├─ InputHandler_OVR：標記 [Obsolete]，保留空殼
+  ├─ InputHandler_OVR：移除 GameObject + 刪除 .cs
   ├─ StarMap CSV：確認已有 Awake 快取，無需修改
   └─ Photon 同步：13 key → 單一 JSON key
 
-P2（有空再做）:
-  ├─ 降低 ZodiacsController 更新頻率
-  ├─ 減少 Singleton 靜態依賴
-  ├─ 移除 Input_OVR GameObject 及 InputHandler_OVR.cs
-  └─ 恢復 Build 按鈕
+P2 ✅（2026-07-11 完成）:
+  ├─ ZodiacsController 節流（FixedUpdate → Update 0.1s）
+  ├─ Singleton OnDestroy 清除（StarMapController / DayNight / HUD）
+  ├─ Input_OVR / InputHandler_OVR 完整移除
+  └─ 恢復 Build 按鈕：⏭️ 跳過（手動 Build 工作流即可）
+
+效能掃描修正 ✅（2026-07-11）:
+  ├─ Camera.main 快取（AlignPosToController / XRRayInteractorUICursor /
+  │   StarMapHUDController / InfoCanvasUI）
+  ├─ InfoCanvasUI UI 更新節流（每幀 → 0.1s）
+  └─ ControlCanvasManager UI 更新節流 + Toggle 值比對 guard
+
+待觀察:
+  └─ DynamicMoveProvider CS0618 警告，等 XRI 正式替代方案
 ```
