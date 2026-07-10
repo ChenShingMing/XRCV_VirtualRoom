@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using UnityEngine.XR.Interaction.Toolkit;
+
 
 //public class LaserScalePointer : OVRCursor
 public class XRRayInteractorUICursor :MonoBehaviour
 {
-    public XRRayInteractor rayInteractor;      // ±N§Aªº XRRayInteractor ©ì¶i¨Ó
-    public GameObject cursorInstance;         // ¥ú¼Ðªº¹ê¨Ò
-    private RectTransform canvasRect;          // ·í«e UI ªº Canvas ¯x§Î
+    public UnityEngine.XR.Interaction.Toolkit.Interactors.XRRayInteractor rayInteractor;      // ï¿½Nï¿½Aï¿½ï¿½ XRRayInteractor ï¿½ï¿½iï¿½ï¿½
+    public GameObject cursorInstance;         // ï¿½ï¿½ï¿½Ðªï¿½ï¿½ï¿½ï¿½
+    private RectTransform canvasRect;          // ï¿½ï¿½ï¿½e UI ï¿½ï¿½ Canvas ï¿½xï¿½ï¿½
 
     void Start()
     {
-        cursorInstance.SetActive(false); // ªì©lª¬ºA¬°¤£Åã¥Ü
+        cursorInstance.SetActive(false); // ï¿½ï¿½lï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     }
 
     void Update()
@@ -24,31 +24,31 @@ public class XRRayInteractorUICursor :MonoBehaviour
 
     private void UpdateCursor()
     {
-        // ÀË¬d¬O§_À»¤¤¤F UI
+        // ï¿½Ë¬dï¿½Oï¿½_ï¿½ï¿½ï¿½ï¿½ï¿½F UI
         if (rayInteractor.TryGetCurrentUIRaycastResult(out RaycastResult raycastResult))
         {
             if (raycastResult.gameObject != null)
             {
-                // Åã¥Ü¥ú¼Ð¨Ã±N¨ä²¾°Ê¨ì®g½uÀ»¤¤ªº UI ¦ì¸m
+                // ï¿½ï¿½Ü¥ï¿½ï¿½Ð¨Ã±Nï¿½ä²¾ï¿½Ê¨ï¿½gï¿½uï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ UI ï¿½ï¿½m
                 cursorInstance.SetActive(true);
                 Vector3 worldPosition = raycastResult.worldPosition;
                 cursorInstance.transform.position = worldPosition;
 
-                // Åý¥ú¼Ð¥Ã»·­±¦V¬Û¾÷
+                // ï¿½ï¿½ï¿½ï¿½ï¿½Ð¥Ã»ï¿½ï¿½ï¿½ï¿½Vï¿½Û¾ï¿½
                 FaceCamera(cursorInstance.transform);
             }
         }
         else
         {
-            // ¦pªG¨S¦³À»¤¤ UI¡AÁôÂÃ¥ú¼Ð
+            // ï¿½pï¿½Gï¿½Sï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ UIï¿½Aï¿½ï¿½ï¿½Ã¥ï¿½ï¿½ï¿½
             cursorInstance.SetActive(false);
         }
     }
 
-    // Åý¥ú¼Ð­±¦V¬Û¾÷ªº¤èªk
+    // ï¿½ï¿½ï¿½ï¿½ï¿½Ð­ï¿½ï¿½Vï¿½Û¾ï¿½ï¿½ï¿½ï¿½ï¿½k
     private void FaceCamera(Transform cursorTransform)
     {
-        // ¨Ï¥ú¼Ð­±¦V¬Û¾÷
+        // ï¿½Ï¥ï¿½ï¿½Ð­ï¿½ï¿½Vï¿½Û¾ï¿½
         Vector3 directionToCamera = cursorTransform.position - Camera.main.transform.position;
         cursorTransform.rotation = Quaternion.LookRotation(directionToCamera);
     }

@@ -59,9 +59,9 @@ namespace HutongGames.PlayMaker.Actions
                 return;
             }
 			
-			var isKinematic = rigidbody2d.isKinematic;
+			var isKinematic = rigidbody2d.bodyType == RigidbodyType2D.Kinematic;
 			store.Value = isKinematic;
-			
+
 			Fsm.Event(isKinematic ? trueEvent : falseEvent);
 		}
 	}

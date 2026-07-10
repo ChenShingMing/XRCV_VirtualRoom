@@ -136,7 +136,7 @@ internal static class PlayMakerMainMenu
 	[MenuItem(MenuRoot + "Components/Add PlayMakerGUI to Scene", true)]
 	public static bool ValidateAddPlayMakerGUI()
 	{
-		return (Object.FindObjectOfType(typeof(PlayMakerGUI)) as PlayMakerGUI) == null;
+		return (Object.FindFirstObjectByType(typeof(PlayMakerGUI)) as PlayMakerGUI) == null;
 	}
 
     [MenuItem(MenuRoot + "Components/Add PlayMakerGUI to Scene", false, iComponents + 1)]

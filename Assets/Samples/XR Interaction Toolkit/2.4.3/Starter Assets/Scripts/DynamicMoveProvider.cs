@@ -8,6 +8,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
     /// determines the forward direction of movement based on user preference for each hand.
     /// For example, can configure to use head relative movement for the left hand and controller relative movement for the right hand.
     /// </summary>
+#pragma warning disable CS0618
     public class DynamicMoveProvider : ActionBasedContinuousMoveProvider
     {
         /// <summary>
@@ -186,4 +187,5 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
             return base.ComputeDesiredMove(input);
         }
     }
+#pragma warning restore CS0618
 }

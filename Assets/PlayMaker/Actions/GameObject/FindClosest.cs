@@ -70,7 +70,7 @@ namespace HutongGames.PlayMaker.Actions
 
 			if (string.IsNullOrEmpty(withTag.Value) || withTag.Value == "Untagged")
 			{
-				objects = (GameObject[])GameObject.FindObjectsOfType(typeof(GameObject));
+				objects = GameObject.FindObjectsByType<GameObject>(FindObjectsSortMode.None);
 			}
 			else
 			{

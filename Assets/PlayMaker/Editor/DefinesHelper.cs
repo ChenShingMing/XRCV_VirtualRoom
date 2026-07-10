@@ -81,7 +81,7 @@ namespace HutongGames.PlayMakerEditor
 
         public static List<string> GetDefines(BuildTargetGroup buildTargetGroup)
         {
-            var defines = PlayerSettings.GetScriptingDefineSymbolsForGroup(buildTargetGroup);
+            var defines = PlayerSettings.GetScriptingDefineSymbols(UnityEditor.Build.NamedBuildTarget.FromBuildTargetGroup(buildTargetGroup));
             return defines.Split(';').Select(d => d.Trim()).ToList();
         }
 
@@ -90,20 +90,20 @@ namespace HutongGames.PlayMakerEditor
             var target = EditorUserBuildSettings.activeBuildTarget;
             var buildTargetGroup = BuildPipeline.GetBuildTargetGroup(target);
             var defines = string.Join(";", definesList.ToArray());
-            PlayerSettings.SetScriptingDefineSymbolsForGroup(buildTargetGroup, defines);
+            PlayerSettings.SetScriptingDefineSymbols(UnityEditor.Build.NamedBuildTarget.FromBuildTargetGroup(buildTargetGroup), defines);
         }
 
         public static void SetDefines(BuildTarget target, List<string> definesList)
         {
             var buildTargetGroup = BuildPipeline.GetBuildTargetGroup(target);
             var defines = string.Join(";", definesList.ToArray());
-            PlayerSettings.SetScriptingDefineSymbolsForGroup(buildTargetGroup, defines);
+            PlayerSettings.SetScriptingDefineSymbols(UnityEditor.Build.NamedBuildTarget.FromBuildTargetGroup(buildTargetGroup), defines);
         }
 
         public static void SetDefines(BuildTargetGroup buildTargetGroup, List<string> definesList)
         {
             var defines = string.Join(";", definesList.ToArray());
-            PlayerSettings.SetScriptingDefineSymbolsForGroup(buildTargetGroup, defines);
+            PlayerSettings.SetScriptingDefineSymbols(UnityEditor.Build.NamedBuildTarget.FromBuildTargetGroup(buildTargetGroup), defines);
         }
 
         private static bool IsValidBuildTargetGroup(BuildTargetGroup group)

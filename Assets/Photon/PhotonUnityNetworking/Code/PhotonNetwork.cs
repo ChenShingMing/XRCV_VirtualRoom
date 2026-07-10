@@ -2984,7 +2984,7 @@ namespace Photon.Pun
         {
             HashSet<GameObject> objectsWithComponent = new HashSet<GameObject>();
 
-            Component[] targetComponents = (Component[]) GameObject.FindObjectsOfType(type);
+            Component[] targetComponents = (Component[]) GameObject.FindObjectsByType(type, FindObjectsSortMode.None);
             for (int index = 0; index < targetComponents.Length; index++)
             {
                 if (targetComponents[index] != null)
@@ -3288,7 +3288,7 @@ namespace Photon.Pun
         /// <remarks>This is done in this class, because the Editor assembly can't access PhotonHandler.</remarks>
         public static void InternalCleanPhotonMonoFromSceneIfStuck()
         {
-            PhotonHandler[] photonHandlers = GameObject.FindObjectsOfType(typeof(PhotonHandler)) as PhotonHandler[];
+            PhotonHandler[] photonHandlers = GameObject.FindObjectsByType<PhotonHandler>(FindObjectsSortMode.None);
             if (photonHandlers != null && photonHandlers.Length > 0)
             {
                 Debug.Log("Cleaning up hidden PhotonHandler instances in scene. Please save the scene to fix the problem.");

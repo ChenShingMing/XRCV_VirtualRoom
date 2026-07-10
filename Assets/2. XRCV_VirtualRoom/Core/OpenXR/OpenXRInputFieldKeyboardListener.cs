@@ -1,5 +1,5 @@
 using UnityEngine;
-using TMPro; // ¤Þ¤J TextMeshPro ©R¦WªÅ¶¡
+using TMPro; // ï¿½Þ¤J TextMeshPro ï¿½Rï¿½Wï¿½Å¶ï¿½
 using UnityEngine.EventSystems;
 using Microsoft.MixedReality.Toolkit.Experimental.UI;
 
@@ -11,22 +11,22 @@ public class OpenXRInputFieldKeyboardListener : MonoBehaviour
     private Transform positionSource;
     private TMP_InputField lastInputField;
 
-    // ·í¸}¥»¶}©l®É¡A¦Û°Ê¬d§ä©Ò¦³ªº InputField ¨Ã¶i¦æºÊÅ¥
+    // ï¿½ï¿½ï¿½}ï¿½ï¿½ï¿½}ï¿½lï¿½É¡Aï¿½Û°Ê¬dï¿½ï¿½Ò¦ï¿½ï¿½ï¿½ InputField ï¿½Ã¶iï¿½ï¿½ï¿½Å¥
     void Start()
     {
         positionSource = Camera.main.transform;
 
-        // Àò¨ú³õ´º¤¤ªº©Ò¦³ InputField
-        TMP_InputField[] inputFields = FindObjectsOfType<TMP_InputField>(true);
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò¦ï¿½ InputField
+        TMP_InputField[] inputFields = FindObjectsByType<TMP_InputField>(FindObjectsInactive.Include, FindObjectsSortMode.None);
 
         foreach (TMP_InputField inputField in inputFields)
         {
-            // ¬°¨C­Ó InputField µù¥U OnSelect ¨Æ¥ó¡A·í³Q¿ï¾Ü®É©I¥s ShowVirtualKeyboard
+            // ï¿½ï¿½ï¿½Cï¿½ï¿½ InputField ï¿½ï¿½ï¿½U OnSelect ï¿½Æ¥ï¿½Aï¿½ï¿½ï¿½Qï¿½ï¿½Ü®É©Iï¿½s ShowVirtualKeyboard
             inputField.onSelect.AddListener(x=> OpenKeyboard(inputField));
         }
     }
 
-    // Åã¥ÜµêÀÀÁä½Lªº¤èªk
+    // ï¿½ï¿½Üµï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½ï¿½k
     void OpenKeyboard(TMP_InputField tmpInputField)
     {
         NonNativeKeyboard.Instance.InputField = tmpInputField;

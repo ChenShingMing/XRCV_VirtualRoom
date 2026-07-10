@@ -24,7 +24,7 @@ namespace HutongGames.PlayMaker.Actions
 
 		public override void OnEnter()
 		{
-			bodies = Object.FindObjectsOfType(typeof(Rigidbody)) as Rigidbody[];
+			bodies = Object.FindObjectsByType<Rigidbody>(FindObjectsSortMode.None);
 			
 			DoWakeAll();
 			
@@ -39,7 +39,7 @@ namespace HutongGames.PlayMaker.Actions
 		
 		void DoWakeAll()
 		{
-			bodies = Object.FindObjectsOfType(typeof(Rigidbody)) as Rigidbody[];
+			bodies = Object.FindObjectsByType<Rigidbody>(FindObjectsSortMode.None);
 			
 			if (bodies != null)
 			{

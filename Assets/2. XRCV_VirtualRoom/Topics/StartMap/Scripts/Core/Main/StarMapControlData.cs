@@ -38,7 +38,9 @@ public class StarMapControlData
     [FoldoutGroup("日期")]
     [InlineButton("SetEarthRotateSpeed", "$rotateSpeedStauts")]
     public float rotateSpeed;
+#pragma warning disable CS0414
     string rotateSpeedStauts = "None";
+#pragma warning restore CS0414
     int rotateStautsCount = 0;
 
     [PropertySpace]

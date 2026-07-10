@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-using UnityEngine.XR.Interaction.Toolkit;
+
 using UnityEngine.XR.Interaction.Toolkit.Inputs;
 
 public class InputHandler_OpenXR : InputHandler
 {
     public static InputHandler_OpenXR ins;
 
-    public XRRayInteractor rayInteractor;
+    public UnityEngine.XR.Interaction.Toolkit.Interactors.XRRayInteractor rayInteractor;
     public LayerMask uiLayerMask;
 
-    public InputActionAsset inputActions; // §â§Aªº Input Action Asset ©ì¨ì³o¸Ì
+    public InputActionAsset inputActions; // ï¿½ï¿½Aï¿½ï¿½ Input Action Asset ï¿½ï¿½ï¿½oï¿½ï¿½
     public InputActionReference leftHandPositionActionRef;
     public InputActionReference rightHandPositionActionRef;
     public InputActionReference leftHandRotationActionRef;
@@ -42,7 +42,7 @@ public class InputHandler_OpenXR : InputHandler
         }
 
 
-        // ¨ú±o "XRController" action map ¤¤ªº Secondary Index Trigger ¸j©wªº°Ê§@
+        // ï¿½ï¿½ï¿½o "XRController" action map ï¿½ï¿½ï¿½ï¿½ Secondary Index Trigger ï¿½jï¿½wï¿½ï¿½ï¿½Ê§@
         //var actionMap = inputActions.FindActionMap("XRController");
         mainMenuAction = inputActions.FindActionMap("XRI LeftHand Interaction").FindAction("MainMenu");
         menuAction = inputActions.FindActionMap("XRI LeftHand Interaction").FindAction("Select");
@@ -72,19 +72,19 @@ public class InputHandler_OpenXR : InputHandler
     public override void InputHandle()
     {
         
-          //¥D¿ï³æ
+          //ï¿½Dï¿½ï¿½ï¿½
           if (mainMenuAction.WasReleasedThisFrame())
           {
               ClassroomManager.ins.inputActionManager.TriggerMainMenu();
           }
 
-          //±Ð§÷±±¨î¾¹¿ï³æ
+          //ï¿½Ð§ï¿½ï¿½ï¿½ï¿½î¾¹ï¿½ï¿½ï¿½
           if (menuAction.WasReleasedThisFrame())
           {
               ClassroomManager.ins.inputActionManager.TriggerMenu();
           }
 
-        //°e¥XÁä¡A©ñ´£¥ÜÂI
+        //ï¿½eï¿½Xï¿½ï¿½Aï¿½ñ´£¥ï¿½ï¿½I
         if (!IsPointingAtUI())
         {
             if (triggerAction.WasPressedThisFrame())
@@ -130,7 +130,7 @@ public class InputHandler_OpenXR : InputHandler
 
     private bool IsPointingAtUI()
     {
-        // ÀË¬d XRRayInteractor ¬O§_«ü¦V¤F UI
+        // ï¿½Ë¬d XRRayInteractor ï¿½Oï¿½_ï¿½ï¿½ï¿½Vï¿½F UI
         if (rayInteractor.TryGetCurrentUIRaycastResult(out RaycastResult raycastResult))
         {
             if (raycastResult.gameObject != null && IsUILayer(raycastResult.gameObject))
@@ -144,7 +144,7 @@ public class InputHandler_OpenXR : InputHandler
 
     private bool IsUILayer(GameObject obj)
     {
-        // ÀË¬dª«Åé¬O§_ÄÝ©ó UI ¹Ï¼h
+        // ï¿½Ë¬dï¿½ï¿½ï¿½ï¿½Oï¿½_ï¿½Ý©ï¿½ UI ï¿½Ï¼h
         return (uiLayerMask == (uiLayerMask | (1 << obj.layer)));
     }
 }

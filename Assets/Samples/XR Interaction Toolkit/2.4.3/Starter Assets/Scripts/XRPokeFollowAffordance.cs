@@ -109,7 +109,9 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
         IPokeStateDataProvider m_PokeDataProvider;
         IMultiPokeStateDataProvider m_MultiPokeStateDataProvider;
 
+#pragma warning disable CS0618
         readonly Vector3TweenableVariable m_TransformTweenableVariable = new Vector3TweenableVariable();
+#pragma warning restore CS0618
         readonly BindingsGroup m_BindingsGroup = new BindingsGroup();
         Vector3 m_InitialPosition;
         bool m_IsFirstFrame;
