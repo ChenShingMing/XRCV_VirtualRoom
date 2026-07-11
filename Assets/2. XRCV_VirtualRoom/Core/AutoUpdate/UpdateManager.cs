@@ -104,7 +104,11 @@ public class UpdateManager : MonoBehaviour
         {
             Debug.Log("[UpdateManager] Checksum OK ✓");
             if (updateUI != null) updateUI.ShowComplete();
-            Proceed(); // Phase 4/5: replace with installer
+#if UNITY_ANDROID
+            UpdateApplier_Android.Install(filePath);
+#else
+            Proceed();
+#endif
         }
         else
         {
