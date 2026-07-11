@@ -126,7 +126,7 @@ Game Window 顯示鏡像畫面
 |------|-------------------|
 | VIVE（Android APK） | OpenXRLoader + OculusXR(on) + VIVEFocus3(on) |
 | Quest Link（PC 測試） | OpenXRLoader + OculusXR(on) + OculusTouch Standalone(on) |
-| Quest（Android APK，待 P0）| OpenXRLoader + OculusXR(on) + OculusTouch Android(on) + VIVE features(off) |
+| Quest（Android APK）| OpenXRLoader + OculusXR(on) + OculusTouch Android(on) + VIVE features(off) |
 
 ---
 

@@ -23,7 +23,7 @@
 | PC | Windows Standalone | 無 XR | 滑鼠鍵盤操作 |
 | Quest Link | Windows Standalone | OpenXR + OculusXR Feature | PC 串流至 Quest 2 測試 |
 | VIVE (Android) | Android | OpenXR + VIVE Features | VIVE Focus 3 APK |
-| Quest (Android) | Android | OpenXR + OculusXR Feature | Quest 2 APK（目前走舊 OculusLoader，待 P0 改善） |
+| Quest (Android) | Android | OpenXR + OculusXR Feature | Quest 2 APK（OculusLoader 已移除，統一走 OpenXR） |
 
 ---
 
@@ -35,7 +35,7 @@
 | OpenXR | com.unity.xr.openxr | 1.16.1 |
 | XR 互動 | com.unity.xr.interaction.toolkit | 3.3.1 |
 | VIVE OpenXR | com.htc.upm.vive.openxr | git（最新） |
-| Oculus SDK（待移除） | com.unity.xr.oculus | 4.5.2 |
+| ~~Oculus SDK~~（已移除） | ~~com.unity.xr.oculus~~ | ~~4.5.2~~ |
 | 網路多人 | Photon PUN 2 | — |
 | 授權後端 | Firebase Firestore | — |
 | 虛擬鍵盤 | MRTK NonNativeKeyboard | — |
@@ -67,7 +67,7 @@ Assets/
 │   │   ├── Classroom/            ← PlatformSwitcher、DontDestroyOnLoad
 │   │   ├── Classroom/Editor/     ← PlatformBuilder（Editor 工具）
 │   │   ├── OpenXR/               ← InputHandler_OpenXR、鍵盤、Raycaster
-│   │   ├── Oculus/               ← InputHandler_OVR（未完整）、UI Cursor
+│   │   ├── Oculus/               ← XRRayInteractorUICursor（InputHandler_OVR 已移除）
 │   │   ├── Room/                 ← 房間材質管理
 │   │   ├── LoadingScene/         ← 場景加載管理
 │   │   └── LicenseInformation/   ← 授權資料、Firebase 整合
