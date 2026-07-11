@@ -47,7 +47,6 @@ public class LineController : MonoBehaviour
 
             worldPos.Add(pos);
             Draw();
-            //BezierPathDraw();//貝塞爾曲線優化畫筆效果差別不大，很卡
 
         }
     }

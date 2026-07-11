@@ -434,12 +434,6 @@ public class ClassroomManager : MonoBehaviourPunCallbacks
         photonView.RPC("StopMonitorRequest", PunNetworkManager.GetPhotonPlayerByNickName(targetNickName), requester);
     }
 
-    public void RPCSendMonitorData(byte[] viewData)
-    {
-        if (PhotonNetwork.IsConnected == false) return;
-        if (PhotonNetwork.InRoom == false) return;
-    }
-
     public void RPCSendMonitorPointerClick()
     {
         if (PhotonNetwork.IsConnected == false) return;

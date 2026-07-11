@@ -248,11 +248,11 @@ Assets/2. XRCV_VirtualRoom/Topics/StartMap/Scripts/VirtualRoomPlugIn/
 | P14 | 效能 | VersionGetter.cs | 🟡 中 | ✅ 完成 |
 | P15 | 效能 | InRoomPanel.cs | 🟡 中 | ✅ 完成 |
 | P16 | 效能 | OpenXRInputFieldKeyboardListener.cs | 🟡 中 | ✅ 已是最佳（無需修改） |
-| C1 | 死碼 | ClassroomManager.cs | 🟢 低 | ⏳ 待決定 |
-| C2 | 死碼 | PointController.cs | 🟢 低 | ⏳ 待決定 |
-| C3 | 死碼 | InfoPanel.cs / Room_Student.cs | 🟢 低 | ⏳ 待決定 |
-| C4 | 死碼 | LineController.cs | 🟢 低 | ⏳ 待決定 |
-| C5 | 架構 | StarMapTopicData.cs | 🟢 低 | ⏳ 待決定 |
+| C1 | 死碼 | ClassroomManager.cs | 🟢 低 | ✅ 完成 |
+| C2 | 死碼 | PointController.cs | 🟢 低 | ✅ 完成（檔案刪除） |
+| C3 | 死碼 | InfoPanel.cs / Room_Student.cs | 🟢 低 | ✅ 已於 P9/P11 一併處理 |
+| C4 | 死碼 | LineController.cs | 🟢 低 | ✅ 完成 |
+| C5 | 架構 | StarMapTopicData.cs | 🟢 低 | ⏸ 接受（對稱設計，低風險） |
 | A1 | 架構 | GazeController.cs | 🟡 中 | ⏳ 待決定 |
 | A2 | 架構 | LobbyPanel.cs | 🟡 中 | ⏳ 待決定 |
 | A3 | 架構 | PunNetworkManager.cs | 🟡 中 | ⏳ 待決定 |
