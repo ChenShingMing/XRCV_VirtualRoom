@@ -1,22 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
+using UnityEngine.XR.Interaction.Toolkit.Interactors.Visuals;
 
-
-//public class LaserScalePointer : OVRCursor
-public class XRRayInteractorUICursor :MonoBehaviour
+public class XRRayInteractorUICursor : MonoBehaviour
 {
-    public UnityEngine.XR.Interaction.Toolkit.Interactors.XRRayInteractor rayInteractor;
+    public XRRayInteractor rayInteractor;
     public GameObject cursorInstance;
-    private RectTransform canvasRect;
+    public XRInteractorLineVisual lineVisual;
+
     private Camera _mainCamera;
+    private float _defaultLineLength;
 
     void Start()
     {
         _mainCamera = Camera.main;
         cursorInstance.SetActive(false);
+        if (lineVisual != null)
+            _defaultLineLength = lineVisual.lineLength;
     }
 
     void Update()
@@ -26,31 +27,30 @@ public class XRRayInteractorUICursor :MonoBehaviour
 
     private void UpdateCursor()
     {
-        // �ˬd�O�_�����F UI
-        if (rayInteractor.TryGetCurrentUIRaycastResult(out RaycastResult raycastResult))
+        if (rayInteractor.TryGetCurrentUIRaycastResult(out RaycastResult raycastResult)
+            && raycastResult.gameObject != null)
         {
-            if (raycastResult.gameObject != null)
-            {
-                // ��ܥ��ШñN�䲾�ʨ�g�u������ UI ��m
-                cursorInstance.SetActive(true);
-                Vector3 worldPosition = raycastResult.worldPosition;
-                cursorInstance.transform.position = worldPosition;
+            cursorInstance.SetActive(true);
 
-                // �����Хû����V�۾�
-                FaceCamera(cursorInstance.transform);
-            }
+            // Offset 1mm toward camera so cursor renders in front of the canvas surface
+            Vector3 towardCamera = (_mainCamera.transform.position - raycastResult.worldPosition).normalized;
+            cursorInstance.transform.position = raycastResult.worldPosition + towardCamera * 0.001f;
+            FaceCamera(cursorInstance.transform);
+
+            // Cap line at UI hit distance to prevent visual penetration
+            if (lineVisual != null)
+                lineVisual.lineLength = Mathf.Max(0.05f, raycastResult.distance);
         }
         else
         {
-            // �p�G�S������ UI�A���å���
             cursorInstance.SetActive(false);
+            if (lineVisual != null)
+                lineVisual.lineLength = _defaultLineLength;
         }
     }
 
-    // �����Э��V�۾�����k
     private void FaceCamera(Transform cursorTransform)
     {
-        // �ϥ��Э��V�۾�
         Vector3 directionToCamera = cursorTransform.position - _mainCamera.transform.position;
         cursorTransform.rotation = Quaternion.LookRotation(directionToCamera);
     }

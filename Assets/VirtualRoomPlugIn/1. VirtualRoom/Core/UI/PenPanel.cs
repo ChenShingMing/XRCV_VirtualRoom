@@ -22,12 +22,21 @@ public class PenPanel : MonoBehaviour
 
         if (isMasterInRoom)
         {
-            penTip.SetActive(true);
-            _tipTimer += Time.fixedDeltaTime;
-            if (_tipTimer >= TIP_INTERVAL)
+            bool isPointingAtUI = InputHandler_OpenXR.ins != null
+                && InputHandler_OpenXR.ins.rayInteractor != null
+                && InputHandler_OpenXR.ins.rayInteractor.TryGetCurrentUIRaycastResult(out var uiResult)
+                && uiResult.gameObject != null;
+
+            penTip.SetActive(!isPointingAtUI);
+
+            if (!isPointingAtUI)
             {
-                _tipTimer = 0f;
-                penTip.transform.position = ClassroomManager.ins.inputActionManager.GetInputPointerOnGazeSphere();
+                _tipTimer += Time.fixedDeltaTime;
+                if (_tipTimer >= TIP_INTERVAL)
+                {
+                    _tipTimer = 0f;
+                    penTip.transform.position = ClassroomManager.ins.inputActionManager.GetInputPointerOnGazeSphere();
+                }
             }
         }
         else
