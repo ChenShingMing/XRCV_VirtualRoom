@@ -10,6 +10,12 @@ public class ZodiacsController : MonoBehaviour
     public float checkInterval = 0.1f;
 
     private float _timer = 0f;
+    private Camera _mainCamera;
+
+    private void Awake()
+    {
+        _mainCamera = Camera.main;
+    }
 
     void Update()
     {
@@ -21,9 +27,10 @@ public class ZodiacsController : MonoBehaviour
 
     public void CheckAllZodiacsStatus()
     {
+        if (_mainCamera == null) _mainCamera = Camera.main;
         for (int i = 0; i < createHipHierarchy.zodiac_Datas.Count; i++)
         {
-            Vector3 pos = Camera.main.WorldToViewportPoint(createHipHierarchy.zodiac_Datas[i].world_transform.position);
+            Vector3 pos = _mainCamera.WorldToViewportPoint(createHipHierarchy.zodiac_Datas[i].world_transform.position);
 
             if (pos.x < 0.8f && pos.x > 0.2f
                 && pos.y < 0.9f && pos.y > 0.1f)

@@ -68,11 +68,11 @@ public void SwitchToQuestForAndroid()
 
 ---
 
-## 三、InputHandler_OVR 未完成 ✅ 已完成（P1）
+## 三、InputHandler_OVR 未完成 ✅ 完整移除（2026-07-11）
 
-- P0 確認 Quest 改走 OpenXR，`InputHandler_OVR` 已無用途
-- 保留空殼（加上 `[Obsolete]`）以避免場景中 `Input_OVR`（inactive）出現 Missing Script 警告
-- 待確認 `Input_OVR` GameObject 可安全移除後，整個檔案可一併刪除（P2 可選）
+- `InputHandler_OVR.cs` 已刪除
+- 場景中無 `Input_OVR` GameObject（搜尋確認）
+- 所有 .cs 檔無任何 `InputHandler_OVR` 或 `Input_OVR` 引用
 
 ---
 
@@ -105,27 +105,25 @@ public void SwitchToQuestForAndroid()
 
 ---
 
-## 七、多 Singleton 的場景耦合 🟢 P2
+## 七、多 Singleton 的場景耦合 ✅ 已完成（2026-07-11）
 
-### 問題
+三個 Singleton 的 null 安全性已全部到位：
 
-`StarMapController`、`DayNightEnvironmentControl`、`StarMapHUDController` 都是 Singleton，它們透過靜態 `.ins` 存取，會在場景卸載時遺留 null reference 風險。
+| 類別 | OnDestroy 清除 | 呼叫端 null 檢查 |
+|------|:-:|:-:|
+| `StarMapController` | ✅ | ✅（所有呼叫端均有 `if (ins)` 判斷） |
+| `DayNightEnvironmentControl` | ✅ | ✅（`StarMapControlData` 兩處加上 `ins != null` guard） |
+| `StarMapHUDController` | ✅ | ✅ |
 
-### 建議
-
-考慮改用 **Service Locator** 或讓 `ClassroomManager` 管理這些參考，降低靜態狀態依賴。
+> Service Locator 完整重構保留為未來架構演進選項，不在此版本執行（風險高、收益有限）。
 
 ---
 
-## 八、ZodiacsController 每幀做 Viewport 計算 🟢 P2
+## 八、ZodiacsController 每幀做 Viewport 計算 ✅ 已完成（2026-07-11）
 
-### 問題
-
-`ZodiacsController.CheckAllZodiacsStatus()` 可能每幀對所有星座做 `WorldToViewportPoint` 計算並更新顯示狀態。
-
-### 建議
-
-降低更新頻率（如每 0.1 秒），或只在視角改變超過一定角度時才重新計算。
+- `checkInterval = 0.1f` 節流，已從每幀降為每 0.1 秒執行一次
+- `Camera.main` 改為 `_mainCamera`（`Awake()` 快取，lazy fallback 補值）
+- `CheckAllZodiacsStatus()` 開頭加入 `if (_mainCamera == null) _mainCamera = Camera.main` 保護平台切換情境
 
 ---
 
@@ -174,9 +172,10 @@ P1 ✅（2026-07-11 完成）:
   └─ Photon 同步：13 key → 單一 JSON key
 
 P2 ✅（2026-07-11 完成）:
-  ├─ ZodiacsController 節流（FixedUpdate → Update 0.1s）
+  ├─ ZodiacsController 節流（0.1s）+ Camera.main 快取
   ├─ Singleton OnDestroy 清除（StarMapController / DayNight / HUD）
-  ├─ Input_OVR / InputHandler_OVR 完整移除
+  ├─ DayNightEnvironmentControl.ins null guard（StarMapControlData 兩處）
+  ├─ Input_OVR / InputHandler_OVR 完整移除（確認場景無殘留）
   └─ 恢復 Build 按鈕：⏭️ 跳過（手動 Build 工作流即可）
 
 效能掃描修正 ✅（2026-07-11）:

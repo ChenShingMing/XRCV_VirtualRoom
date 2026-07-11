@@ -269,7 +269,7 @@ public class StarMapControlData
     {
         if (!usePanoramic) return;
 
-        if (DayNightEnvironmentControl.ins.isNight)
+        if (DayNightEnvironmentControl.ins != null && DayNightEnvironmentControl.ins.isNight)
         {
             panoramicStatus = PanoramicStatus.Night;
             panoramicController.Use(currentNight360);
@@ -350,7 +350,7 @@ public class StarMapControlData
                 }
                 
                 //如果日夜不一樣
-                if (DayNightEnvironmentControl.ins.isNight)
+                if (DayNightEnvironmentControl.ins != null && DayNightEnvironmentControl.ins.isNight)
                 {
                     if (panoramicStatus != PanoramicStatus.Night)
                     {
