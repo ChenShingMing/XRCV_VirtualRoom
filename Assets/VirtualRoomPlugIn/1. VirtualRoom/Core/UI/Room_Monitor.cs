@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
@@ -63,7 +63,7 @@ public class Room_Monitor : MonoBehaviourPunCallbacks
         }
         else
         {
-            currentTarget_Text.text = "�|�����";
+            currentTarget_Text.text = "無觀看目標";
         }
     }
 

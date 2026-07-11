@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
@@ -63,11 +63,11 @@ public class Room_Student : MonoBehaviourPunCallbacks
 
         if (teachingType == ClassroomManager.TeachingType.Guidance)
         {
-            teachingType_Text.text = "�ɾǼҦ�";
+            teachingType_Text.text = "導學模式";
         }
         else if(teachingType == ClassroomManager.TeachingType.SelfStudy)
         {
-            teachingType_Text.text = "�۾ǼҦ�";
+            teachingType_Text.text = "自學模式";
         }
     }
 }
