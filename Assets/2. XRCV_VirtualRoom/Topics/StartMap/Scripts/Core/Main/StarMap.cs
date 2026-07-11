@@ -90,6 +90,8 @@ public class StarMap : MonoBehaviour
     bool _close_zodiacs_flag = false;
 
     List<LineRenderer> starLineRenderers;
+    internal bool _linesDirty = true;  // CreateHipHierarchy 增刪連線時設為 true
+    bool _prevOnLineRender = false;
 
     #region MonoBehavior
 
@@ -103,10 +105,10 @@ public class StarMap : MonoBehaviour
         createHipHierarchy.ScanHipData();
         zodiacs_GameObject = createHipHierarchy.hip_Parent;
 
-        starLineRenderers = new List<LineRenderer>();
+        starLineRenderers = new List<LineRenderer>(hipLineList.Count);
 
-        //產生連線LineRenderer的物件
-        for (int i = 0; i < 100; i++)
+        //產生連線LineRenderer的物件，數量對齊 CSV 總行數
+        for (int i = 0; i < hipLineList.Count; i++)
         {
             starLineRenderers.Add(Instantiate(starLineRenderPrefab, starLineRenderParent).GetComponent<LineRenderer>());
         }
@@ -170,23 +172,28 @@ public class StarMap : MonoBehaviour
 
     void StarLinkLineRenderHandle(List<HipLine> lineList, float distance)
     {
-        //如果有啟用星座連線
         if (OnLineRender)
         {
-            //如果沒有星星數據就跳出
             if (lineList == null) return;
 
-            starLineRenderParent.gameObject.SetActive(true);
-
-            if (starLineRenderers.Count - lineList.Count < 0)
+            if (!_prevOnLineRender)
             {
-                int needToAdd = starLineRenderers.Count - lineList.Count;
-
-                for (int j = 0; j < needToAdd; j++)
-                {
-                    starLineRenderers.Add(Instantiate(starLineRenderPrefab, starLineRenderParent).GetComponent<LineRenderer>());
-                }
+                starLineRenderParent.gameObject.SetActive(true);
+                _prevOnLineRender = true;
+                _linesDirty = true;
             }
+
+            if (!_linesDirty) return;
+            _linesDirty = false;
+
+            // 擴容：修正原本反向計算導致擴容永遠不執行的 bug
+            int deficit = lineList.Count - starLineRenderers.Count;
+            if (deficit > 0)
+            {
+                for (int j = 0; j < deficit; j++)
+                    starLineRenderers.Add(Instantiate(starLineRenderPrefab, starLineRenderParent).GetComponent<LineRenderer>());
+            }
+
             for (int i = 0; i < starLineRenderers.Count; ++i)
             {
                 if (i < lineList.Count)
@@ -196,14 +203,18 @@ public class StarMap : MonoBehaviour
                 }
                 else
                 {
-                    starLineRenderers[i].SetPosition(0, new Vector3());
-                    starLineRenderers[i].SetPosition(1, new Vector3());
+                    starLineRenderers[i].SetPosition(0, Vector3.zero);
+                    starLineRenderers[i].SetPosition(1, Vector3.zero);
                 }
             }
         }
         else
         {
-            starLineRenderParent.gameObject.SetActive(false);
+            if (_prevOnLineRender)
+            {
+                starLineRenderParent.gameObject.SetActive(false);
+                _prevOnLineRender = false;
+            }
         }
     }
 

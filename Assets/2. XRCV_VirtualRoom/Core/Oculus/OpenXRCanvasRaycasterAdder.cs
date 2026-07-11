@@ -12,11 +12,6 @@ public class OpenXRCanvasRaycasterAdder : MonoBehaviour
 
     private void Start()
     {
-        if (XRSettings.isDeviceActive)
-        {
-            AddXRRaycaster();
-        }
-
         AddXRRaycaster();
     }
 

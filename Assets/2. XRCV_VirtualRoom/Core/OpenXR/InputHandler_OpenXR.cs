@@ -23,13 +23,14 @@ public class InputHandler_OpenXR : InputHandler
     private InputAction menuAction;
     private InputAction triggerAction;
     private InputAction penModeAction;
-
+    private Camera _mainCamera;
 
     private void Awake()
     {
         if(ins == null)
         {
             ins = this;
+            _mainCamera = Camera.main;
         }
         else
         {
@@ -124,7 +125,8 @@ public class InputHandler_OpenXR : InputHandler
 
     public override Vector3 GetInputPointerOnGazeSphere()
     {
-        return GazeSphere.RayHitOnSphere(new Ray(Camera.main.transform.position,
+        if (_mainCamera == null) _mainCamera = Camera.main;
+        return GazeSphere.RayHitOnSphere(new Ray(_mainCamera.transform.position,
                                     GetControllerRotation() * Vector3.forward));
     }
 

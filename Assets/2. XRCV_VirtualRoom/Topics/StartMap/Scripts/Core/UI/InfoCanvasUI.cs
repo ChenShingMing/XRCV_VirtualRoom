@@ -50,7 +50,7 @@ public class InfoCanvasUI : MonoBehaviour
         hour.text  = data.Hour.ToString();
 
         localicationName.text = data.currentLocalicationName;
-        longitude.text        = data.longitude.ToString();
-        latitude.text         = data.latitude.ToString();
+        longitude.text        = data.longitude.ToString("F2");
+        latitude.text         = data.latitude.ToString("F2");
     }
 }

@@ -53,6 +53,12 @@ public class ControlCanvasManager : MonoBehaviour
 
     private float _uiTimer;
     private const float UI_UPDATE_INTERVAL = 0.1f;
+    private Camera _mainCamera;
+
+    private void Awake()
+    {
+        _mainCamera = Camera.main;
+    }
 
     void Update()
     {
@@ -73,9 +79,10 @@ public class ControlCanvasManager : MonoBehaviour
     }
     public void SetControlCanvas(bool value)
     {
+        if (_mainCamera == null) _mainCamera = Camera.main;
         if (value)
         {
-            Vector3 rot = new Vector3(0, Camera.main.transform.rotation.eulerAngles.y, 0);
+            Vector3 rot = new Vector3(0, _mainCamera.transform.rotation.eulerAngles.y, 0);
             transform.rotation = Quaternion.Euler(rot);
 
             this.gameObject.SetActive(value);
@@ -83,7 +90,7 @@ public class ControlCanvasManager : MonoBehaviour
         }
         else
         {
-            Vector3 rot = new Vector3(0, Camera.main.transform.rotation.eulerAngles.y, 0);
+            Vector3 rot = new Vector3(0, _mainCamera.transform.rotation.eulerAngles.y, 0);
             infoCanvasUI.transform.rotation = Quaternion.Euler(rot);
             infoCanvasUI.gameObject.SetActive(true);
         }
@@ -120,8 +127,8 @@ public class ControlCanvasManager : MonoBehaviour
         day.text              = data.Day.ToString();
         hour.text             = data.Hour.ToString();
         localicationName.text = data.currentLocalicationName;
-        latitude.text         = data.latitude.ToString();
-        longitude.text        = data.longitude.ToString();
+        latitude.text         = data.latitude.ToString("F2");
+        longitude.text        = data.longitude.ToString("F2");
     }
 
     private static void SetToggle(Toggle toggle, bool value)

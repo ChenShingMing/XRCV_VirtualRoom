@@ -239,13 +239,11 @@ public class CreateHipHierarchy : MonoBehaviour
             {
                 starMap.hipLineList.Add(new StarMap.HipLine(hipLineList_Remove[i].constellationNameShort,
                     hipLineList_Remove[i].sttData, hipLineList_Remove[i].endData));
-
-
                 hipLineList_Remove.RemoveAt(i);
                 i--;
             }
         }
-
+        starMap._linesDirty = true;
     }
 
     public void RemoveZodiacListByName(string str)
@@ -256,14 +254,11 @@ public class CreateHipHierarchy : MonoBehaviour
             {
                 hipLineList_Remove.Add(new StarMap.HipLine(starMap.hipLineList[i].constellationNameShort,
                     starMap.hipLineList[i].sttData, starMap.hipLineList[i].endData));
-
-
-
                 starMap.hipLineList.RemoveAt(i);
                 i--;
             }
         }
-
+        starMap._linesDirty = true;
     }
 
     #endregion

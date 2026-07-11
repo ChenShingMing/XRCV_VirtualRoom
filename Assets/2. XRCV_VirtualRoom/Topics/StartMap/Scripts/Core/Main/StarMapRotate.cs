@@ -36,6 +36,7 @@ public class StarMapRotate : MonoBehaviour
 
     private TimeSpan timeSpan;
     private Vector3 prev_transform;
+    private static readonly System.DateTime _baseline = new System.DateTime(2020, 1, 1, 0, 0, 0);
     
 	
 	// Update is called once per frame
@@ -50,8 +51,7 @@ public class StarMapRotate : MonoBehaviour
 
     public void SetDateTime(int Year, int Month, int Day, int Hour)
     {
-        string Time = string.Format("{0}-{1}-{2} {3}:00:00", Year, Month, Day, Hour);
-        dateTime = DateTime.Parse(Time);
+        dateTime = new DateTime(Year, Month, Day, Hour, 0, 0);
     }
 
     #endregion
@@ -68,13 +68,10 @@ public class StarMapRotate : MonoBehaviour
         latitudeTrans.localRotation = Quaternion.Euler(0, 0, 90 + latitude);
     }
 
-    //將時間轉成自轉單位
+    //將時間轉成自轉單位（以 2020-01-01 00:00 為基準）
     void TimeToSpindleSample()
     {
-        string subTime = string.Format("{0}-{1}-{2} {3}:00:00", 2020, 1, 1, 0); //以20200101做為基準點
-        DateTime d2 = DateTime.Parse(subTime);
-
-        timeSpan = dateTime - d2;
+        timeSpan = dateTime - _baseline;
         SpindleSampleValue = timeSpan.TotalHours;
     }
 
