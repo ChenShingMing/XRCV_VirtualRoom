@@ -1,69 +1,156 @@
 fileFormatVersion: 2
 guid: 2e26b4f43dffeed41aa9cf7b8a529a7f
-timeCreated: 1538365955
-licenseType: Free
 ModelImporter:
-  serializedVersion: 21
-  fileIDToRecycleName:
-    100000: 10_Capricorn
-    100002: Bone001
-    100004: Bone002
-    100006: Bone003
-    100008: Bone004
-    100010: Bone005
-    100012: Bone006
-    100014: Bone007
-    100016: Bone008
-    100018: Bone009
-    100020: Bone010
-    100022: Bone011
-    100024: Bone012
-    100026: Bone013
-    100028: Bone014
-    100030: Bone015
-    100032: Plane001
-    100034: //RootNode
-    400000: 10_Capricorn
-    400002: Bone001
-    400004: Bone002
-    400006: Bone003
-    400008: Bone004
-    400010: Bone005
-    400012: Bone006
-    400014: Bone007
-    400016: Bone008
-    400018: Bone009
-    400020: Bone010
-    400022: Bone011
-    400024: Bone012
-    400026: Bone013
-    400028: Bone014
-    400030: Bone015
-    400032: Plane001
-    400034: //RootNode
-    2300000: Plane001
-    3300000: Plane001
-    4300000: Plane001
-    4300002: 10_Capricorn
-    7400000: Take 001
-    9500000: //RootNode
-    13700000: 10_Capricorn
+  serializedVersion: 24200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: 10_Capricorn
+  - first:
+      1: 100002
+    second: Bone001
+  - first:
+      1: 100004
+    second: Bone002
+  - first:
+      1: 100006
+    second: Bone003
+  - first:
+      1: 100008
+    second: Bone004
+  - first:
+      1: 100010
+    second: Bone005
+  - first:
+      1: 100012
+    second: Bone006
+  - first:
+      1: 100014
+    second: Bone007
+  - first:
+      1: 100016
+    second: Bone008
+  - first:
+      1: 100018
+    second: Bone009
+  - first:
+      1: 100020
+    second: Bone010
+  - first:
+      1: 100022
+    second: Bone011
+  - first:
+      1: 100024
+    second: Bone012
+  - first:
+      1: 100026
+    second: Bone013
+  - first:
+      1: 100028
+    second: Bone014
+  - first:
+      1: 100030
+    second: Bone015
+  - first:
+      1: 100032
+    second: Plane001
+  - first:
+      1: 100034
+    second: //RootNode
+  - first:
+      4: 400000
+    second: 10_Capricorn
+  - first:
+      4: 400002
+    second: Bone001
+  - first:
+      4: 400004
+    second: Bone002
+  - first:
+      4: 400006
+    second: Bone003
+  - first:
+      4: 400008
+    second: Bone004
+  - first:
+      4: 400010
+    second: Bone005
+  - first:
+      4: 400012
+    second: Bone006
+  - first:
+      4: 400014
+    second: Bone007
+  - first:
+      4: 400016
+    second: Bone008
+  - first:
+      4: 400018
+    second: Bone009
+  - first:
+      4: 400020
+    second: Bone010
+  - first:
+      4: 400022
+    second: Bone011
+  - first:
+      4: 400024
+    second: Bone012
+  - first:
+      4: 400026
+    second: Bone013
+  - first:
+      4: 400028
+    second: Bone014
+  - first:
+      4: 400030
+    second: Bone015
+  - first:
+      4: 400032
+    second: Plane001
+  - first:
+      4: 400034
+    second: //RootNode
+  - first:
+      23: 2300000
+    second: Plane001
+  - first:
+      33: 3300000
+    second: Plane001
+  - first:
+      43: 4300000
+    second: Plane001
+  - first:
+      43: 4300002
+    second: 10_Capricorn
+  - first:
+      74: 7400000
+    second: Take 001
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: 10_Capricorn
+  externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -72,36 +159,58 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 0
+    meshCompression: 2
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 0
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -111,14 +220,19 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

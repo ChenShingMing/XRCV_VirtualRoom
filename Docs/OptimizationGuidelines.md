@@ -261,15 +261,16 @@ Bug 修正 ✅（2026-07-11）:
 ### 執行順序
 
 ```
-待執行（2026-07-12 起）:
+效能最佳化 ✅（2026-07-11 完成）:
   P0:
-    └─ BVColorTest.FixedUpdate() 清空
+    └─ BVColorTest.FixedUpdate() 清空 ✅
 
   P1:
-    ├─ 13 個 FBX：isReadable=False、meshCompression=Medium
-    └─ 全景圖大檔：確認引用 → 設定 Android ASTC 4x4 + maxSize 4096
+    ├─ 13 個 FBX：isReadable=False、meshCompression=Medium ✅
+    └─ 全景圖大檔 68 張：Android ASTC 4x4 + maxSize 4096 ✅
+         (10 張無引用略過：Custom_Day/Night.png, noise2.png, CloudyCrown_Midnight_*.png)
 
-  P2:
+  P2（待執行）:
     ├─ DayNightEnvironmentControl FixedUpdate 節流（1s）
     ├─ Resources.Load → Inspector 直接引用
     └─ Camera enabled 管理
