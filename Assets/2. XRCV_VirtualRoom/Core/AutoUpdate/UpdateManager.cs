@@ -104,11 +104,12 @@ public class UpdateManager : MonoBehaviour
         {
             Debug.Log("[UpdateManager] Checksum OK ✓");
             if (updateUI != null) updateUI.ShowComplete();
-#if UNITY_ANDROID
+#if !UNITY_EDITOR && UNITY_ANDROID
             UpdateApplier_Android.Install(filePath);
-#elif UNITY_STANDALONE_WIN || UNITY_EDITOR_WIN
+#elif !UNITY_EDITOR && UNITY_STANDALONE_WIN
             UpdateApplier_PC.Install(filePath);
 #else
+            // Editor 中直接進場景，方便測試
             Proceed();
 #endif
         }
