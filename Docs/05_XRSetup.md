@@ -78,11 +78,17 @@ Camera  [active]
 | Feature | 啟用 | 說明 |
 |---------|:----:|------|
 | OculusXR Feature | ✅ | Quest Android 必要 |
-| VIVEFocus3Profile | ✅ | VIVE Focus 3 控制器 |
-| VIVE XR Support（內建於 VIVE package） | ✅ | VIVE 裝置支援 |
-| OculusTouchControllerProfile | ❌ | PlatformBuilder 切換 Quest 時自動啟用（VIVE 時關閉）|
-| MetaQuestTouchPlusControllerProfile | ❌ | — |
-| 其餘 VIVE features | ❌ | 依需求啟用 |
+| OculusTouchControllerProfile | ✅ | Quest 控制器輸入 |
+| MetaQuestTouchPlusControllerProfile | ✅ | Quest Touch Plus 控制器 |
+| VIVEFocus3Profile | ✅ | VIVE Focus 3 控制器 Profile |
+| ViveEnterpriseCommand Android | ❌ | ⚠️ Quest 上 SIGSEGV crash：Meta runtime 不支援 HTC OpenXR 擴展（XR_HTC_*） |
+| ViveCompositionLayer Android | ❌ | ⚠️ 同上，必須關閉 |
+| ViveCompositionLayerPassthrough Android | ❌ | ⚠️ 同上，必須關閉 |
+| VIVEFocus3Feature Android | ❌ | ⚠️ 同上，必須關閉 |
+
+> **重要**：上方四個 VIVE Android features 在 Quest 上啟用會導致 app 啟動即 crash（Thread-4 SIGSEGV，`libunity.so`）。  
+> 原因：這些 feature 試圖初始化 HTC 專屬 OpenXR 擴展，Meta runtime 完全不支援，native 層直接崩潰。  
+> VIVE Focus 3 實體機出包時才需要重新啟用。
 
 ### Standalone 平台（PC / Quest Link）
 
@@ -124,9 +130,40 @@ Game Window 顯示鏡像畫面
 
 | 目標 | 需要的 Feature 組合 |
 |------|-------------------|
-| VIVE（Android APK） | OpenXRLoader + OculusXR(on) + VIVEFocus3(on) |
+| VIVE Focus 3（Android APK） | OpenXRLoader + OculusXR(on) + VIVEFocus3Profile(on) + VIVEFocus3Feature(on) + ViveCompositionLayer(on) |
 | Quest Link（PC 測試） | OpenXRLoader + OculusXR(on) + OculusTouch Standalone(on) |
-| Quest（Android APK）| OpenXRLoader + OculusXR(on) + OculusTouch Android(on) + VIVE features(off) |
+| Quest（Android APK）| OpenXRLoader + OculusXR(on) + OculusTouch(on) + MetaQuestTouchPlus(on) + **全部 VIVE Android features(off)** |
+
+---
+
+## Quest APK 出包注意事項
+
+### AndroidManifest.xml（必要）
+
+`Assets/Plugins/Android/AndroidManifest.xml` 必須包含 VR 類別，否則 app 以 2D 面板模式啟動（XR Session 卡在 VISIBLE，無法進入 FOCUSED）：
+
+```xml
+<category android:name="com.oculus.intent.category.VR" />
+```
+
+### VIVE OpenXR Features（必要關閉）
+
+Quest 出包前，確認以下四個 VIVE Android features 為 **關閉** 狀態  
+（`Assets/XR/Settings/OpenXR Package Settings.asset`）：
+
+- ViveEnterpriseCommand Android
+- ViveCompositionLayer Android  
+- ViveCompositionLayerPassthrough Android
+- VIVEFocus3Feature Android
+
+> 忘記關閉 → app 啟動即 crash，無任何 C# 錯誤訊息（native crash）。
+
+### Gradle 設定
+
+| 檔案 | 用途 |
+|------|------|
+| `Assets/Plugins/Android/settingsTemplate.gradle` | 將 Firebase 本地 m2repository 加入 settings 層 repo，修正 `:launcher` 找不到 Firebase 依賴的問題 |
+| `Assets/Plugins/Android/gradleTemplate.properties` | 移除已廢棄的 `android.enableR8`（AGP 8.x 不相容）|
 
 ---
 

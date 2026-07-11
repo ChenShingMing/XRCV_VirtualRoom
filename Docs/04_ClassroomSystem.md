@@ -74,18 +74,38 @@
 ```
 遊戲啟動
   ↓
-ClassroomManager 讀取 PlayerPrefs 中的授權碼
+ClassroomManager.CheckLicense()
   ↓
-FirebaseLicenseInfoManager.ReadData(licenseKey)
-  ↓ (從 Firestore 拉取)
-LicenseInformation_Current 填入資料
-  ├── schoolName, logo
-  ├── photonAppID
-  ├── seatInfo_Stu（學生座位數）
-  └── seatInfo_Teacher（教師座位數）
-  ↓
-OnPassLicenseEvent.Invoke()  或  OnFailLicenseEvent.Invoke()
+  ├── PlayerPrefs 無授權碼 → OnFailLicenseEvent（顯示輸入面板）
+  └── 有授權碼 → FirebaseLicenseInfoManager.ReadData()
+                    ↓
+                    IsGooglePlayServicesAvailable()
+                    ├── GPS 可用（一般 Android）
+                    │     → CheckAndFixDependenciesAsync()
+                    │     → Firebase native SDK → Firestore
+                    └── GPS 不可用（Meta Quest）
+                          → Firebase REST API（HTTPS）
+                          → firestore.googleapis.com/v1/projects/...
+                    ↓
+                LicenseInformation_Current 填入資料
+                  ├── schoolName, logo
+                  ├── photonAppID
+                  ├── seatInfo_Stu（學生座位數）
+                  └── seatInfo_Teacher（教師座位數）
+                    ↓
+              OnPassLicenseEvent  或  OnFailLicenseEvent
 ```
+
+### Firebase on Meta Quest
+
+Meta Quest **沒有 Google Play Services（GPS）**，Firebase Android native SDK 在 Quest 上初始化時會 SIGSEGV crash（Thread-4，`libunity.so`），且此 crash 發生在 native 層，C# 的 try/catch 和 `CheckAndFixDependenciesAsync()` 都無法攔截。
+
+**解法**：`FirebaseLicenseInfoManager.IsGooglePlayServicesAvailable()` 在任何 Firebase 程式碼執行前，先用 Android 原生 API 確認 GPS 是否存在。Quest 偵測到無 GPS 後，改走 **Firebase Firestore REST API**（純 HTTPS，`UnityWebRequest`），完整支援授權驗證。
+
+| 環境 | 驗證路徑 |
+|------|---------|
+| 一般 Android | Firebase native SDK（`FirebaseFirestore`）|
+| Meta Quest | Firebase REST API（`UnityWebRequest` → `firestore.googleapis.com`）|
 
 ### 預設授權資料（LicenseCreater 子物件）
 
