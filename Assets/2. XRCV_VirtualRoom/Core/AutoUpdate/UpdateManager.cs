@@ -1,3 +1,5 @@
+using System.Collections;
+using System.IO;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -78,8 +80,7 @@ public class UpdateManager : MonoBehaviour
             onComplete: path =>
             {
                 Debug.Log($"[UpdateManager] Download complete: {path}");
-                if (updateUI != null) updateUI.ShowComplete();
-                Proceed(); // Phase 4/5: replace with installer
+                StartCoroutine(VerifyAndProceed(path, asset.checksum));
             },
             onError: err =>
             {
@@ -89,6 +90,31 @@ public class UpdateManager : MonoBehaviour
                 else
                     Proceed(); // no UI — auto-proceed
             });
+    }
+
+    private IEnumerator VerifyAndProceed(string filePath, string checksum)
+    {
+        if (updateUI != null) updateUI.SetVerifying();
+
+        bool verified = false;
+        yield return ChecksumVerifier.VerifyCoroutine(filePath, checksum,
+            result => verified = result);
+
+        if (verified)
+        {
+            Debug.Log("[UpdateManager] Checksum OK ✓");
+            if (updateUI != null) updateUI.ShowComplete();
+            Proceed(); // Phase 4/5: replace with installer
+        }
+        else
+        {
+            Debug.LogWarning("[UpdateManager] Checksum mismatch — deleting file");
+            try { File.Delete(filePath); } catch { }
+            if (updateUI != null)
+                updateUI.ShowError("檔案驗證失敗，請略過後重試");
+            else
+                Proceed();
+        }
     }
 
     private void OnCheckFailed(string error)

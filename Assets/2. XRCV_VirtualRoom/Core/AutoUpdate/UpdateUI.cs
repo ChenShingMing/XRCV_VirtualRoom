@@ -81,6 +81,13 @@ public class UpdateUI : MonoBehaviour
         if (statusText     != null) statusText.text = $"下載中… {(int)(progress * 100)}%";
     }
 
+    public void SetVerifying()
+    {
+        if (statusText != null) statusText.text = "驗證檔案中…";
+        _skipEnabled = false;
+        if (skipButton != null) skipButton.gameObject.SetActive(false);
+    }
+
     public void ShowComplete()
     {
         if (statusText != null) statusText.text = "下載完成";
