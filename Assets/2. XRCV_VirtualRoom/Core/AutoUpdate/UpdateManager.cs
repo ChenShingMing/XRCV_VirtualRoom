@@ -106,6 +106,8 @@ public class UpdateManager : MonoBehaviour
             if (updateUI != null) updateUI.ShowComplete();
 #if UNITY_ANDROID
             UpdateApplier_Android.Install(filePath);
+#elif UNITY_STANDALONE_WIN || UNITY_EDITOR_WIN
+            UpdateApplier_PC.Install(filePath);
 #else
             Proceed();
 #endif
