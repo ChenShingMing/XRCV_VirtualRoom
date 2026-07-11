@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Firebase;
@@ -19,8 +19,9 @@ public class FirebaseLicenseInfoManager : MonoBehaviour
 
     void Start()
     {
-        // Àò¨ú Firestore ¹ê¨Ò
         firestore = FirebaseFirestore.DefaultInstance;
+        // Disable local LevelDB persistence so multiple instances can run simultaneously on PC
+        firestore.Settings.PersistenceEnabled = false;
     }
 
     [Button]
@@ -28,27 +29,27 @@ public class FirebaseLicenseInfoManager : MonoBehaviour
     {
         firestore = FirebaseFirestore.DefaultInstance;
 
-        // ±N sampleData Âà´«¬°¦r¨å
+        // ï¿½N sampleData ï¿½à´«ï¿½ï¿½ï¿½rï¿½ï¿½
         Dictionary<string, object> data = ConvertSampleDataToDictionary(sampleData);
 
-        // ¨ú±o Firestore ªº DocumentReference
+        // ï¿½ï¿½ï¿½o Firestore ï¿½ï¿½ DocumentReference
         DocumentReference docRef = FirebaseFirestore.DefaultInstance.Collection(cllection).Document(documentID);
 
-        // ±N¸ê®Æ¼g¤J Firestore
+        // ï¿½Nï¿½ï¿½Æ¼gï¿½J Firestore
         docRef.SetAsync(data).ContinueWithOnMainThread(task =>
         {
             if (task.IsCanceled)
             {
-                Debug.LogError("SetAsync ³Q¨ú®ø¡C");
+                Debug.LogError("SetAsync ï¿½Qï¿½ï¿½ï¿½ï¿½ï¿½C");
                 return;
             }
             if (task.IsFaulted)
             {
-                Debug.LogError("SetAsync ¹J¨ì¿ù»~¡G" + task.Exception);
+                Debug.LogError("SetAsync ï¿½Jï¿½ï¿½ï¿½ï¿½~ï¿½G" + task.Exception);
                 return;
             }
 
-            Debug.Log("¸ê®Æ¦¨¥\·s¼W¦Ü Firestore¡C");
+            Debug.Log("Data saved to Firestore.");
         });
     }
 
