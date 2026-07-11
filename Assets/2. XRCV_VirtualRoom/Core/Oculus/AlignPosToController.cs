@@ -17,6 +17,7 @@ public class AlignPosToController : MonoBehaviour
 
     private void OnEnable()
     {
+        if (InputHandler_OpenXR.ins == null || align == null) return;
         align.transform.position = InputHandler_OpenXR.ins.leftHandPositionActionRef.action.ReadValue<Vector3>() + offset;
     }
 
@@ -28,6 +29,8 @@ public class AlignPosToController : MonoBehaviour
 
     void AlignHandle()
     {
+        if (InputHandler_OpenXR.ins == null || align == null) return;
+
         /*
         bool controllersActive = OVRInput.GetActiveController() == OVRInput.Controller.Touch ||
           OVRInput.GetActiveController() == OVRInput.Controller.LTouch ||
