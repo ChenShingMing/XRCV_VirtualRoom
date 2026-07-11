@@ -18,6 +18,7 @@ public class Topic
     [HideInInspector]
     public string syncSenderName;
     private object topicManager;
+    private string _cachedMasterNickName;
 
     public virtual void OnInit()
     {
@@ -32,19 +33,15 @@ public class Topic
     {
         controller.gameObject.SetActive(true);
 
-        //設定同步來源為房間的Master，即老師。
-        SetSyncSenderName(PhotonNetwork.CurrentRoom.GetPlayer(PhotonNetwork.CurrentRoom.MasterClientId).NickName);
-
+        _cachedMasterNickName = PhotonNetwork.CurrentRoom.GetPlayer(PhotonNetwork.CurrentRoom.MasterClientId).NickName;
+        SetSyncSenderName(_cachedMasterNickName);
     }
 
     public virtual void OnUpdate()
     {
-        //更新同步目標
-        //判斷教師端的教學模式並且將同步目標跟著做變動
         if (ClassroomManager.ins.teachingType == ClassroomManager.TeachingType.Guidance)
         {
-            //設定同步來源為房間的Master，即老師。
-            SetSyncSenderName(PhotonNetwork.CurrentRoom.GetPlayer(PhotonNetwork.CurrentRoom.MasterClientId).NickName);
+            SetSyncSenderName(_cachedMasterNickName);
         }
         else if (ClassroomManager.ins.teachingType == ClassroomManager.TeachingType.SelfStudy)
         {

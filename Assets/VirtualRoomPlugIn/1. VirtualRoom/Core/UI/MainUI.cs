@@ -77,6 +77,8 @@ public class MainUI : MonoBehaviourPunCallbacks
 
 
     private string identity;
+    private float _uiRefreshTimer;
+    private const float UI_REFRESH_INTERVAL = 0.5f;
 
     #region Monobehavior
 
@@ -101,6 +103,12 @@ public class MainUI : MonoBehaviourPunCallbacks
 
     public void FixedUpdate()
     {
+        ToolsUIHandle();
+
+        _uiRefreshTimer += Time.fixedDeltaTime;
+        if (_uiRefreshTimer < UI_REFRESH_INTERVAL) return;
+        _uiRefreshTimer = 0f;
+
         if (PhotonNetwork.InRoom)
         {
             identity = ClassroomManager.ins.GetIdentityInfo();
@@ -109,7 +117,6 @@ public class MainUI : MonoBehaviourPunCallbacks
             playerNumInfo.text = "There are " + ClassroomManager.ins.GetStudentNumber() + " students in this room.";
             currentTopicInfo.text = ClassroomManager.ins.currentTopicName;
             teachingTypeInfo.text = ClassroomManager.ins.teachingType.ToString();
-
 
             switch(ClassroomManager.ins.joinType)
             {
@@ -129,7 +136,6 @@ public class MainUI : MonoBehaviourPunCallbacks
 
                     break;
             }
-
         }
         else
         {
@@ -142,9 +148,6 @@ public class MainUI : MonoBehaviourPunCallbacks
             toolsUI.SetActive(false);
             monitorUI.SetActive(false);
         }
-
-        ToolsUIHandle();
-        ReflashMonitorList();
     }
 
     #endregion
@@ -272,6 +275,20 @@ public class MainUI : MonoBehaviourPunCallbacks
         roomCollection.SetActive(false);
 
         infoBox.text = "Welcome " + PhotonNetwork.NickName + "\nLobby name : " + PhotonNetwork.CurrentLobby.Name + "\nRoom name : " + PhotonNetwork.CurrentRoom.Name;
+
+        ReflashMonitorList();
+    }
+
+    public override void OnPlayerEnteredRoom(Photon.Realtime.Player other)
+    {
+        ReflashMonitorList();
+        ClassroomManager.ins.newMonitorManager.InvalidateGazeControllerCache();
+    }
+
+    public override void OnPlayerLeftRoom(Photon.Realtime.Player other)
+    {
+        ReflashMonitorList();
+        ClassroomManager.ins.newMonitorManager.InvalidateGazeControllerCache();
     }
 
     public override void OnDisconnected(DisconnectCause cause)

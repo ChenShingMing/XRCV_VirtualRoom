@@ -232,14 +232,14 @@ Assets/2. XRCV_VirtualRoom/Topics/StartMap/Scripts/VirtualRoomPlugIn/
 |------|------|------|--------|------|
 | B1 | Bug | PunNetworkManager.cs | 🔴 高 | ✅ 完成 |
 | B2 | Bug | MenuUITip.cs | 🔴 高 | ✅ 完成 |
-| P1 | 效能 | InputActionManager.cs | 🔴 高 | ⏳ 待決定 |
-| P2 | 效能 | InputHandler_PC.cs | 🔴 高 | ⏳ 待決定 |
-| P3 | 效能 | Player.cs | 🔴 高 | ⏳ 待決定 |
-| P4 | 效能 | GazeController.cs | 🔴 高 | ⏳ 待決定 |
-| P5 | 效能 | NewMonitorManager.cs | 🔴 高 | ⏳ 待決定 |
-| P6 | 效能 | LineController.cs | 🔴 高 | ⏳ 待決定 |
-| P7 | 效能 | MainUI.cs | 🔴 高 | ⏳ 待決定 |
-| P8 | 效能 | Topic.cs | 🔴 高 | ⏳ 待決定 |
+| P1 | 效能 | InputActionManager.cs | 🔴 高 | ✅ 完成 |
+| P2 | 效能 | InputHandler_PC.cs | 🔴 高 | ✅ 完成 |
+| P3 | 效能 | Player.cs | 🔴 高 | ✅ 完成 |
+| P4 | 效能 | GazeController.cs | 🔴 高 | ✅ 完成 |
+| P5 | 效能 | NewMonitorManager.cs | 🔴 高 | ✅ 完成 |
+| P6 | 效能 | LineController.cs | 🔴 高 | ⏸ 跳過（架構高風險） |
+| P7 | 效能 | MainUI.cs | 🔴 高 | ✅ 完成 |
+| P8 | 效能 | Topic.cs | 🔴 高 | ✅ 完成 |
 | P9 | 效能 | Room_Teacher/Student/Monitor.cs | 🟡 中 | ⏳ 待決定 |
 | P10 | 效能 | RoomInformation.cs | 🟡 中 | ⏳ 待決定 |
 | P11 | 效能 | InfoPanel.cs | 🟡 中 | ⏳ 待決定 |

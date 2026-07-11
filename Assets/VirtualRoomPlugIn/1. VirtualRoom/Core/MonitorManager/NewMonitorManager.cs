@@ -29,11 +29,15 @@ public class NewMonitorManager : MonoBehaviour
     public List<string> monitorReceivers = new List<string>();
 
     private Transform mainCamTransform;
+    private Camera _mainCamera;
     private ExitGames.Client.Photon.Hashtable props = new ExitGames.Client.Photon.Hashtable();
+    private List<GazeController> _cachedGazeControllers;
+    private float _sendTimer;
 
     private void Awake()
     {
-        mainCamTransform = Camera.main.transform;
+        _mainCamera = Camera.main;
+        mainCamTransform = _mainCamera.transform;
     }
 
     // Update is called once per frame
@@ -171,6 +175,10 @@ public class NewMonitorManager : MonoBehaviour
 
     private void SendHandle()
     {
+        _sendTimer += Time.deltaTime;
+        if (_sendTimer < 0.1f) return;
+        _sendTimer = 0f;
+
         props.Clear();
         props.Add(Player.localPlayer.playerName + "_MainCameraTransform_Position", mainCamTransform.position);
         props.Add(Player.localPlayer.playerName + "_MainCameraTransform_Rotation", mainCamTransform.rotation);
@@ -179,7 +187,7 @@ public class NewMonitorManager : MonoBehaviour
         if (ClassroomManager.ins != null)
         {
             Vector3 pointWorldPos = ClassroomManager.ins.inputActionManager.GetInputPointerOnGazeSphere();
-            Vector3 pointViewPos = Camera.main.WorldToViewportPoint(pointWorldPos);
+            Vector3 pointViewPos = _mainCamera.WorldToViewportPoint(pointWorldPos);
             props.Add(Player.localPlayer.playerName + "_MonitorPointerPos", new Vector3(pointViewPos.x, pointViewPos.y, 0));
         }
 
@@ -216,9 +224,16 @@ public class NewMonitorManager : MonoBehaviour
 
     }
 
+    public void InvalidateGazeControllerCache()
+    {
+        _cachedGazeControllers = null;
+    }
+
     private void SetPlayerGazeMode(PlayerGazeMode mode)
     {
-        List<GazeController> gazeControllers = FindObjectsOfTypeAll<GazeController>();
+        if (_cachedGazeControllers == null)
+            _cachedGazeControllers = FindObjectsOfTypeAll<GazeController>();
+        List<GazeController> gazeControllers = _cachedGazeControllers;
 
         switch (mode)
         {

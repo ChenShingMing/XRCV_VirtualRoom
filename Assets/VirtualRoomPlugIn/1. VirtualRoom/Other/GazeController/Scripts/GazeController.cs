@@ -17,6 +17,8 @@ public class GazeController : MonoBehaviour
     public static Camera adjustCamera;
     static Transform gazeControllerObjectTF;
 
+    private Camera _mainCamera;
+
 
     public PointViewType pointViewType;
     public string studentname = "";
@@ -44,9 +46,9 @@ public class GazeController : MonoBehaviour
     }
     private void Start()
     {
+        _mainCamera = _mainCamera;
         CreatObjectTF();
         CreatGazeCanvas();
-
     }
 
     // Update is called once per frame
@@ -138,20 +140,20 @@ public class GazeController : MonoBehaviour
                 currentPointView.transform.position = currentPointView.transform.position = point;
             }
 
-            //currentPointView.transform.forward = Camera.main.transform.forward;
-            currentPointView.transform.forward = currentPointView.transform.position - Camera.main.transform.position;
+            //currentPointView.transform.forward = _mainCamera.transform.forward;
+            currentPointView.transform.forward = currentPointView.transform.position - _mainCamera.transform.position;
         }
         if (Tip_PointView != null)
         {
-            //Tip_PointView.transform.forward = Camera.main.transform.forward;
-            Tip_PointView.transform.forward = Tip_PointView.transform.position - Camera.main.transform.position;
+            //Tip_PointView.transform.forward = _mainCamera.transform.forward;
+            Tip_PointView.transform.forward = Tip_PointView.transform.position - _mainCamera.transform.position;
         }
 
 
     }
     void CheckPoint()
     {
-        Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
+        Ray ray = new Ray(_mainCamera.transform.position, _mainCamera.transform.forward);
         point = GazeSphere.RayHitOnSphere(ray);
     }
 
@@ -198,7 +200,7 @@ public class GazeController : MonoBehaviour
 
         if (Tip_PointView == null || !Tip_PointView.gameObject.activeSelf) return;
 
-        Vector3 screenPoint = Camera.main.WorldToViewportPoint(Tip_PointView.transform.position);
+        Vector3 screenPoint = _mainCamera.WorldToViewportPoint(Tip_PointView.transform.position);
 
         bool onScreen = screenPoint.z > 0 && screenPoint.x > 0.01 && screenPoint.x < 0.99 && screenPoint.y > 0.01 && screenPoint.y < 0.99;
 
@@ -221,20 +223,20 @@ public class GazeController : MonoBehaviour
 
         //TipArrow 轉向 TipView 
         Vector3 dir = Tip_PointView.transform.position - point;
-        dir = Vector3.ProjectOnPlane(dir, Camera.main.transform.forward);
-        TipArrow.transform.rotation = Quaternion.LookRotation(dir, Camera.main.transform.forward);
+        dir = Vector3.ProjectOnPlane(dir, _mainCamera.transform.forward);
+        TipArrow.transform.rotation = Quaternion.LookRotation(dir, _mainCamera.transform.forward);
 
         
         //adjustCamera_Handle
         CheckOrthoGraphicCamera();
-        adjustCamera.transform.position = Camera.main.transform.position;
-        adjustCamera.transform.rotation = Camera.main.transform.rotation;
+        adjustCamera.transform.position = _mainCamera.transform.position;
+        adjustCamera.transform.rotation = _mainCamera.transform.rotation;
 
         //TipArrow 移動
 
         if (onScreen)
         {
-            /*  Vector3 adjustCamera_screenPoint = Camera.main.WorldToViewportPoint(Tip_PointView.transform.position);
+            /*  Vector3 adjustCamera_screenPoint = _mainCamera.WorldToViewportPoint(Tip_PointView.transform.position);
               Vector3 movePoint = new Vector3( Mathf.Clamp(adjustCamera_screenPoint.x, 0.4f, 0.6f),  Mathf.Clamp(adjustCamera_screenPoint.y, 0.4f, 0.6f));
 
 
@@ -243,7 +245,7 @@ public class GazeController : MonoBehaviour
               movePoint = mdir.normalized * 0.1f + new Vector3(0.5f, 0.5f);
 
               TipArrow_movePoint = movePoint;
-              Ray ray = Camera.main.ViewportPointToRay(TipArrow_movePoint);
+              Ray ray = _mainCamera.ViewportPointToRay(TipArrow_movePoint);
 
               TipArrow.transform.position = GazeSphere.RayHitOnSphere(ray);*/
 
@@ -258,7 +260,7 @@ public class GazeController : MonoBehaviour
             movePoint = mdir.normalized * 0.1f + new Vector3(0.5f, 0.5f);
 
             TipArrow_movePoint = Vector3.Lerp(TipArrow_movePoint, movePoint, Time.deltaTime * 3);
-            Ray ray = Camera.main.ViewportPointToRay(TipArrow_movePoint);
+            Ray ray = _mainCamera.ViewportPointToRay(TipArrow_movePoint);
             TipArrow.transform.position = GazeSphere.RayHitOnSphere(ray);
         }
 

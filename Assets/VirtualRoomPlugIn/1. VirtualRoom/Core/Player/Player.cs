@@ -15,6 +15,7 @@ public class Player : MonoBehaviourPunCallbacks, IPunObservable
     }
 
     public static Player localPlayer;
+    private static readonly List<Player> _allPlayers = new List<Player>();
 
     public string playerName;
     public bool isMaster;
@@ -28,6 +29,7 @@ public class Player : MonoBehaviourPunCallbacks, IPunObservable
 
     private void Awake()
     {
+        _allPlayers.Add(this);
         gazeController = GetComponentInChildren<GazeController>();
 
         playerName = photonView.Owner.NickName;
@@ -80,18 +82,18 @@ public class Player : MonoBehaviourPunCallbacks, IPunObservable
         GazeControllerHandle();
     }
 
+    private void OnDestroy()
+    {
+        _allPlayers.Remove(this);
+    }
+
     public static Identity GetIdentityByName(string searchName)
     {
-        Player[] players = Resources.FindObjectsOfTypeAll<Player>();
-
-        for(int i = 0; i < players.Length; i++)
+        for (int i = 0; i < _allPlayers.Count; i++)
         {
-            if(players[i].playerName == searchName)
-            {
-                return players[i].identity;
-            }
+            if (_allPlayers[i].playerName == searchName)
+                return _allPlayers[i].identity;
         }
-
         return Identity.None;
     }
 

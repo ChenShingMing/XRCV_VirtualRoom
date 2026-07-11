@@ -10,6 +10,13 @@ public class InputActionManager : MonoBehaviour
     [FoldoutGroup("物件設置")]
     public InputHandler currentInputHandler;
 
+    private Camera _mainCamera;
+
+    private void Awake()
+    {
+        _mainCamera = _mainCamera;
+    }
+
     #region Public Method
 
     public void SetCurrentInputHandler(InputHandler value)
@@ -75,14 +82,14 @@ public class InputActionManager : MonoBehaviour
            
             if (ClassroomManager.ins.isPenMode)
             {
-                ClassroomManager.ins.RPCSetTipLinePointViwe(true, GazeSphere.RayHitOnSphereLine(new Ray(Camera.main.transform.position,
+                ClassroomManager.ins.RPCSetTipLinePointViwe(true, GazeSphere.RayHitOnSphereLine(new Ray(_mainCamera.transform.position,
                                                                              rotation * Vector3.forward)));
             }
             else
             {
 
 
-                ClassroomManager.ins.RPCSetTipPointViwe(GazeSphere.RayHitOnSphere(new Ray(Camera.main.transform.position,
+                ClassroomManager.ins.RPCSetTipPointViwe(GazeSphere.RayHitOnSphere(new Ray(_mainCamera.transform.position,
                                                                                                            rotation * Vector3.forward)));
             }
 
@@ -107,7 +114,7 @@ public class InputActionManager : MonoBehaviour
 
             if (ClassroomManager.ins.isPenMode)
             {
-                Vector3 pos = GazeSphere.RayHitOnSphereLine(new Ray(Camera.main.transform.position,
+                Vector3 pos = GazeSphere.RayHitOnSphereLine(new Ray(_mainCamera.transform.position,
                                                                          rotation * Vector3.forward));
 
                 if (Vector3.Distance(pos, ClassroomManager.ins.lineController.pos) > 0.15f)
@@ -138,7 +145,7 @@ public class InputActionManager : MonoBehaviour
             if (ClassroomManager.ins.isPenMode)
             {
                 //Debug.Log("isPenMode Up");
-                ClassroomManager.ins.RPCSetTipLinePointViwe(false, GazeSphere.RayHitOnSphereLine(new Ray(Camera.main.transform.position,
+                ClassroomManager.ins.RPCSetTipLinePointViwe(false, GazeSphere.RayHitOnSphereLine(new Ray(_mainCamera.transform.position,
                                                                              rotation * Vector3.forward)));
             }
 
