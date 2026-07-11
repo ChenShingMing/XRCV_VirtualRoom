@@ -55,8 +55,13 @@ public class DayNightEnvironmentControl : MonoBehaviour
     }
 
 
+    private float _skyCheckTimer = 0f;
+
     private void FixedUpdate()
     {
+        _skyCheckTimer += Time.fixedDeltaTime;
+        if (_skyCheckTimer < 1f) return;
+        _skyCheckTimer = 0f;
         SkyBoxHandle();
     }
 

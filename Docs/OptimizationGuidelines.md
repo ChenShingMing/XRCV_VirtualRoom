@@ -270,10 +270,10 @@ Bug 修正 ✅（2026-07-11）:
     └─ 全景圖大檔 68 張：Android ASTC 4x4 + maxSize 4096 ✅
          (10 張無引用略過：Custom_Day/Night.png, noise2.png, CloudyCrown_Midnight_*.png)
 
-  P2（待執行）:
+  P2 ✅（2026-07-11 完成）:
     ├─ DayNightEnvironmentControl FixedUpdate 節流（1s）
-    ├─ Resources.Load → Inspector 直接引用
-    └─ Camera enabled 管理
+    ├─ Resources.Load 12 prefab → zodiacPrefabs[] Inspector 直接引用（需在 Inspector 拖入）
+    └─ PlatformSetting.platformCamera 欄位：切換時設定 camera.enabled（可選，Inspector 拖入）
 
   排除:
     └─ LocationDataManager 快取（系統未啟用，StreamingAssets 無資料）

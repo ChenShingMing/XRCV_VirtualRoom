@@ -82,12 +82,18 @@ public class PlatformSwitcher : SerializedMonoBehaviour
 
 
         [FoldoutGroup("物件設置")]
+        public Camera platformCamera;
+
+        [FoldoutGroup("物件設置")]
         public List<GameObject> activeGameObjects = new List<GameObject>();
 
         public void SetEnable(bool value)
         {
             mainUIGameObject.SetActive(value);
             inputHandler.gameObject.SetActive(value);
+
+            if (platformCamera != null)
+                platformCamera.enabled = value;
 
             for (int i = 0; i < activeGameObjects.Count; i++)
             {

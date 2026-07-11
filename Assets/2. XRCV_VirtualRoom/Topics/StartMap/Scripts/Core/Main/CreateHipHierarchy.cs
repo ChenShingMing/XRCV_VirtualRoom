@@ -73,6 +73,9 @@ public class CreateHipHierarchy : MonoBehaviour
     public GameObject hip_Parent;
     public StarMap starMap;
 
+    [SerializeField]
+    public GameObject[] zodiacPrefabs;
+
     //移除連線之清單
     List<StarMap.HipLine> hipLineList_Remove = new List<StarMap.HipLine>();
 
@@ -157,11 +160,22 @@ public class CreateHipHierarchy : MonoBehaviour
             newhip.transform.localRotation = Quaternion.identity;
 
             GameObject newmodelObject = null;
-            Object obj = Resources.Load("Prefabs/" + _zodiacDatas[i].name);
-
-            if (obj != null)
+            GameObject prefabSrc = null;
+            if (zodiacPrefabs != null)
             {
-                newmodelObject = Instantiate(obj) as GameObject;
+                for (int j = 0; j < zodiacPrefabs.Length; j++)
+                {
+                    if (zodiacPrefabs[j] != null && zodiacPrefabs[j].name == _zodiacDatas[i].name)
+                    {
+                        prefabSrc = zodiacPrefabs[j];
+                        break;
+                    }
+                }
+            }
+
+            if (prefabSrc != null)
+            {
+                newmodelObject = Instantiate(prefabSrc);
                 newmodelObject.name = _zodiacDatas[i].name;
                 newmodelObject.transform.SetParent(newhip.transform);
                 newmodelObject.transform.localPosition = new Vector3();
