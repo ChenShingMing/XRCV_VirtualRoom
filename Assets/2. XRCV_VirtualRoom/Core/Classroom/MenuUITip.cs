@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
 using Photon.Pun;
 
 public class MenuUITip : MonoBehaviour
@@ -19,12 +20,7 @@ public class MenuUITip : MonoBehaviour
 
     void Handle()
     {
-        bool controllersActive = false;
-        /*
-        bool controllersActive = OVRInput.GetActiveController() == OVRInput.Controller.Touch ||
-          OVRInput.GetActiveController() == OVRInput.Controller.LTouch ||
-          OVRInput.GetActiveController() == OVRInput.Controller.RTouch;
-        */
+        bool controllersActive = XRSettings.isDeviceActive;
 
         if (controllersActive
             && PhotonNetwork.InRoom

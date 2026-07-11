@@ -230,8 +230,8 @@ Assets/2. XRCV_VirtualRoom/Topics/StartMap/Scripts/VirtualRoomPlugIn/
 
 | 編號 | 分類 | 檔案 | 嚴重度 | 狀態 |
 |------|------|------|--------|------|
-| B1 | Bug | PunNetworkManager.cs | 🔴 高 | ⏳ 待決定 |
-| B2 | Bug | MenuUITip.cs | 🔴 高 | ⏳ 待決定 |
+| B1 | Bug | PunNetworkManager.cs | 🔴 高 | ✅ 完成 |
+| B2 | Bug | MenuUITip.cs | 🔴 高 | ✅ 完成 |
 | P1 | 效能 | InputActionManager.cs | 🔴 高 | ⏳ 待決定 |
 | P2 | 效能 | InputHandler_PC.cs | 🔴 高 | ⏳ 待決定 |
 | P3 | 效能 | Player.cs | 🔴 高 | ⏳ 待決定 |

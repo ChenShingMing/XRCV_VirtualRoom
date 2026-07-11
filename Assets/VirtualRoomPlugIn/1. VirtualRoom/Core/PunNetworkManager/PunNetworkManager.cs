@@ -170,7 +170,7 @@ public class PunNetworkManager : MonoBehaviourPunCallbacks
 
     public override void OnLeftLobby()
     {
-        base.OnJoinedLobby();
+        base.OnLeftLobby();
         cachedRoomList.Clear();
     }
 
