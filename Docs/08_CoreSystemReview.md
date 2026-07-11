@@ -240,14 +240,14 @@ Assets/2. XRCV_VirtualRoom/Topics/StartMap/Scripts/VirtualRoomPlugIn/
 | P6 | 效能 | LineController.cs | 🔴 高 | ⏸ 跳過（架構高風險） |
 | P7 | 效能 | MainUI.cs | 🔴 高 | ✅ 完成 |
 | P8 | 效能 | Topic.cs | 🔴 高 | ✅ 完成 |
-| P9 | 效能 | Room_Teacher/Student/Monitor.cs | 🟡 中 | ⏳ 待決定 |
-| P10 | 效能 | RoomInformation.cs | 🟡 中 | ⏳ 待決定 |
-| P11 | 效能 | InfoPanel.cs | 🟡 中 | ⏳ 待決定 |
-| P12 | 效能 | MainUIManager.cs | 🟡 中 | ⏳ 待決定 |
-| P13 | 效能 | PenPanel.cs | 🟡 中 | ⏳ 待決定 |
-| P14 | 效能 | VersionGetter.cs | 🟡 中 | ⏳ 待決定 |
-| P15 | 效能 | InRoomPanel.cs | 🟡 中 | ⏳ 待決定 |
-| P16 | 效能 | OpenXRInputFieldKeyboardListener.cs | 🟡 中 | ⏳ 待決定 |
+| P9 | 效能 | Room_Teacher/Student/Monitor.cs | 🟡 中 | ✅ 完成 |
+| P10 | 效能 | RoomInformation.cs | 🟡 中 | ✅ 完成 |
+| P11 | 效能 | InfoPanel.cs | 🟡 中 | ✅ 完成 |
+| P12 | 效能 | MainUIManager.cs | 🟡 中 | ✅ 完成 |
+| P13 | 效能 | PenPanel.cs | 🟡 中 | ✅ 完成 |
+| P14 | 效能 | VersionGetter.cs | 🟡 中 | ✅ 完成 |
+| P15 | 效能 | InRoomPanel.cs | 🟡 中 | ✅ 完成 |
+| P16 | 效能 | OpenXRInputFieldKeyboardListener.cs | 🟡 中 | ✅ 已是最佳（無需修改） |
 | C1 | 死碼 | ClassroomManager.cs | 🟢 低 | ⏳ 待決定 |
 | C2 | 死碼 | PointController.cs | 🟢 低 | ⏳ 待決定 |
 | C3 | 死碼 | InfoPanel.cs / Room_Student.cs | 🟢 低 | ⏳ 待決定 |

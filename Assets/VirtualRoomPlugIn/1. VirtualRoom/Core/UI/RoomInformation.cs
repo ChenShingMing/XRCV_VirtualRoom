@@ -6,32 +6,39 @@ using Sirenix.OdinInspector;
 
 public class RoomInformation : MonoBehaviour
 {
-    [FoldoutGroup("物件設置")]
+    [FoldoutGroup("嚙踝蕭嚙踝蕭]嚙練")]
     public TMP_Text no_text;
-    [FoldoutGroup("物件設置")]
+    [FoldoutGroup("嚙踝蕭嚙踝蕭]嚙練")]
     public TMP_Text roomName_text;
-    [FoldoutGroup("物件設置")]
+    [FoldoutGroup("嚙踝蕭嚙踝蕭]嚙練")]
     public TMP_Text curremtTopic_text;
-    [FoldoutGroup("物件設置")]
+    [FoldoutGroup("嚙踝蕭嚙踝蕭]嚙練")]
     public TMP_Text teacherName_text;
-    [FoldoutGroup("物件設置")]
+    [FoldoutGroup("嚙踝蕭嚙踝蕭]嚙練")]
     public TMP_Text memberNum_text;
 
-    [FoldoutGroup("參數設置")]
+    [FoldoutGroup("嚙諸數設嚙練")]
     public int no;
-    [FoldoutGroup("參數設置")]
+    [FoldoutGroup("嚙諸數設嚙練")]
     public string roomName;
-    [FoldoutGroup("參數設置")]
+    [FoldoutGroup("嚙諸數設嚙練")]
     public string curremtTopic;
-    [FoldoutGroup("參數設置")]
+    [FoldoutGroup("嚙諸數設嚙練")]
     public string teacherName;
-    [FoldoutGroup("參數設置")]
+    [FoldoutGroup("嚙諸數設嚙練")]
     public int playerCount;
-    [FoldoutGroup("參數設置")]
+    [FoldoutGroup("嚙諸數設嚙練")]
     public int maxPlayers;
+
+    private float _timer;
+    private const float REFRESH_INTERVAL = 0.5f;
 
     private void FixedUpdate()
     {
+        _timer += Time.fixedDeltaTime;
+        if (_timer < REFRESH_INTERVAL) return;
+        _timer = 0f;
+
         no_text.text = no.ToString();
         roomName_text.text = roomName;
 

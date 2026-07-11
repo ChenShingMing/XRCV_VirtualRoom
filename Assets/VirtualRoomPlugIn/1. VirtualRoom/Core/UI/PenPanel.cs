@@ -8,35 +8,31 @@ public class PenPanel : MonoBehaviour
     public GameObject penPanel;
     public GameObject penTip;
 
+    private float _tipTimer;
+    private const float TIP_INTERVAL = 0.033f; // ~30 Hz
 
     void FixedUpdate()
     {
-        if (ClassroomManager.ins != null
-            && ClassroomManager.ins.isPenMode
+        bool isMasterInRoom = ClassroomManager.ins != null
             && PhotonNetwork.InRoom
             && Player.localPlayer != null
-            && Player.localPlayer.isMaster)
-        {
-            penPanel.SetActive(true);
-        }
-        else
-        {
-            penPanel.SetActive(false);
-        }
+            && Player.localPlayer.isMaster;
 
+        penPanel.SetActive(isMasterInRoom && ClassroomManager.ins.isPenMode);
 
-        if (ClassroomManager.ins != null
-            && PhotonNetwork.InRoom
-            && Player.localPlayer != null
-            && Player.localPlayer.isMaster)
+        if (isMasterInRoom)
         {
             penTip.SetActive(true);
-            penTip.transform.position = ClassroomManager.ins.inputActionManager.GetInputPointerOnGazeSphere();
+            _tipTimer += Time.fixedDeltaTime;
+            if (_tipTimer >= TIP_INTERVAL)
+            {
+                _tipTimer = 0f;
+                penTip.transform.position = ClassroomManager.ins.inputActionManager.GetInputPointerOnGazeSphere();
+            }
         }
         else
         {
             penTip.SetActive(false);
         }
-
     }
 }

@@ -17,8 +17,11 @@ public class InRoomPanel : MonoBehaviour
     public GameObject student;
     public GameObject monitor;
 
+    private bool _typeSet;
+
     private void OnEnable()
     {
+        _typeSet = false;
         teacher.SetActive(false);
         student.SetActive(false);
         monitor.SetActive(false);
@@ -26,32 +29,23 @@ public class InRoomPanel : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (PhotonNetwork.InRoom)
+        if (_typeSet) return;
+        if (!PhotonNetwork.InRoom || Player.localPlayer == null) return;
+
+        switch (ClassroomManager.ins.joinType)
         {
-            switch (ClassroomManager.ins.joinType)
-            {
-                case ClassroomManager.JoinType.Member:
-
-                    if (ClassroomManager.ins.GetIdentityInfo() == Player.Identity.Teacher.ToString())
-                    {
-                        type = InRoomPanel.Type.Teacher;
-                    }
-                    else
-                    {
-                        type = InRoomPanel.Type.Student;
-                    }
-
-                    break;
-
-                case ClassroomManager.JoinType.Monitor:
-
-                    type = InRoomPanel.Type.Monitor;
-
-                    break;
-            }
-
-            PanelHandle();
+            case ClassroomManager.JoinType.Member:
+                type = ClassroomManager.ins.GetIdentityInfo() == Player.Identity.Teacher.ToString()
+                    ? InRoomPanel.Type.Teacher
+                    : InRoomPanel.Type.Student;
+                break;
+            case ClassroomManager.JoinType.Monitor:
+                type = InRoomPanel.Type.Monitor;
+                break;
         }
+
+        PanelHandle();
+        _typeSet = true;
     }
 
     void PanelHandle()
