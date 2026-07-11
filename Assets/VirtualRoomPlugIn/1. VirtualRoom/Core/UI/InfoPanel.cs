@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using Photon.Realtime;
 using TMPro;
 
-public class InfoPanel : MonoBehaviour
+public class InfoPanel : MonoBehaviourPunCallbacks
 {
     public GameObject infoPanel;
     public TMP_Text schoolName_Text;
@@ -12,31 +13,27 @@ public class InfoPanel : MonoBehaviour
     public GameObject leaveRoom;
     public GameObject disconneck;
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
-        
+        base.OnEnable();
+        Refresh();
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    public void Refresh()
     {
         schoolName_Text.text = ClassroomManager.ins.licenseInformation.schoolName;
         nickName_Text.text = PhotonNetwork.NickName;
+        if (infoPanel != null)
+            infoPanel.SetActive(PhotonNetwork.IsConnected);
+    }
 
-        if (PhotonNetwork.IsConnected)
-        {
-            if (infoPanel != null)
-            {
-                infoPanel.SetActive(true);
-            }
-        }
-        else
-        {
-            if (infoPanel != null)
-            {
-                infoPanel.SetActive(false);
-            }
-        }
+    public override void OnConnectedToMaster()
+    {
+        Refresh();
+    }
+
+    public override void OnDisconnected(DisconnectCause cause)
+    {
+        Refresh();
     }
 }

@@ -7,7 +7,7 @@ using Photon.Pun;
 using UnityEngine.UI;
 using System.Linq;
 
-public class Room_Teacher : MonoBehaviour
+public class Room_Teacher : MonoBehaviourPunCallbacks
 {
     [FoldoutGroup("Teacher")]
     public TMP_Text roomName_Text;
@@ -31,26 +31,36 @@ public class Room_Teacher : MonoBehaviour
 
     private void OnEnable()
     {
+        base.OnEnable();
         ReflashTopicSelect();
+        Refresh();
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    public void Refresh()
     {
+        if (PhotonNetwork.CurrentRoom == null) return;
         roomName_Text.text = PhotonNetwork.CurrentRoom.Name;
         memberNum_Text.text = PhotonNetwork.CurrentRoom.PlayerCount.ToString() + "/" + PhotonNetwork.CurrentRoom.MaxPlayers.ToString();
 
         string currentTopic = (string)PhotonNetwork.CurrentRoom.CustomProperties["CurrentTopic"];
+        currentTopic_Text.text = (currentTopic == null || currentTopic == string.Empty)
+            ? "No Topic Selected."
+            : currentTopic;
+    }
 
-        if (currentTopic == null || currentTopic == string.Empty)
-        {
-            currentTopic_Text.text = "No Topic Selected.";
-        }
-        else
-        {
-            currentTopic_Text.text = currentTopic;
-        }
+    public override void OnRoomPropertiesUpdate(ExitGames.Client.Photon.Hashtable propertiesThatChanged)
+    {
+        Refresh();
+    }
 
+    public override void OnPlayerEnteredRoom(Photon.Realtime.Player newPlayer)
+    {
+        Refresh();
+    }
+
+    public override void OnPlayerLeftRoom(Photon.Realtime.Player otherPlayer)
+    {
+        Refresh();
     }
 
 
@@ -62,7 +72,7 @@ public class Room_Teacher : MonoBehaviour
             return;
         }
 
-        //將選重的資料填上InputField
+        //嚙瞇嚙踝重嚙踝蕭嚙踝蕭げ嚙磕InputField
         activeSelects = topicToggleGroup.ActiveToggles();
         activeSelect = activeSelects.ElementAt(0).GetComponent<TopicSelect>();
     }

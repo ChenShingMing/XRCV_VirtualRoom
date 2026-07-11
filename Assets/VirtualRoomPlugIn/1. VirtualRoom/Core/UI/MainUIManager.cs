@@ -68,7 +68,7 @@ public class MainUIManager : MonoBehaviourPunCallbacks
     public Room_Monitor room_Monitor;
 
     //[FoldoutGroup("Lobby")]
-    //public RoomListUpdater roomListUpdater; //¦bOnEnable ¨ê·s¦Û¨­²M³æ¡A´£¨Ñ¨ê·s²M³æªº¤èªk
+    //public RoomListUpdater roomListUpdater; //ï¿½bOnEnable ï¿½ï¿½sï¿½Û¨ï¿½ï¿½Mï¿½ï¿½Aï¿½ï¿½ï¿½Ñ¨ï¿½sï¿½Mï¿½æªºï¿½ï¿½k
 
     [FoldoutGroup("Other")]
     public Rename rename;
@@ -115,12 +115,6 @@ public class MainUIManager : MonoBehaviourPunCallbacks
         isInit = true;
     }
 
-
-    public void FixedUpdate()
-    {
-        if (!isInit) return;
-        ReflashMonitorList();
-    }
 
     #endregion
 
@@ -184,7 +178,7 @@ public class MainUIManager : MonoBehaviourPunCallbacks
 
 
 
-    //ÅýTopicUI «ö¶s¨Ï¥Î¤§¥\¯à ³]©wTopic
+    //ï¿½ï¿½TopicUI ï¿½ï¿½ï¿½sï¿½Ï¥Î¤ï¿½ï¿½\ï¿½ï¿½ ï¿½]ï¿½wTopic
     public void SetTopic()
     {
         string topicName = room_Teacher.GetSelect();
@@ -193,7 +187,7 @@ public class MainUIManager : MonoBehaviourPunCallbacks
 
         ClassroomManager.ins.SetTopic(room_Teacher.GetSelect());
     }
-    //ÅýTopicUI «ö¶s¨Ï¥Î¤§¥\¯à Â÷¶}Topic
+    //ï¿½ï¿½TopicUI ï¿½ï¿½ï¿½sï¿½Ï¥Î¤ï¿½ï¿½\ï¿½ï¿½ ï¿½ï¿½ï¿½}Topic
     public void ExitTopic()
     {
         ClassroomManager.ins.ExitTopic();
@@ -223,11 +217,13 @@ public class MainUIManager : MonoBehaviourPunCallbacks
 
         if (targetName == null || targetName == string.Empty) return;
         ClassroomManager.ins.newMonitorManager.StartReceive(targetName);
+        room_Monitor.Refresh();
     }
 
     public void StopMonitorRequest()
     {
         ClassroomManager.ins.newMonitorManager.StopReceive();
+        room_Monitor.Refresh();
     }
 
     public void SetPenColor(string value)
@@ -298,8 +294,8 @@ public class MainUIManager : MonoBehaviourPunCallbacks
 
         switch (cause)
         {
-            case DisconnectCause.ClientTimeout: //±µ¦¬¤£¨ì¦øªA¾¹ªº°T®§¡A»P¦øªA¾¹³s½u¤¤Â_
-            case DisconnectCause.DisconnectByServerReasonUnknown: //ºô¸ô³s½u­ì¦]¡A»P¦øªA¾¹³s½u¤¤Â_
+            case DisconnectCause.ClientTimeout: //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½Tï¿½ï¿½ï¿½Aï¿½Pï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½sï¿½uï¿½ï¿½ï¿½_
+            case DisconnectCause.DisconnectByServerReasonUnknown: //ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½uï¿½ï¿½]ï¿½Aï¿½Pï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½sï¿½uï¿½ï¿½ï¿½_
             case DisconnectCause.DnsExceptionOnConnect: 
 
                 connectPanel.SetActive(false);

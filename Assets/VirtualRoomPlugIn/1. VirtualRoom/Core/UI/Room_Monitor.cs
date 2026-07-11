@@ -7,7 +7,7 @@ using Photon.Pun;
 using UnityEngine.UI;
 using System.Linq;
 
-public class Room_Monitor : MonoBehaviour
+public class Room_Monitor : MonoBehaviourPunCallbacks
 {
     [FoldoutGroup("Monitor")]
     public TMP_Text roomName_Text;
@@ -28,15 +28,30 @@ public class Room_Monitor : MonoBehaviour
 
     List<MonitorSelect> monitorSelects = new List<MonitorSelect>();
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
-        
+        base.OnEnable();
+        Refresh();
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    public override void OnRoomPropertiesUpdate(ExitGames.Client.Photon.Hashtable propertiesThatChanged)
     {
+        Refresh();
+    }
+
+    public override void OnPlayerEnteredRoom(Photon.Realtime.Player newPlayer)
+    {
+        Refresh();
+    }
+
+    public override void OnPlayerLeftRoom(Photon.Realtime.Player otherPlayer)
+    {
+        Refresh();
+    }
+
+    public void Refresh()
+    {
+        if (PhotonNetwork.CurrentRoom == null) return;
         roomName_Text.text = PhotonNetwork.CurrentRoom.Name;
         memberNum_Text.text = PhotonNetwork.CurrentRoom.PlayerCount.ToString() + "/" + PhotonNetwork.CurrentRoom.MaxPlayers.ToString();
 
@@ -48,7 +63,7 @@ public class Room_Monitor : MonoBehaviour
         }
         else
         {
-            currentTarget_Text.text = "©|¥¼¿ï¾Ü";
+            currentTarget_Text.text = "ï¿½|ï¿½ï¿½ï¿½ï¿½ï¿½";
         }
     }
 
@@ -61,7 +76,7 @@ public class Room_Monitor : MonoBehaviour
             return;
         }
 
-        //±N¿ï­«ªº¸ê®Æ¶ñ¤WInputField
+        //ï¿½Nï¿½ï­«ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½WInputField
         activeSelects = selectToggleGroup.ActiveToggles();
         activeSelect = activeSelects.ElementAt(0).GetComponent<MonitorSelect>();
     }

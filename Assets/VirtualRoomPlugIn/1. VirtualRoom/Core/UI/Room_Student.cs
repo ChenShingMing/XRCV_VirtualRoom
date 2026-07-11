@@ -7,7 +7,7 @@ using Photon.Pun;
 using UnityEngine.UI;
 using System.Linq;
 
-public class Room_Student : MonoBehaviour
+public class Room_Student : MonoBehaviourPunCallbacks
 {
     [FoldoutGroup("Student")]
     public TMP_Text roomName_Text;
@@ -20,15 +20,30 @@ public class Room_Student : MonoBehaviour
     [FoldoutGroup("Student")]
     public TMP_Text teachingType_Text;
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
-        
+        base.OnEnable();
+        Refresh();
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    public override void OnRoomPropertiesUpdate(ExitGames.Client.Photon.Hashtable propertiesThatChanged)
     {
+        Refresh();
+    }
+
+    public override void OnPlayerEnteredRoom(Photon.Realtime.Player newPlayer)
+    {
+        Refresh();
+    }
+
+    public override void OnPlayerLeftRoom(Photon.Realtime.Player otherPlayer)
+    {
+        Refresh();
+    }
+
+    public void Refresh()
+    {
+        if (PhotonNetwork.CurrentRoom == null) return;
         roomName_Text.text = PhotonNetwork.CurrentRoom.Name;
         teacherName_Text.text = (string)PhotonNetwork.CurrentRoom.CustomProperties["TeacherNickName"];
         memberNum_Text.text = PhotonNetwork.CurrentRoom.PlayerCount.ToString() + "/" + PhotonNetwork.CurrentRoom.MaxPlayers.ToString();
@@ -48,11 +63,11 @@ public class Room_Student : MonoBehaviour
 
         if (teachingType == ClassroomManager.TeachingType.Guidance)
         {
-            teachingType_Text.text = "導學模式";
+            teachingType_Text.text = "嚙褕學模佗蕭";
         }
         else if(teachingType == ClassroomManager.TeachingType.SelfStudy)
         {
-            teachingType_Text.text = "自學模式";
+            teachingType_Text.text = "嚙諛學模佗蕭";
         }
     }
 }
