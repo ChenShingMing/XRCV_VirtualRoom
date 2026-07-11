@@ -14,7 +14,7 @@ public class InputActionManager : MonoBehaviour
 
     private void Awake()
     {
-        _mainCamera = _mainCamera;
+        _mainCamera = Camera.main;
     }
 
     #region Public Method

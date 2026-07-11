@@ -46,7 +46,7 @@ public class GazeController : MonoBehaviour
     }
     private void Start()
     {
-        _mainCamera = _mainCamera;
+        _mainCamera = Camera.main;
         CreatObjectTF();
         CreatGazeCanvas();
     }

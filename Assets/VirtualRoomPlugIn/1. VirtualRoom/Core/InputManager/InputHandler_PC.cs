@@ -9,7 +9,7 @@ public class InputHandler_PC : InputHandler
 
     private void Awake()
     {
-        _mainCamera = _mainCamera;
+        _mainCamera = Camera.main;
     }
 
     public override Vector3 GetInputPointerOnGazeSphere()
