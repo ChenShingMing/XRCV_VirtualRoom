@@ -1,23 +1,24 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-/// <summary>
-/// Loading Scene 的更新流程入口。
-/// Start() 時檢查網路 → 查詢版本 → 比對後觸發 OnReadyToLoad。
-/// Phase 2 在 OnReadyToLoad 之前插入下載 UI。
-/// </summary>
 [RequireComponent(typeof(VersionCheckService))]
+[RequireComponent(typeof(DownloadManager))]
 public class UpdateManager : MonoBehaviour
 {
     [Header("Events")]
-    public UnityEvent OnReadyToLoad;
-    public UnityEvent<string> OnUpdateAvailable;  // arg: releaseNote
+    public UnityEvent           OnReadyToLoad;
+    public UnityEvent<string>   OnUpdateAvailable;
+
+    [Header("UI")]
+    public UpdateUI updateUI;
 
     private VersionCheckService _versionCheckService;
+    private DownloadManager     _downloadManager;
 
     private void Awake()
     {
         _versionCheckService = GetComponent<VersionCheckService>();
+        _downloadManager     = GetComponent<DownloadManager>();
     }
 
     private void Start()
@@ -46,11 +47,48 @@ public class UpdateManager : MonoBehaviour
         }
 
         Debug.Log($"[UpdateManager] Update available → {manifest.latestVersion}  ({manifest.releaseNote})");
-        Debug.Log($"[UpdateManager] Force: {manifest.IsForceUpdateRequired(local)}  URL: {manifest.GetCurrentPlatformAsset()?.downloadUrl}");
 
-        // Phase 2: 在此插入下載 UI，目前直接放行
+        bool forced = manifest.IsForceUpdateRequired(local);
         OnUpdateAvailable?.Invoke(manifest.releaseNote);
-        Proceed();
+
+        if (updateUI != null)
+            updateUI.ShowUpdatePrompt(manifest.releaseNote, forced, onSkip: Proceed);
+
+        var asset = manifest.GetCurrentPlatformAsset();
+        if (asset == null || string.IsNullOrEmpty(asset.downloadUrl))
+        {
+            Debug.LogWarning("[UpdateManager] No download URL — skipping download");
+            Proceed();
+            return;
+        }
+
+        string destPath = System.IO.Path.Combine(
+            Application.temporaryCachePath,
+            $"update_{manifest.latestVersion}{GetExtension()}");
+
+        Debug.Log($"[UpdateManager] Downloading → {destPath}");
+
+        _downloadManager.Download(
+            asset.downloadUrl,
+            destPath,
+            onProgress: progress =>
+            {
+                if (updateUI != null) updateUI.SetProgress(progress);
+            },
+            onComplete: path =>
+            {
+                Debug.Log($"[UpdateManager] Download complete: {path}");
+                if (updateUI != null) updateUI.ShowComplete();
+                Proceed(); // Phase 4/5: replace with installer
+            },
+            onError: err =>
+            {
+                Debug.LogWarning($"[UpdateManager] Download failed: {err}");
+                if (updateUI != null)
+                    updateUI.ShowError(err);  // ShowError re-enables Skip button for user to proceed
+                else
+                    Proceed(); // no UI — auto-proceed
+            });
     }
 
     private void OnCheckFailed(string error)
@@ -61,6 +99,16 @@ public class UpdateManager : MonoBehaviour
 
     private void Proceed()
     {
+        if (updateUI != null) updateUI.Hide();
         OnReadyToLoad?.Invoke();
+    }
+
+    private static string GetExtension()
+    {
+#if UNITY_ANDROID
+        return ".apk";
+#else
+        return ".zip";
+#endif
     }
 }
