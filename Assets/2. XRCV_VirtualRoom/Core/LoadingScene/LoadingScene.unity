@@ -420,8 +420,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12ec1c508f33e4c43a1819eadce5e5d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: 
-  loadingUI: {fileID: 0}
+  sceneName: Main
+  loadingUI: {fileID: 757294451}
   loadingSlider: {fileID: 610669239}
   loadingText: {fileID: 581279471}
   OnLoadFinish:

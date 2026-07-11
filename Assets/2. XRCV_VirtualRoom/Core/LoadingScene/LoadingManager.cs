@@ -26,29 +26,29 @@ public class LoadingManager : MonoBehaviour
 
 	bool isFinish = true;
 
-	// Use this for initialization
 	void Start()
 	{
-		loadingUI.SetActive(false);
-		loadingSlider.value = 0.0f;
+		if (loadingUI != null) loadingUI.SetActive(false);
+		if (loadingSlider != null) loadingSlider.value = 0.0f;
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
 		if (isFinish) return;
+		if (operation == null) return;
 
 		targetValue = operation.progress;
 
 		if (operation.progress >= 0.9f)
 		{
-			//operation.progressªº­È³Ì¤j¬°0.9
+			//operation.progressï¿½ï¿½ï¿½È³Ì¤jï¿½ï¿½0.9
 			targetValue = 1.0f;
 		}
 
 		if (targetValue != loadingSlider.value)
 		{
-			//´¡­È¹Bºâ
+			//ï¿½ï¿½ï¿½È¹Bï¿½ï¿½
 			loadingSlider.value = Mathf.Lerp(loadingSlider.value, targetValue, Time.deltaTime * loadingSpeed);
 			if (Mathf.Abs(loadingSlider.value - targetValue) < 0.01f)
 			{
@@ -75,7 +75,7 @@ public class LoadingManager : MonoBehaviour
 		if (!isFinish) return;
 
 		isFinish = false;
-		loadingUI.SetActive(true);
+		if (loadingUI != null) loadingUI.SetActive(true);
 		StartCoroutine(AsyncLoading());
 	}
 
@@ -87,9 +87,18 @@ public class LoadingManager : MonoBehaviour
 
 	IEnumerator AsyncLoading()
 	{
-		operation = SceneManager.LoadSceneAsync(sceneName);
+		string target = !string.IsNullOrEmpty(nextSceneName) ? nextSceneName
+		              : !string.IsNullOrEmpty(sceneName)     ? sceneName
+		              : null;
+		if (target == null)
+		{
+			Debug.LogWarning("[LoadingManager] No scene name set â€” aborting load");
+			isFinish = true;
+			yield break;
+		}
+		operation = SceneManager.LoadSceneAsync(target);
 
-		//ªý¤î·í¸ü¤J§¹¦¨¦Û°Ê¤Á´«
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½Û°Ê¤ï¿½ï¿½ï¿½
 		operation.allowSceneActivation = false;
 
 		yield return operation;
