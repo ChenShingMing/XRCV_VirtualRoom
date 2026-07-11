@@ -17,23 +17,28 @@ public class FirebaseLicenseInfoManager : MonoBehaviour
 
     FirebaseFirestore firestore;
 
-    void Start()
+    private void EnsureFirestore()
     {
-        firestore = FirebaseFirestore.DefaultInstance;
-        // Disable local LevelDB persistence so multiple instances can run simultaneously on PC
-        firestore.Settings.PersistenceEnabled = false;
+        if (firestore != null) return;
+        // Each process gets a uniquely named FirebaseApp so Firestore uses a separate
+        // LevelDB directory per instance, allowing multiple builds to run simultaneously.
+        int pid = System.Diagnostics.Process.GetCurrentProcess().Id;
+        string appName = "xrcv_" + pid;
+        FirebaseApp app;
+        try { app = FirebaseApp.Create(FirebaseApp.DefaultInstance.Options, appName); }
+        catch { app = FirebaseApp.GetInstance(appName); }
+        firestore = FirebaseFirestore.GetInstance(app);
     }
 
     [Button]
     public void AddData()
     {
-        firestore = FirebaseFirestore.DefaultInstance;
-
+        EnsureFirestore();
         // �N sampleData �ഫ���r��
         Dictionary<string, object> data = ConvertSampleDataToDictionary(sampleData);
 
         // ���o Firestore �� DocumentReference
-        DocumentReference docRef = FirebaseFirestore.DefaultInstance.Collection(cllection).Document(documentID);
+        DocumentReference docRef = firestore.Collection(cllection).Document(documentID);
 
         // �N��Ƽg�J Firestore
         docRef.SetAsync(data).ContinueWithOnMainThread(task =>
@@ -56,8 +61,7 @@ public class FirebaseLicenseInfoManager : MonoBehaviour
     [Button]
     public void ReadData(UnityAction OnSuccessEvent = null, UnityAction OnFailEvent = null)
     {
-        firestore = FirebaseFirestore.DefaultInstance;
-
+        EnsureFirestore();
         firestore.Collection(cllection).Document(documentID).GetSnapshotAsync()
             .ContinueWithOnMainThread(task =>
             {
