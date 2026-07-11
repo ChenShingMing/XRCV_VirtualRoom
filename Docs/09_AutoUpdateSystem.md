@@ -1,6 +1,6 @@
 # 09 — 自動更新系統
 
-> 建立日期：2026-07-11 | 狀態：Phase 0 完成，Phase 1 待實作
+> 建立日期：2026-07-11 | 狀態：Phase 0–1 完成
 
 ---
 
@@ -305,7 +305,7 @@ Invoke-RestMethod -Uri $url -Method Patch -Body $body -ContentType "application/
 | 階段 | 內容 | 狀態 |
 |------|------|------|
 | **Phase 0** | GitHub Releases 建立、APK/ZIP 上傳、Firestore manifest 設定 | ✅ 完成 |
-| **Phase 1** | `VersionCheckService` + `UpdateManager` 骨架 + 版本比對 | 待實作 |
+| **Phase 1** | `VersionCheckService` + `UpdateManager` 骨架 + 版本比對 | ✅ 完成 |
 | **Phase 2** | `DownloadManager` + `UpdateUI` 進度條 | 待實作 |
 | **Phase 3** | `ChecksumVerifier` + 錯誤處理 | 待實作 |
 | **Phase 4** | `UpdateApplier_Android`（Quest） | 待實作 |
