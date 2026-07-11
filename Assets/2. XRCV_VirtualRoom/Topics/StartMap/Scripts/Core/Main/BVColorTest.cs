@@ -1,35 +1,7 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class BVColorTest : MonoBehaviour {
-
-    public Image pic;
-    public Text BVText;
-    public Text RGBText;
-
-	// Use this for initialization
-	void Start () {
-        SetColor();
-    }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-    private void FixedUpdate()
-    {
-        SetColor();
-    }
-
-    void SetColor()
-    {
-        Color c = BVColorTest.Bv2rgb(float.Parse(BVText.text));
-        pic.color = c;
-        RGBText.text = "(" + c.r + " , " + c.g + " , " + c.b + ")";
-    }
 
     public static Color BV2Col(float _bv)
     {

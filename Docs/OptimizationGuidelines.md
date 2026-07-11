@@ -1,6 +1,6 @@
 # XRCV VirtualRoom — 優化方針
 
-> Unity 6000.3.12f1 | 更新：2026-07-11（P0 ✅ P1 ✅）  
+> Unity 6000.3.12f1 | 更新：2026-07-11（P0 ✅ P1 ✅）｜效能最佳化規劃：2026-07-11  
 > 本文件列出技術債、架構改進點，以及優先級建議。
 
 ---
@@ -185,6 +185,95 @@ P2 ✅（2026-07-11 完成）:
   ├─ InfoCanvasUI UI 更新節流（每幀 → 0.1s）
   └─ ControlCanvasManager UI 更新節流 + Toggle 值比對 guard
 
+Bug 修正 ✅（2026-07-11）:
+  ├─ Plasma shader 星座連線黑色：o.Albedo → o.Emission（夜間自發光）
+  └─ CSV 移除 28 個自連 row（StartID==EndID 產生 artifact）
+
 待觀察:
   └─ DynamicMoveProvider CS0618 警告，等 XRI 正式替代方案
+```
+
+---
+
+## 效能最佳化規劃（待執行，2026-07-11 規劃）
+
+> 調查範圍：網路同步、星空系統、3D 模型、貼圖、Update 數量、UI
+
+### 調查結論摘要
+
+- 場景 MonoBehaviour 數：1529，Update() 42 個，FixedUpdate() 23 個
+- 貼圖資產：100 個，其中 95 個 >=1024px，多張全景圖達 8192×4096
+- 3D 模型：13 個 FBX（12 星座 + 經緯球），全部 meshCompression=Off、isReadable=True
+- StarMap 系統有 6 個 FixedUpdate（StarMap、StarMapController、DayNight、BVColorTest、StarMapRotate、SunRotate）
+- Photon 同步：已完成 P1 優化（13 key → 1 JSON），目前只有 StarMapTopicController 使用 CustomProperties
+- LocationDataManager（全景圖本地載入器）：**場景中無實例，StreamingAssets 無資料，確認未使用 → 排除優化**
+- 全景圖大檔（8192×4096 PNG）：確認是否有 Material 引用，若無則不影響執行時效能
+
+---
+
+### 🔴 P0 — 立即處理
+
+#### BVColorTest.FixedUpdate() 每幀執行複雜顏色計算
+- **檔案**：`Assets/2. XRCV_VirtualRoom/Topics/StartMap/Scripts/Core/Main/BVColorTest.cs`
+- **問題**：`FixedUpdate()` 每幀呼叫 `SetColor()`，內有 `float.Parse(BVText.text)` + BV→RGB 完整色彩空間轉換
+- 這是調試工具用的 UI 元件（Debug 用 `Image` + `Text`），不應在正式版每幀執行
+- **修法**：將 `FixedUpdate()` 清空（保留靜態方法供 StarMap.cs 呼叫）；同時 `Update()` 本體也是空的可一併移除
+
+---
+
+### 🟡 P1 — 高優先
+
+#### ① 13 個 FBX 模型 Import Settings 未最佳化
+- **路徑**：`Assets/2. XRCV_VirtualRoom/Topics/StartMap/Art/Models/*.FBX`
+- **問題**：
+  - `isReadable = True`：Mesh 資料在 CPU RAM 與 GPU VRAM 各存一份，Quest 記憶體珍貴
+  - `meshCompression = Off`：可開啟 Medium 節省約 30% 磁碟/記憶體
+- **修法**：批次修改 13 個 FBX Import Settings
+  - `isReadable = False`
+  - `meshCompression = Medium`
+
+#### ② 全景圖 Android 平台格式未指定（需先確認是否有被引用）
+- **問題**：多張 2048–8192px 的全景 PNG，Android 平台使用 `default(Compressed)` 而非明確 ASTC
+- Quest 設備需 ASTC 格式；8192px 超出部分 Quest 硬體上限
+- **前置確認**：先檢查這批大圖是否有 Material 或 Script 引用（若無引用不打包）
+- **修法**：有引用的全景圖 → Android 平台設定 `ASTC 4x4`，maxSize 鎖 `4096`
+
+---
+
+### 🟢 P2 — 建議優化
+
+#### ③ DayNightEnvironmentControl.FixedUpdate() 節流
+- **檔案**：`Assets/2. XRCV_VirtualRoom/Topics/StartMap/Scripts/Core/DayNightEnvironmentControl.cs`
+- **問題**：`FixedUpdate()` 每幀檢查 `sunTrans.position.y`，但日夜切換極低頻（StarMap 使用期間可能完全不切換）
+- **修法**：加 1 秒節流（checkInterval = 1f），與 ZodiacsController 同模式
+
+#### ④ Resources.Load 12 個星座 Prefab → Inspector 直接引用
+- **問題**：`CreateHipHierarchy.CreateHipGameObject()` 用字串 `Resources.Load("Prefabs/" + name)` 動態載入
+- 字串查找 + Resources 系統有額外開銷；若名稱不符直接靜默失敗
+- **修法**：`CreateHipHierarchy` 加 `[SerializeField] GameObject[] zodiacPrefabs`，Inspector 直接拖入，移除 Resources 依賴
+
+#### ⑤ 非使用中 Camera 關閉 enabled
+- **問題**：`Main Camera`（PC 模式）和 `MainCamera`（XR 模式）目前同時 active，閒置的 Camera 仍執行 culling
+- **修法**：在 `PlatformSwitcher.SwitchPlatform()` 切換時同步設定非使用 Camera 的 `enabled = false`
+
+---
+
+### 執行順序
+
+```
+待執行（2026-07-12 起）:
+  P0:
+    └─ BVColorTest.FixedUpdate() 清空
+
+  P1:
+    ├─ 13 個 FBX：isReadable=False、meshCompression=Medium
+    └─ 全景圖大檔：確認引用 → 設定 Android ASTC 4x4 + maxSize 4096
+
+  P2:
+    ├─ DayNightEnvironmentControl FixedUpdate 節流（1s）
+    ├─ Resources.Load → Inspector 直接引用
+    └─ Camera enabled 管理
+
+  排除:
+    └─ LocationDataManager 快取（系統未啟用，StreamingAssets 無資料）
 ```
