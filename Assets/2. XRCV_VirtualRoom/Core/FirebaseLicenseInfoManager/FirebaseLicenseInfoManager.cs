@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 using Firebase;
 using Firebase.Firestore;
 using Firebase.Extensions;
@@ -58,13 +59,54 @@ public class FirebaseLicenseInfoManager : MonoBehaviour
         });
     }
 
+    private bool IsGooglePlayServicesAvailable()
+    {
+#if UNITY_ANDROID && !UNITY_EDITOR
+        try
+        {
+            using (var ctx = new AndroidJavaClass("com.unity3d.player.UnityPlayer")
+                                 .GetStatic<AndroidJavaObject>("currentActivity"))
+            using (var gps = new AndroidJavaClass("com.google.android.gms.common.GoogleApiAvailability"))
+            {
+                var instance = gps.CallStatic<AndroidJavaObject>("getInstance");
+                int result = instance.Call<int>("isGooglePlayServicesAvailable", ctx);
+                Debug.Log($"[Firebase] GPS availability result: {result}");
+                return result == 0; // 0 = SUCCESS
+            }
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogWarning($"[Firebase] GPS check failed (likely Quest): {e.Message}");
+            return false;
+        }
+#else
+        return true;
+#endif
+    }
+
     [Button]
     public void ReadData(UnityAction OnSuccessEvent = null, UnityAction OnFailEvent = null)
     {
-        EnsureFirestore();
-        firestore.Collection(cllection).Document(documentID).GetSnapshotAsync()
-            .ContinueWithOnMainThread(task =>
+        if (!IsGooglePlayServicesAvailable())
+        {
+            Debug.LogWarning("[Firebase] GPS not available, using REST API fallback.");
+            StartCoroutine(ReadDataViaRest(OnSuccessEvent, OnFailEvent));
+            return;
+        }
+
+        FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(depTask =>
+        {
+            if (depTask.Result != DependencyStatus.Available)
             {
+                Debug.LogError("Firebase dependencies not available: " + depTask.Result);
+                OnFailEvent?.Invoke();
+                return;
+            }
+
+            EnsureFirestore();
+            firestore.Collection(cllection).Document(documentID).GetSnapshotAsync()
+                .ContinueWithOnMainThread(task =>
+                {
                 if (task.IsCompleted)
                 {
                     DocumentSnapshot snapshot = task.Result;
@@ -105,7 +147,8 @@ public class FirebaseLicenseInfoManager : MonoBehaviour
                         OnFailEvent.Invoke();
                     }
                 }
-            });
+                });
+        });
     }
 
 
@@ -141,6 +184,72 @@ public class FirebaseLicenseInfoManager : MonoBehaviour
         }
 
         return default;
+    }
+
+    private const string FirestoreProjectId = "creativexrworld";
+    private const string FirestoreApiKey = "AIzaSyCioQs9R6V1MT28lttoHF2HXDD80JoiNL4";
+
+    private IEnumerator ReadDataViaRest(UnityAction OnSuccessEvent, UnityAction OnFailEvent)
+    {
+        string url = $"https://firestore.googleapis.com/v1/projects/{FirestoreProjectId}/databases/(default)/documents/{cllection}/{documentID}?key={FirestoreApiKey}";
+        Debug.Log($"[Firebase REST] GET {url}");
+
+        using (var req = UnityWebRequest.Get(url))
+        {
+            yield return req.SendWebRequest();
+
+            if (req.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError($"[Firebase REST] Failed: {req.responseCode} {req.error}");
+                OnFailEvent?.Invoke();
+                yield break;
+            }
+
+            string json = req.downloadHandler.text;
+            Debug.Log($"[Firebase REST] Response: {json}");
+
+            if (!json.Contains("\"fields\""))
+            {
+                Debug.Log($"[Firebase REST] Document not found: {documentID}");
+                OnFailEvent?.Invoke();
+                yield break;
+            }
+
+            sampleData.logo            = GetRestStringField(json, "logo");
+            sampleData.schoolName      = GetRestStringField(json, "schoolName");
+            sampleData.photonAppID     = GetRestStringField(json, "photonAppID");
+            sampleData.seatInfo_Stu     = GetRestIntField(json, "seatInfo_Stu");
+            sampleData.seatInfo_Teacher = GetRestIntField(json, "seatInfo_Teacher");
+
+            SetLicenseInformation(sampleData);
+            OnSuccessEvent?.Invoke();
+        }
+    }
+
+    private string GetRestStringField(string json, string fieldName)
+    {
+        int fIdx = json.IndexOf($"\"{fieldName}\"");
+        if (fIdx < 0) return "";
+        int svIdx = json.IndexOf("\"stringValue\"", fIdx);
+        if (svIdx < 0) return "";
+        int colon = json.IndexOf(':', svIdx);
+        int q1 = json.IndexOf('"', colon + 1);
+        int q2 = json.IndexOf('"', q1 + 1);
+        return (q1 >= 0 && q2 > q1) ? json.Substring(q1 + 1, q2 - q1 - 1) : "";
+    }
+
+    private int GetRestIntField(string json, string fieldName)
+    {
+        int fIdx = json.IndexOf($"\"{fieldName}\"");
+        if (fIdx < 0) return 0;
+        int ivIdx = json.IndexOf("\"integerValue\"", fIdx);
+        if (ivIdx < 0) return 0;
+        int colon = json.IndexOf(':', ivIdx);
+        int q1 = json.IndexOf('"', colon + 1);
+        int q2 = json.IndexOf('"', q1 + 1);
+        if (q1 < 0 || q2 <= q1) return 0;
+        int.TryParse(json.Substring(q1 + 1, q2 - q1 - 1), out int result);
+        return result;
     }
 
     private void SetLicenseInformation(SampleData sampleData)
