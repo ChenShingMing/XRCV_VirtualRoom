@@ -94,6 +94,12 @@ public class UpdateUI : MonoBehaviour
         if (skipButton != null) skipButton.gameObject.SetActive(false);
     }
 
+    public void ShowRestarting(int secondsLeft)
+    {
+        if (statusText != null) statusText.text = $"更新完成，{secondsLeft} 秒後自動重新啟動…";
+        if (skipButton != null) skipButton.gameObject.SetActive(false);
+    }
+
     public void ShowError(string error)
     {
         if (statusText != null) statusText.text = $"下載失敗：{error}";

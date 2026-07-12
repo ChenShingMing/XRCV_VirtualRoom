@@ -35,7 +35,7 @@ $zipSize = (Get-Item "路徑\creativeXRworld_yyyyMMdd_PC.zip").Length
 ### Step 2：建立 GitHub Release 並上傳
 
 ```powershell
-$ver = "v20260711"   # 改成當次版本號
+$ver = "v1.0"   # 改成當次版本號（語意化版號，例如 v1.0、v1.1、v1.10）
 
 # 建立 Release（若已存在則略過）
 & $gh release create $ver --repo $repo --title $ver --notes "更新說明" --latest
@@ -50,26 +50,31 @@ $ver = "v20260711"   # 改成當次版本號
 ### Step 3：更新 Firestore Manifest
 
 ```powershell
+$versionNumber = $ver.TrimStart("v")   # "v1.0" -> "1.0"，Firestore 裡存純數字版號
+
 $body = @{
   fields = @{
-    latestVersion      = @{ stringValue  = "20260711" }
-    minRequiredVersion = @{ stringValue  = "20260711" }
+    latestVersion      = @{ stringValue  = $versionNumber }
+    minRequiredVersion = @{ stringValue  = $versionNumber }
     forceUpdate        = @{ booleanValue = $false }
-    releaseNote        = @{ stringValue  = "更新說明" }
+    releaseNote        = @{ stringValue  = $ver }   # 畫面上只顯示版本號，不放中文說明
     android = @{ mapValue = @{ fields = @{
-      downloadUrl = @{ stringValue  = "https://github.com/$repo/releases/download/v20260711/creativeXRworld_20260711.apk" }
+      downloadUrl = @{ stringValue  = "https://github.com/$repo/releases/download/$ver/creativeXRworld_yyyyMMdd.apk" }
       checksum    = @{ stringValue  = "sha256:$apkHash" }
       sizeBytes   = @{ integerValue = "$apkSize" }
     }}}
     pc = @{ mapValue = @{ fields = @{
-      downloadUrl = @{ stringValue  = "https://github.com/$repo/releases/download/v20260711/creativeXRworld_20260711_PC.zip" }
+      downloadUrl = @{ stringValue  = "https://github.com/$repo/releases/download/$ver/creativeXRworld_yyyyMMdd_PC.zip" }
       checksum    = @{ stringValue  = "sha256:$zipHash" }
       sizeBytes   = @{ integerValue = "$zipSize" }
     }}}
   }
 } | ConvertTo-Json -Depth 10
 
-Invoke-RestMethod -Uri $firestoreUrl -Method Patch -Body $body -ContentType "application/json"
+# 務必以 UTF-8（無 BOM）位元組送出，Windows PowerShell 5.1 的 Invoke-RestMethod
+# 預設用系統當地編碼組字串，中文字元會在送出前就被吃掉變成 "?"。
+$utf8Bytes = [System.Text.Encoding]::UTF8.GetBytes($body)
+Invoke-RestMethod -Uri $firestoreUrl -Method Patch -Body $utf8Bytes -ContentType "application/json; charset=utf-8"
 ```
 
 ### GitHub Release 備註格式
@@ -93,9 +98,11 @@ Invoke-RestMethod -Uri $firestoreUrl -Method Patch -Body $body -ContentType "app
 
 ## 版本號規則
 
-- 格式：`yyyyMMdd`（同日多版加 `-N`，例如 `20260711-2`）
+- 格式：語意化版號 `主版號.次版號`，例如 `1.0`、`1.1`、`1.10`（**不再使用 `yyyyMMdd` 日期格式**）
 - `Application.version` = `bundleVersion` in ProjectSettings
-- `minRequiredVersion`：設為與 `latestVersion` 相同（強制更新），測試時設 `"20260101"`
+- 版本比較邏輯在 `VersionManifest.cs`，是逐段數字比較（`1.9 < 1.10`），可以放心用兩位數以上的次版號
+- `minRequiredVersion`：設為與 `latestVersion` 相同（強制更新），測試時設 `"0.1"`（一定小於任何正式版號）
+- `releaseNote`：畫面上只顯示版本號本身（例如 `v1.0`），不要放中文說明（避免 PowerShell 編碼問題，見下方 Step 3 備註）
 
 ---
 

@@ -107,6 +107,13 @@ public class UpdateManager : MonoBehaviour
 #if !UNITY_EDITOR && UNITY_ANDROID
             UpdateApplier_Android.Install(filePath);
 #elif !UNITY_EDITOR && UNITY_STANDALONE_WIN
+            // 讓使用者看到「即將自動重新啟動」的倒數提示，避免程式突然關閉造成困惑
+            const int restartCountdown = 3;
+            for (int s = restartCountdown; s >= 1; s--)
+            {
+                if (updateUI != null) updateUI.ShowRestarting(s);
+                yield return new WaitForSeconds(1f);
+            }
             UpdateApplier_PC.Install(filePath);
 #else
             // Editor 中直接進場景，方便測試

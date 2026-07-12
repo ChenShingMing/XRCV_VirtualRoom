@@ -22,6 +22,7 @@ public static class UpdateApplier_PC
             "@echo off\r\n" +
             "timeout /t 3 /nobreak > NUL\r\n" +
             "powershell -Command \"Expand-Archive -Path '" + zipPath    + "' -DestinationPath '" + installDir + "' -Force\"\r\n" +
+            "del \"" + zipPath + "\"\r\n" +
             "start \"\" \""  + exePath + "\"\r\n" +
             "del \"%~f0\"\r\n";
 

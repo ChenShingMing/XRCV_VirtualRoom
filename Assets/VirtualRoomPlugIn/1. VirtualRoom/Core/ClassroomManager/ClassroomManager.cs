@@ -177,7 +177,7 @@ public class ClassroomManager : MonoBehaviourPunCallbacks
     [Button]
     public void UpdateVersion()
     {
-        version = "v" + System.DateTime.Now.ToString("yyyyMMdd");
+        version = "v" + Application.version;
     }
 
     #region InputAction
