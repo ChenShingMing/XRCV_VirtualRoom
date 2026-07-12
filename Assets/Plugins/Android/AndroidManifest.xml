@@ -10,17 +10,7 @@
       </intent-filter>
       <meta-data android:name="com.oculus.ossplash" android:value="true" />
     </activity>
-
-    <!-- FileProvider：供 UpdateApplier_Android 透過 content:// URI 傳遞 APK 給系統 PackageInstaller -->
-    <provider
-      android:name="androidx.core.content.FileProvider"
-      android:authorities="${applicationId}.provider"
-      android:exported="false"
-      android:grantUriPermissions="true">
-      <meta-data
-        android:name="android.support.FILE_PROVIDER_PATHS"
-        android:resource="@xml/file_paths" />
-    </provider>
+    <!-- FileProvider 已移至 UpdateProvider.androidlib/AndroidManifest.xml -->
   </application>
 
   <uses-feature android:name="android.hardware.vr.headtracking" android:required="true" android:version="1" />
