@@ -3,4 +3,5 @@ apply plugin: 'com.android.library'
 android {
     namespace 'com.xrcreativeverse.creativeXRworld.updateprovider'
     compileSdkVersion 36
+    buildToolsVersion '36.0.0'
 }
