@@ -16,35 +16,38 @@ $gh       = "C:\Program Files\GitHub CLI\gh.exe"
 $repo     = "ChenShingMing/XRCV_VirtualRoom"
 $apiKey   = "AIzaSyCioQs9R6V1MT28lttoHF2HXDD80JoiNL4"
 $firestoreUrl = "https://firestore.googleapis.com/v1/projects/creativexrworld/databases/(default)/documents/AppConfig/version?key=$apiKey"
+
+$ver = "v1.0"   # 改成當次版本號（語意化版號，例如 v1.0、v1.1、v1.10）
 ```
 
 ### Step 1：計算 SHA-256
 
+檔名格式固定為 `creativeXRworld_{版本號}_{日期}`（版本號在前、日期在後），例如 `creativeXRworld_v1.0_20260713.apk`。
+Quest APK 由 PlatformBuilder 建置時已自動用這個格式命名；PC ZIP 是手動打包，打包時請自己套用同樣格式。
+
 ```powershell
-# Android APK
-$apkHash = (Get-FileHash "路徑\creativeXRworld_yyyyMMdd.apk" -Algorithm SHA256).Hash.ToLower()
-$apkSize = (Get-Item "路徑\creativeXRworld_yyyyMMdd.apk").Length
+# Android APK（PlatformBuilder 產出檔名已含版本號）
+$apkHash = (Get-FileHash "路徑\creativeXRworld_${ver}_yyyyMMdd.apk" -Algorithm SHA256).Hash.ToLower()
+$apkSize = (Get-Item "路徑\creativeXRworld_${ver}_yyyyMMdd.apk").Length
 
 # PC ZIP（先打包，排除 BurstDebugInformation）
 $items = Get-ChildItem "PC build 目錄" | Where-Object { $_.Name -notlike "*BurstDebug*" }
-Compress-Archive -Path ($items.FullName) -DestinationPath "路徑\creativeXRworld_yyyyMMdd_PC.zip" -Force
-$zipHash = (Get-FileHash "路徑\creativeXRworld_yyyyMMdd_PC.zip" -Algorithm SHA256).Hash.ToLower()
-$zipSize = (Get-Item "路徑\creativeXRworld_yyyyMMdd_PC.zip").Length
+Compress-Archive -Path ($items.FullName) -DestinationPath "路徑\creativeXRworld_${ver}_yyyyMMdd_PC.zip" -Force
+$zipHash = (Get-FileHash "路徑\creativeXRworld_${ver}_yyyyMMdd_PC.zip" -Algorithm SHA256).Hash.ToLower()
+$zipSize = (Get-Item "路徑\creativeXRworld_${ver}_yyyyMMdd_PC.zip").Length
 ```
 
 ### Step 2：建立 GitHub Release 並上傳
 
 ```powershell
-$ver = "v1.0"   # 改成當次版本號（語意化版號，例如 v1.0、v1.1、v1.10）
-
 # 建立 Release（若已存在則略過）
 & $gh release create $ver --repo $repo --title $ver --notes "更新說明" --latest
 
 # 上傳 APK
-& $gh release upload $ver "路徑\creativeXRworld_yyyyMMdd.apk" --repo $repo --clobber
+& $gh release upload $ver "路徑\creativeXRworld_${ver}_yyyyMMdd.apk" --repo $repo --clobber
 
 # 上傳 PC ZIP
-& $gh release upload $ver "路徑\creativeXRworld_yyyyMMdd_PC.zip" --repo $repo --clobber
+& $gh release upload $ver "路徑\creativeXRworld_${ver}_yyyyMMdd_PC.zip" --repo $repo --clobber
 ```
 
 ### Step 3：更新 Firestore Manifest
@@ -59,12 +62,12 @@ $body = @{
     forceUpdate        = @{ booleanValue = $false }
     releaseNote        = @{ stringValue  = $ver }   # 畫面上只顯示版本號，不放中文說明
     android = @{ mapValue = @{ fields = @{
-      downloadUrl = @{ stringValue  = "https://github.com/$repo/releases/download/$ver/creativeXRworld_yyyyMMdd.apk" }
+      downloadUrl = @{ stringValue  = "https://github.com/$repo/releases/download/$ver/creativeXRworld_${ver}_yyyyMMdd.apk" }
       checksum    = @{ stringValue  = "sha256:$apkHash" }
       sizeBytes   = @{ integerValue = "$apkSize" }
     }}}
     pc = @{ mapValue = @{ fields = @{
-      downloadUrl = @{ stringValue  = "https://github.com/$repo/releases/download/$ver/creativeXRworld_yyyyMMdd_PC.zip" }
+      downloadUrl = @{ stringValue  = "https://github.com/$repo/releases/download/$ver/creativeXRworld_${ver}_yyyyMMdd_PC.zip" }
       checksum    = @{ stringValue  = "sha256:$zipHash" }
       sizeBytes   = @{ integerValue = "$zipSize" }
     }}}
@@ -90,8 +93,8 @@ Invoke-RestMethod -Uri $firestoreUrl -Method Patch -Body $utf8Bytes -ContentType
 ### 檔案
 | 平台 | 檔名 | SHA-256 |
 |------|------|---------|
-| Android / Quest | creativeXRworld_{日期}.apk | `{apkHash}` |
-| PC (Windows) | creativeXRworld_{日期}_PC.zip | `{zipHash}` |
+| Android / Quest | creativeXRworld_{版本號}_{日期}.apk | `{apkHash}` |
+| PC (Windows) | creativeXRworld_{版本號}_{日期}_PC.zip | `{zipHash}` |
 ```
 
 ---

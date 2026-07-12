@@ -155,7 +155,7 @@ public class PlatformBuilder : EditorWindow
 
         Directory.CreateDirectory(_questBuildPath);
         string date    = System.DateTime.Now.ToString("yyyyMMdd");
-        string apkPath = Path.Combine(_questBuildPath, _buildFileName + "_" + date + ".apk");
+        string apkPath = Path.Combine(_questBuildPath, _buildFileName + "_v" + PlayerSettings.bundleVersion + "_" + date + ".apk");
 
         var report = BuildPipeline.BuildPlayer(EditorBuildSettings.scenes, apkPath,
             BuildTarget.Android, BuildOptions.None);
@@ -176,7 +176,6 @@ public class PlatformBuilder : EditorWindow
     {
         EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Standalone, BuildTarget.StandaloneWindows64);
         CallPlatformSwitcher("OnSwitchToPC");
-        CallClassroomManager();
         SaveScene();
         Debug.Log("[PlatformBuilder] Switched to PC.");
     }
@@ -188,7 +187,6 @@ public class PlatformBuilder : EditorWindow
         SetOpenXRFeature(FEATURE_VIVE_FOCUS3,  false);
         AssetDatabase.SaveAssets();
         CallPlatformSwitcher("OnSwitchToOculus");
-        CallClassroomManager();
         SaveScene();
         Debug.Log("[PlatformBuilder] Switched to Quest.");
     }
@@ -200,7 +198,6 @@ public class PlatformBuilder : EditorWindow
         SetOpenXRFeature(FEATURE_OCULUS_TOUCH, false);
         AssetDatabase.SaveAssets();
         CallPlatformSwitcher("OnSwitchToOpenXR");
-        CallClassroomManager();
         SaveScene();
         Debug.Log("[PlatformBuilder] Switched to VIVE.");
     }
@@ -245,12 +242,6 @@ public class PlatformBuilder : EditorWindow
         var m = ps.GetType().GetMethod(methodName);
         if (m == null) { Debug.LogWarning("[PlatformBuilder] 方法不存在: " + methodName); return; }
         m.Invoke(ps, null);
-    }
-
-    private static void CallClassroomManager()
-    {
-        var mgr = GameObject.Find("ClassroomManager")?.GetComponent<ClassroomManager>();
-        if (mgr != null) mgr.UpdateVersion();
     }
 
     private bool ValidateName()

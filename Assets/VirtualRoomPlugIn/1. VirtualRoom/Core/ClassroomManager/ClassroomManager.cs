@@ -22,8 +22,8 @@ public class ClassroomManager : MonoBehaviourPunCallbacks
     public static ClassroomManager ins;
 
     [HideLabel]
-    [BoxGroup("Version")]
-    public string version;
+    [BoxGroup("Version"), ShowInInspector, ReadOnly]
+    public string version => "v" + Application.version;
 
     [FoldoutGroup("Player")]
     public GameObject playerPrefab;
@@ -172,13 +172,6 @@ public class ClassroomManager : MonoBehaviourPunCallbacks
     #endregion
 
     #region Public Method PunRpc不可為Public，所以若要由別的Class執行就必須多寫一個對應的 public method
-
-    [BoxGroup("Version")]
-    [Button]
-    public void UpdateVersion()
-    {
-        version = "v" + Application.version;
-    }
 
     #region InputAction
 
